@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /doc/
+Disallow: /assets/
+Disallow: /menu/
+Disallow: /perfil/emobras.html
+Disallow: /perfil/programashlf2026.html
+Disallow: /perfil/tabelahlfpremium2026.html
+Allow: /
+Sitemap: https://edusidegum.github.io/sitemap.xml

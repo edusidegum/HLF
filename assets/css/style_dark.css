@@ -1,0 +1,18 @@
+/* Variáveis e Reset preservados conforme briefing */
+:root { --primary: #78BE20; --primary-glow: #8ae029; --dark: #0d0d0d; --card-bg: #1a1a1a; --text-light: #d6d6d6; --whatsapp: #25D366; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Open Sans', sans-serif; color: var(--text-light); background-color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; color: #fff; }
+
+/* Estrutura de Vídeo e Hero */
+.video-wrapper { position: relative; width: 100%; max-width: 800px; margin: 0 auto 30px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(120, 190, 32, 0.3); }
+video { width: 100%; display: block; }
+
+/* Grid de Pilares */
+.pilares-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+.pilar-card { background: var(--card-bg); border-radius: 14px; padding: 20px; text-align: center; border: 1px solid rgba(120, 190, 32, 0.15); }
+.pilar-card h3 { color: var(--primary); font-size: 1rem; margin-bottom: 10px; }
+
+/* Carrossel de Resultados */
+.selos-carrossel { display: flex; overflow-x: auto; gap: 16px; padding: 20px 0; scroll-snap-type: x mandatory; }
+.selos-carrossel img { height: 250px; border-radius: 12px; border: 2px solid rgba(120, 190, 32, 0.2); scroll-snap-align: center; }
