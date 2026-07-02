@@ -3,94 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ficha de Autoavaliação do Bem-Estar Herbalife. Diagnóstico completo com Carlos Silva.">
+    <title>Diagnóstico de Sistema Nutricional | Edu Sidegum — HLF</title>
+    <meta name="robots" content="noindex, nofollow">
     <meta name="protecao-copia" content="ativado">
-    <title>Autoavaliação Completa | Carlos Silva — HLF</title>
     <link rel="stylesheet" href="../assets/css/style_verde.css">
+    <style>
+        .pergunta-row { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid var(--border); }
+        .pergunta-text { font-size: 0.9rem; flex: 1; padding-right: 10px; }
+        .options { display: flex; gap: 10px; }
+        .btn-check { cursor: pointer; padding: 5px 15px; border: 1px solid var(--garden); border-radius: 20px; font-size: 0.8rem; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + label { background: var(--garden); color: white; }
+        .form-footer { margin-top: 30px; text-align: center; }
+    </style>
 </head>
 <body>
     <div id="topbar-placeholder"></div>
     <main class="container">
-        <h1>Ficha de Autoavaliação do Bem-Estar</h1>
-        
-        <section class="card">
-            <h2>🍎 Alimentação Saudável</h2>
-            <div class="question-row"><span>1. Consome frutas e vegetais diariamente?</span><div class="toggle-group" data-group="ali" data-idx="0"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>2. Consome proteínas magras regularmente?</span><div class="toggle-group" data-group="ali" data-idx="1"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>3. Evita alimentos processados?</span><div class="toggle-group" data-group="ali" data-idx="2"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>4. Bebe pelo menos 2L de água por dia?</span><div class="toggle-group" data-group="ali" data-idx="3"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>5. Faz de 4 a 5 refeições por dia?</span><div class="toggle-group" data-group="ali" data-idx="4"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>6. Consome grãos integrais regularmente?</span><div class="toggle-group" data-group="ali" data-idx="5"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>7. Evita consumo excessivo de açúcar?</span><div class="toggle-group" data-group="ali" data-idx="6"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>8. Consome gorduras saudáveis diariamente?</span><div class="toggle-group" data-group="ali" data-idx="7"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>9. Lê os rótulos nutricionais?</span><div class="toggle-group" data-group="ali" data-idx="8"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>10. Planeja suas refeições com antecedência?</span><div class="toggle-group" data-group="ali" data-idx="9"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-        </section>
+        <header>
+            <h1>Autoavaliação de Bem-Estar</h1>
+            <p>Responda com sinceridade para que o sistema processe seu perfil nutricional.</p>
+        </header>
 
-        <section class="card">
-            <h2>🏃 Estilo de Vida</h2>
-            <div class="question-row"><span>11. Pratica atividade física 3x por semana?</span><div class="toggle-group" data-group="est" data-idx="0"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>12. Dorme de 7 a 8 horas por noite?</span><div class="toggle-group" data-group="est" data-idx="1"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>13. Gerencia bem o estresse?</span><div class="toggle-group" data-group="est" data-idx="2"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>14. Evita álcool em excesso?</span><div class="toggle-group" data-group="est" data-idx="3"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>15. Você não fuma?</span><div class="toggle-group" data-group="est" data-idx="4"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>16. Reserva tempo para lazer?</span><div class="toggle-group" data-group="est" data-idx="5"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>17. Mantém rotina equilibrada trabalho/vida?</span><div class="toggle-group" data-group="est" data-idx="6"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-        </section>
+        <form id="diagnosticoForm">
+            <!-- As 22 Perguntas Estruturadas (Exemplos do Bloco Original) -->
+            <div id="perguntas-container">
+                <script>
+                    const perguntas = [
+                        "Você faz pelo menos 3 refeições ao dia?",
+                        "Consome frutas e verduras diariamente?",
+                        "Bebe pelo menos 2 litros de água por dia?",
+                        "Sente cansaço excessivo ao longo do dia?",
+                        "Tem dificuldade para dormir ou sono agitado?",
+                        "Consome frituras ou doces mais de 3x na semana?",
+                        "Pratica atividade física regularmente?",
+                        "Sente inchaço abdominal com frequência?",
+                        "Costuma pular o café da manhã?",
+                        "Sente fome excessiva no período da noite?",
+                        "Consome bebidas açucaradas (sucos/refri)?",
+                        "Sua digestão é lenta ou pesada?",
+                        "Tem intestino preso ou irregular?",
+                        "Consome álcool com frequência?",
+                        "Sente-se estressado com facilidade?",
+                        "Tem o hábito de beliscar entre as refeições?",
+                        "Já tentou dietas restritivas sem sucesso?",
+                        "Deseja reduzir medidas ou gordura localizada?",
+                        "Deseja aumentar sua massa muscular?",
+                        "Deseja ter mais energia e disposição?",
+                        "Está disposto a investir na sua saúde mensalmente?",
+                        "Busca um acompanhamento profissional dedicado?"
+                    ];
 
-        <section class="card">
-            <h2>⚖️ Controle de Peso</h2>
-            <div class="question-row"><span>18. Está satisfeito com seu peso atual?</span><div class="toggle-group" data-group="pes" data-idx="0"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>19. Mantém peso estável há 6 meses?</span><div class="toggle-group" data-group="pes" data-idx="1"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>20. Evita dietas restritivas?</span><div class="toggle-group" data-group="pes" data-idx="2"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>21. Se pesa regularmente?</span><div class="toggle-group" data-group="pes" data-idx="3"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-            <div class="question-row"><span>22. Sente controle sobre escolhas alimentares?</span><div class="toggle-group" data-group="pes" data-idx="4"><button class="toggle-btn" onclick="setVal(this, 'sim')">Sim</button><button class="toggle-btn" onclick="setVal(this, 'nao')">Não</button></div></div>
-        </section>
+                    const container = document.getElementById('perguntas-container');
+                    perguntas.forEach((p, i) => {
+                        container.innerHTML += `
+                            <div class="pergunta-row">
+                                <span class="pergunta-text">${i+1}. ${p}</span>
+                                <div class="options">
+                                    <input type="radio" name="q${i}" id="q${i}s" value="1" required>
+                                    <label for="q${i}s" class="btn-check">SIM</label>
+                                    <input type="radio" name="q${i}" id="q${i}n" value="0">
+                                    <label for="q${i}n" class="btn-check">NÃO</label>
+                                </div>
+                            </div>
+                        `;
+                    });
+                </script>
+            </div>
 
-        <section class="card">
-            <h2>📋 Seus Dados</h2>
-            <input type="text" id="nome" placeholder="Nome Completo" style="margin-bottom:10px;">
-            <select id="objetivo" style="padding:15px; font-size:1.1rem; border:2px solid var(--garden-light); margin-bottom:10px;">
-                <option disabled selected>Qual seu objetivo pessoal?</option>
-                <option>Reduzir Peso</option><option>Ganhar Músculos</option><option>Vida Saudável</option><option>Performance</option>
-            </select>
-            <select id="investimento" style="padding:15px; font-size:1.1rem; border:2px solid var(--garden-light);">
-                <option disabled selected>Investimento Diário Desejado</option>
-                <option>R$ 15,00/dia</option><option>R$ 25,00/dia</option><option>R$ 40,00+/dia</option>
-            </select>
-        </section>
-
-        <section id="meus-resultados" class="results-card" style="display:none; background:var(--garden-dark); padding:20px; border-radius:12px; margin-top:20px;">
-            <h3>📊 Diagnóstico</h3>
-            <div id="res-ali">🍎 Alimentação: 0/10</div>
-            <div id="res-est">🏃 Estilo: 0/7</div>
-            <div id="res-pes">⚖️ Peso: 0/5</div>
-        </section>
-
-        <div style="text-align:center; margin-top:30px;">
-            <button class="btn-primary-whats" onclick="mostrarResultados()">🔍 Ver Resultado</button>
-            <button class="btn-secondary" onclick="enviarWhatsApp()" style="margin-top:10px; border-color:#25D366; color:#25D366;">📲 Enviar Resumo ao Consultor</button>
-        </div>
+            <div class="form-footer">
+                <button type="submit" class="btn-primary-whats" style="background: #2E8B57; width: 100%;">GERAR MEU DIAGNÓSTICO AGORA</button>
+            </div>
+        </form>
     </main>
-    <script>
-        let scores = { ali: new Array(10).fill(null), est: new Array(7).fill(null), pes: new Array(5).fill(null) };
-        function setVal(btn, val) {
-            const group = btn.parentElement;
-            scores[group.dataset.group][group.dataset.idx] = val;
-            group.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active-sim', 'active-nao'));
-            btn.classList.add(val === 'sim' ? 'active-sim' : 'active-nao');
-        }
-        function mostrarResultados() {
-            document.getElementById('res-ali').textContent = `🍎 Alimentação: ${scores.ali.filter(v=>v==='sim').length}/10`;
-            document.getElementById('res-est').textContent = `🏃 Estilo: ${scores.est.filter(v=>v==='sim').length}/7`;
-            document.getElementById('res-pes').textContent = `⚖️ Peso: ${scores.pes.filter(v=>v==='sim').length}/5`;
-            document.getElementById('meus-resultados').style.display = 'block';
-        }
-        function enviarWhatsApp() {
-            const msg = `Olá Carlos! Finalizei minha autoavaliação.\nObjetivo: ${document.getElementById('objetivo').value}\nResultados: Ali ${scores.ali.filter(v=>v==='sim').length}, Est ${scores.est.filter(v=>v==='sim').length}, Peso ${scores.pes.filter(v=>v==='sim').length}`;
-            window.open(`https://wa.me/5551999663200?text=${encodeURIComponent(msg)}`);
-        }
-    </script>
+    <div id="footer-placeholder"></div>
+
     <script src="../assets/js/bloco-incluir.js" defer></script>
+    <script>
+        document.getElementById('diagnosticoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let score = 0;
+            const formData = new FormData(this);
+            for (let value of formData.values()) {
+                score += parseInt(value);
+            }
+            // Lógica de Redirecionamento e Encaminhamento WhatsApp
+            const msg = `Olá Carlos! Acabei de fazer meu diagnóstico de sistema. Meu score foi: ${score}/22. Quero minha proposta personalizada.`;
+            const waUrl = `https://wa.me/5551999663200?text=${encodeURIComponent(msg)}`;
+            
+            // Salva o score para a página de avaliação ler
+            localStorage.setItem('perfil_score', score);
+            
+            // Redireciona para a página de avaliação técnica
+            window.location.href = 'avaliacao.html';
+        });
+    </script>
 </body>
 </html>
+
+$htmlPerfilApp | Out-File -FilePath "D:\HLF\perfil\index.html" -Encoding utf8
