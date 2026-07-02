@@ -89,7 +89,41 @@ img { max-width: 100%; }
         }
       }
     ]
+  }    
+
+      /* ── Gerar Proposta ──────────────────── */
+function gerarProposta() {
+  const nome = document.getElementById('nome').value.trim();
+  const objetivo = document.getElementById('objetivo-pessoal').value;
+  const investimento = parseInt(document.getElementById('investimento').value);
+
+  if (!objetivo || !investimento) {
+    alert('Por favor, selecione seu objetivo pessoal e quanto deseja investir por dia.');
+    return;
   }
+
+  const dados = {
+    nome: nome || 'Cliente',
+    objetivo: objetivo,
+    investimento: investimento,
+    score: {
+      alimentacao: respostas.alimentacao.filter(v => v === 'sim').length,
+      estilo: respostas.estilo.filter(v => v === 'sim').length,
+      peso: respostas.peso.filter(v => v === 'sim').length,
+      total: respostas.alimentacao.filter(v => v === 'sim').length +
+             respostas.estilo.filter(v => v === 'sim').length +
+             respostas.peso.filter(v => v === 'sim').length
+    },
+    peso: parseFloat(document.getElementById('peso').value) || 0,
+    altura: parseFloat(document.getElementById('altura').value) || 0,
+    idade: parseInt(document.getElementById('idade').value) || 0
+  };
+
+  localStorage.setItem('dadosPerfil', JSON.stringify(dados));
+  window.location.href = 'avaliacao.html';
+}
+
+      
   </script>
 
   <style>
