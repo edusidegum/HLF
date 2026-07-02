@@ -745,6 +745,8 @@ img { max-width: 100%; }
       <!-- ═══════════ BOTÕES ═══════════ -->
       <div class="btn-row">
         <button class="btn-primary" onclick="imprimir()">🖨️ Imprimir Ficha</button>
+        <button class="btn-primary" onclick="gerarProposta()">📋 Gerar Proposta Personalizada</button>
+        
         <button class="btn-secondary" onclick="limparTudo()">🔄 Limpar Respostas</button>
       </div>
 
@@ -842,6 +844,35 @@ img { max-width: 100%; }
     function imprimir() {
       window.print();
     }
+ /* ── Gerar proposta ───────────────────────── */
+function gerarProposta() {
+  const dados = {
+    nome: document.getElementById('nome').value,
+    objetivo: document.getElementById('objetivo-pessoal').value,
+    investimento: parseInt(document.getElementById('investimento').value) || 25,
+    score: {
+      alimentacao: respostas.alimentacao.filter(v => v === 'sim').length,
+      estilo: respostas.estilo.filter(v => v === 'sim').length,
+      peso: respostas.peso.filter(v => v === 'sim').length,
+      total: respostas.alimentacao.filter(v => v === 'sim').length +
+             respostas.estilo.filter(v => v === 'sim').length +
+             respostas.peso.filter(v => v === 'sim').length
+    },
+    peso: parseFloat(document.getElementById('peso').value) || 0,
+    altura: parseFloat(document.getElementById('altura').value) || 0,
+    idade: parseInt(document.getElementById('idade').value) || 0
+  };
+
+  if (!dados.objetivo || !dados.investimento) {
+    alert('Por favor, selecione seu objetivo e quanto deseja investir por dia.');
+    return;
+  }
+
+  localStorage.setItem('dadosPerfil', JSON.stringify(dados));
+  window.location.href = 'avaliacao.html';
+}
+
+      
   </script>
   <script src="/menu/scripts/bloco-incluir.js" defer></script>
 </body>
