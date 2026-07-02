@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Diagnóstico | Carlos Silva — HLF</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="protecao-copia" content="ativado">
+    <link rel="stylesheet" href="../assets/css/style_verde.css">
+    <style>
+        .result-card { background: var(--card); padding: 30px; border-radius: 20px; text-align: center; margin-top: 20px; border: 1px solid var(--garden); }
+        .score-display { font-size: 3rem; font-weight: bold; color: var(--garden-light); margin: 10px 0; }
+        .status-badge { display: inline-block; padding: 8px 20px; border-radius: 50px; font-weight: bold; text-transform: uppercase; margin-bottom: 20px; }
+        .status-critico { background: #ff4d4d; color: white; }
+        .status-alerta { background: #ffa500; color: black; }
+        .status-otimo { background: #2E8B57; color: white; }
+        .recommendation-box { text-align: left; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div id="topbar-placeholder"></div>
+    <main class="container">
+        <div class="result-card">
+            <h1>Seu Diagnóstico de Sistema</h1>
+            <div id="score" class="score-display">--</div>
+            <div id="status" class="status-badge">Processando...</div>
+            
+            <div class="recommendation-box" id="feedback-text">
+                <!-- Preenchido via JS -->
+            </div>
+
+            <div style="margin-top: 30px;">
+                <p><strong>Próximo Passo:</strong> Receba seu plano de ação detalhado via WhatsApp.</p>
+                <a id="wa-link" href="#" class="btn-primary-whats" style="background: #25D366; width: 100%; display: block;">SOLICITAR PLANO PERSONALIZADO</a>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/bloco-incluir.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const score = parseInt(localStorage.getItem('perfil_score'));
+            if (isNaN(score)) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const scoreEl = document.getElementById('score');
+            const statusEl = document.getElementById('status');
+            const feedbackEl = document.getElementById('feedback-text');
+            const waLink = document.getElementById('wa-link');
+
+            scoreEl.innerText = `${score}/22`;
+
+            let status = "";
+            let feedback = "";
+            let colorClass = "";
+
+            if (score <= 7) {
+                status = "Zona Crítica";
+                colorClass = "status-critico";
+                feedback = "Seu sistema nutricional apresenta lacunas severas de aporte. É necessária uma intervenção imediata para restaurar os níveis de energia e desinflamação corporal.";
+            } else if (score <= 15) {
+                status = "Zona de Alerta";
+                colorClass = "status-alerta";
+                feedback = "Você possui uma base, mas o sistema está operando com baixa eficiência. Ajustes no protocolo de hidratação e micronutrientes podem acelerar seus resultados significativamente.";
+            } else {
+                status = "Zona de Otimização";
+                colorClass = "status-otimo";
+                feedback = "Parabéns! Seu sistema está bem estruturado. O foco agora é o ajuste fino (fine-tuning) para atingir o pico de performance e longevidade.";
+            }
+
+            statusEl.innerText = status;
+            statusEl.classList.add(colorClass);
+            feedbackEl.innerHTML = `<p>${feedback}</p>`;
+
+            const msg = `Olá Carlos! Concluí meu diagnóstico. Score: ${score}/22 (${status}). Quero os detalhes do meu plano de ação.`;
+            waLink.href = `https://wa.me/5551999663200?text=${encodeURIComponent(msg)}`;
+        });
+    </script>
+</body>
+</html>
