@@ -1,665 +1,273 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><style>
-@page {
-    size: A4;
-    margin: 2.2cm 2.4cm;
-    @top-center { content: string(doctitle); font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.12em; color: #999; }
-    @bottom-center { content: counter(page); font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 9pt; color: #999; }
-}
-@page :first { @top-center { content: none; } @bottom-center { content: none; } }
-@page cover { margin: 2.4cm; @top-center { content: none; } @bottom-center { content: none; } }
-
-body {
-    font-family: 'Noto Serif', 'Liberation Serif', 'DejaVu Serif', serif;
-    font-size: 11pt;
-    line-height: 1.55;
-    color: #1a1a1a;
-}
-body p, body li { text-align: left; }
-h1.doc-title { string-set: doctitle content(); }
-h1, h2, h3 { break-after: avoid; }
-figure, table, pre { break-inside: avoid; }
-
-p { margin: 0 0 0.7em; orphans: 3; widows: 3; }
-
-ul, ol { margin: 0 0 0.7em 1.4em; }
-li { margin: 0 0 0.2em; }
-hr { border: none; border-top: 0.5pt solid #bbb; width: 30%; margin: 1.6em auto; }
-code { font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace; font-size: 10pt; background: #f4f4f4; padding: 1px 4px; border-radius: 3px; }
-pre { font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace; background: #f6f6f6; padding: 11px 13px; border-radius: 5px; white-space: pre-wrap; font-size: 10pt; line-height: 1.45; text-align: left; }
-pre code { background: none; padding: 0; }
-blockquote { margin: 0.8em 0; padding: 0.2em 0 0.2em 1em; border-left: 3px solid #1f3a5f33; color: #555; font-style: italic; }
-/* Images span up to the content width, block-level + centered. Charts are
-   rendered page-width (see _size_chart_spec), so max-width:100% makes them fill
-   the page like the UI shows them; an uploaded image keeps its natural size
-   (never upscaled past the content width). The height cap keeps a very tall
-   image (a long screenshot) from taking a whole page. */
-img { max-width: 100%; max-height: 20cm; display: block; margin: 0.8em auto; }
-figure { margin: 1.1em 0; }
-figure img { margin: 0 auto; }
-body { counter-reset: fig; }
-figure.fig-captioned { counter-increment: fig; }
-figcaption::before { content: "Figure " counter(fig) " — "; }
-
-div.cover { page: cover; page-break-after: always; }
-div.cover .cover-inner { padding-top: 7.6cm; }
-div.cover .cover-rule { width: 60px; height: 3px; background: #1f3a5f; margin: 0 0 1.4em; }
-div.cover h1.doc-title { font-size: 30pt; text-align: left; border: none; padding: 0; margin: 0 0 0.35em; }
-div.cover p.subtitle { text-align: left; }
-
-nav.toc { margin: 0 0 1.8em; padding-bottom: 1em; border-bottom: 0.5pt solid #ccc; }
-nav.toc.toc-break { page-break-after: always; border-bottom: none; }
-nav.toc .toc-entry { margin: 0.18em 0; }
-nav.toc .toc-l3 { margin-left: 1.2em; font-size: 88%; color: #555; }
-nav.toc a { text-decoration: none; color: inherit; }
-
-
-
-h1 { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 25pt; font-weight: 700; letter-spacing: -0.3px; line-height: 1.15; text-align: left; color: #1a1a1a; margin: 0 0 0.2em; }
-p.subtitle { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 12.5pt; font-weight: 400; color: #555; text-align: left; margin: 0 0 0.4em; }
-header.title-block { padding-bottom: 0.9em; border-bottom: 0.5pt solid #999; margin: 0 0 1.7em; }
-h2 { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14.5pt; font-weight: 700; color: #1f3a5f; margin: 1.5em 0 0.5em; padding-bottom: 0.35em; border-bottom: 1px solid #ddd; }
-h3 { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 11.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #333; margin: 1.3em 0 0.35em; }
-table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 10pt; }
-th { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.08em; text-align: left; padding: 6px 10px; border-bottom: 2px solid #1f3a5f; }
-td { padding: 6px 10px; border-bottom: 0.5pt solid #ccc; text-align: left; }
-figcaption { font-family: 'Noto Sans', 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 9pt; color: #555; text-align: center; margin-top: 0.6em; }
-
-</style></head><body><header class="title-block"><h1 class="doc-title">avaliacao — Folha de Propostas HLF</h1></header><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Proposta Personalizada | Eduardo Sidegum — Distribuidor Independente Herbalife</title>
-  <meta name="description" content="Com base no seu perfil de bem-estar, objetivo pessoal e investimento diário, geramos uma proposta personalizada de produtos Herbalife.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
+
+  <link rel="canonical" href="https://edusidegum.github.io/HLF/perfil/avaliacao.html">
+
+  <!-- CSS do ecossistema -->
+  <link rel="preload" as="style" href="https://edusidegum.github.io/HLF/assets/css/style.css">
+  <link rel="stylesheet" href="https://edusidegum.github.io/HLF/assets/css/style.css">
 
   <style>
     :root {
-      --garden:        #2E8B57;
-      --garden-light:  #3CB371;
-      --garden-soft:   #66CDAA;
-      --garden-dark:   #1B5E34;
-      --garden-deep:   #0D3B1C;
-      --garden-bg:     #071A0E;
-      --bg:            #071209;
-      --card:          #0C1F12;
-      --text:          #E8F0EC;
-      --muted:         #8CA89A;
-      --border:        #1A3A24;
-      --border-soft:   #244B31;
-      --white:         #FFFFFF;
+      --garden: #2E8B57; --garden-light: #3CB371; --garden-soft: #66CDAA;
+      --garden-dark: #1B5E34; --garden-deep: #0D3B1C; --garden-bg: #071A0E;
+      --bg: #071209; --card: #0C1F12; --text: #E8F0EC; --muted: #8CA89A;
+      --border: #1A3A24; --border-soft: #244B31; --white: #FFFFFF;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
     }
+    .container { max-width: 920px; margin: 0 auto; padding: 30px 20px; }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 20px;
-    }
-
-    /* ── HEADER ── */
+    /* Header da página */
     .page-header {
-      text-align: center;
-      margin-bottom: 36px;
+      text-align: center; margin-bottom: 30px;
     }
-    .page-header h1 {
-      font-size: 1.7rem;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-    .page-header .subtitle {
-      color: var(--muted);
-      font-size: .95rem;
+    .page-header h1 { color: #fff; font-size: 1.6rem; }
+    .page-header p { color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+
+    /* Card base */
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-left: 4px solid var(--garden); border-radius: 12px;
+      padding: 24px 28px; margin-bottom: 20px;
     }
 
-    /* ── PERFIL SUMMARY ── */
-    .perfil-badge {
-      background: var(--garden-deep);
-      border: 1px solid var(--garden-dark);
-      border-radius: 14px;
-      padding: 18px 24px;
-      margin-bottom: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px 40px;
-      align-items: center;
-    }
-    .perfil-badge .label { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; }
-    .perfil-badge .valor  { color: #fff; font-size: 1.1rem; font-weight: 700; }
-    .perfil-badge .highlight { color: var(--garden-light); }
-
-    /* ── PROPOSTA CARD ── */
-    .proposta {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--garden);
-      border-radius: 14px;
-      padding: 24px 28px;
-      margin-bottom: 24px;
-    }
-    .proposta.recomendada {
-      border-left-color: #F5A623;
-      border-color: #F5A62340;
-      background: linear-gradient(135deg, var(--card) 0%, #1A2E15 100%);
-    }
+    /* Header da proposta */
     .proposta-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 8px;
     }
-    .proposta-header h2 {
-      font-size: 1.3rem;
-      color: #fff;
+    .cliente-nome {
+      font-size: 1.4rem; font-weight: 800; color: #fff;
     }
-    .proposta-header .tag {
-      background: var(--garden-dark);
-      color: var(--garden-soft);
-      font-size: .75rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
+    .cliente-meta {
+      display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.88rem; color: var(--muted);
+      margin-top: 4px;
     }
-    .proposta-header .tag.recomendada {
-      background: #F5A623;
-      color: #1a1a1a;
-    }
-    .proposta-header .valor-dia {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--garden-light);
-    }
+    .cliente-meta span { background: var(--garden-bg); padding: 4px 12px; border-radius: 16px; }
 
-    /* Tabela de produtos */
-    .tbl-produtos {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0 16px;
-      font-size: .92rem;
-    }
-    .tbl-produtos th {
-      text-align: left;
-      padding: 8px 10px;
-      background: var(--garden-bg);
-      color: var(--garden-soft);
-      border-bottom: 2px solid var(--border);
-      font-size: .82rem;
-      text-transform: uppercase;
-      letter-spacing: .4px;
-    }
-    .tbl-produtos td {
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--border);
-    }
-    .tbl-produtos tr:last-child td { border-bottom: none; }
-    .tbl-produtos .total-row td {
-      font-weight: 700;
-      color: var(--garden-light);
-      border-top: 2px solid var(--garden-dark);
-    }
-
-    /* Benefícios */
-    .beneficios {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 12px 0;
-    }
-    .beneficios .chip {
-      background: var(--garden-bg);
-      border: 1px solid var(--border-soft);
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: .82rem;
-      color: var(--garden-soft);
-    }
-
-    .proposta-footer {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-    .btn-whats {
-      background: #25D366;
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      border: none;
-      border-radius: 10px;
-      padding: 11px 20px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-whats:hover { background: #1ebe5b; }
-    .btn-detalhes {
-      background: transparent;
-      border: 1px solid var(--border-soft);
-      color: var(--muted);
-      border-radius: 10px;
-      padding: 10px 18px;
-      cursor: pointer;
-      font-size: .85rem;
-    }
-    .btn-detalhes:hover { border-color: var(--garden-soft); color: #fff; }
-
-    /* ── TABELA DE PROPOSTAS ── */
-    .propostas-grid {
-      margin: 32px 0;
-    }
-    .propostas-grid h2 {
-      color: #fff;
-      margin-bottom: 4px;
-    }
-    .propostas-grid .desc {
-      color: var(--muted);
-      margin-bottom: 20px;
-      font-size: .92rem;
-    }
-
-    /* ── BOTÃO VOLTAR ── */
-    .btn-voltar {
-      display: inline-block;
-      background: transparent;
-      border: 2px solid var(--border-soft);
-      color: var(--muted);
-      padding: 10px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .9rem;
-      margin-bottom: 20px;
-    }
-    .btn-voltar:hover { border-color: var(--garden-soft); color: #fff; }
-
-    /* ── DISCLAIMER ── */
-    .disclaimer-box {
-      font-size: .78rem;
-      color: var(--muted);
-      padding: 16px 20px;
-      background: var(--garden-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-top: 28px;
-      line-height: 1.5;
-    }
-
-    /* ── FOOTER ── */
-    .footer {
+    /* Destaque da proposta */
+    .proposta-destaque {
+      background: linear-gradient(135deg, #0D3B1C, #1B5E34);
+      border: 2px solid var(--garden); border-radius: 12px;
+      padding: 20px 24px; margin: 16px 0 20px;
       text-align: center;
-      padding: 24px 0;
-      border-top: 2px solid var(--garden-dark);
-      margin-top: 36px;
-      color: var(--muted);
-      font-size: .82rem;
     }
-    .footer a { color: var(--garden-soft); }
+    .destaque-tag {
+      display: inline-block; background: #DAA520; color: #0D3B1C;
+      font-weight: 800; font-size: 0.75rem; padding: 4px 14px;
+      border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .destaque-titulo { font-size: 1.5rem; color: #fff; font-weight: 800; }
+    .destaque-desc { color: var(--garden-soft); font-size: 0.9rem; margin-top: 6px; }
 
-    /* ── RESPONSIVE ── */
+    /* Tabela */
+    .proposta-tabela {
+      width: 100%; border-collapse: collapse; margin: 12px 0;
+      font-size: 0.92rem;
+    }
+    .proposta-tabela th {
+      background: var(--garden-dark); color: #fff;
+      padding: 10px 12px; text-align: left; font-weight: 700;
+      border: 1px solid var(--border);
+    }
+    .proposta-tabela td {
+      padding: 10px 12px; border: 1px solid var(--border);
+    }
+    .proposta-tabela tbody tr:hover { background: var(--garden-bg); }
+    .proposta-tabela tfoot td {
+      background: var(--garden-deep); border-top: 2px solid var(--garden);
+      padding: 12px;
+    }
+
+    /* Extras */
+    .proposta-extras {
+      background: var(--garden-bg); border: 1px dashed var(--garden-soft);
+      border-radius: 8px; padding: 12px 16px; margin: 12px 0;
+      font-size: 0.88rem; color: var(--garden-soft);
+    }
+
+    /* Resumo financeiro */
+    .proposta-resumo {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin: 16px 0;
+    }
+    .resumo-card {
+      background: var(--garden-bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px; text-align: center;
+    }
+    .resumo-label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
+    .resumo-valor { font-size: 1.3rem; font-weight: 800; color: var(--garden-light); }
+
+    /* Tags de benefícios */
+    .proposta-beneficios {
+      display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0;
+    }
+    .beneficio-tag {
+      background: var(--garden-deep); border: 1px solid var(--garden);
+      border-radius: 20px; padding: 6px 16px; font-size: 0.85rem; color: var(--garden-soft);
+    }
+
+    /* Botões */
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--garden), var(--garden-light));
+      color: #fff; font-weight: 700; font-size: 1rem;
+      border: none; border-radius: 10px; padding: 14px 28px;
+      cursor: pointer; transition: filter .2s, transform .1s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-whatsapp {
+      background: #25D366; color: #fff; font-weight: 700;
+      border: none; border-radius: 10px; padding: 14px 28px;
+      cursor: pointer; transition: filter .2s, transform .1s;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-whatsapp:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent; border: 2px solid var(--border-soft);
+      color: var(--muted); font-weight: 600; border-radius: 10px;
+      padding: 12px 24px; cursor: pointer; transition: all .2s;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--garden-soft); color: #fff; }
+
+    /* Loading */
+    .loading {
+      text-align: center; padding: 60px 20px; color: var(--muted);
+    }
+    .loading .spinner {
+      width: 40px; height: 40px; border: 4px solid var(--border);
+      border-top-color: var(--garden); border-radius: 50%;
+      animation: spin .8s linear infinite; margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Erro */
+    .erro-card {
+      background: #2a1515; border: 2px solid #8b4444; border-radius: 12px;
+      padding: 30px; text-align: center;
+    }
+    .erro-card h2 { color: #ff8a8a; margin-bottom: 10px; }
+    .erro-card p { color: #d4a0a0; margin-bottom: 16px; }
+
+    /* Disclaimer */
+    .disclaimer {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.5;
+      padding: 14px 18px; background: var(--garden-bg);
+      border: 1px solid var(--border); border-radius: 8px; margin-top: 16px;
+    }
+
+    /* Responsivo */
     @media (max-width: 700px) {
-      .container { padding: 20px 14px; }
-      .proposta { padding: 18px 16px; }
-      .proposta-header { flex-direction: column; }
-      .tbl-produtos { font-size: .82rem; }
-      .perfil-badge { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .proposta-resumo { grid-template-columns: 1fr; }
+      .cliente-meta { flex-direction: column; gap: 6px; }
+      .proposta-tabela { font-size: 0.78rem; }
+    }
+    @media print {
+      .btn-row, .btn-whatsapp { display: none !important; }
+      body { background: #fff; color: #000; }
+      .card { background: #fff; border: 1px solid #ccc; }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-
-  <!-- ═══ HEADER ═══ -->
-  <header class="page-header">
-    <h1>📋 Sua Proposta Personalizada</h1>
-    <p class="subtitle">
-      Com base no seu objetivo e investimento diário, selecionamos a melhor combinação de produtos para você.
-    </p>
-  </header>
-
-  <!-- ═══ PERFIL DO CLIENTE (preenchido via JS) ═══ -->
-  <div class="perfil-badge" id="perfil-cliente">
-    <div>
-      <div class="label">Cliente</div>
-      <div class="valor" id="display-nome">—</div>
+  <div class="container">
+    <div class="page-header">
+      <h1>📋 Sua Proposta Personalizada</h1>
+      <p>Com base nas suas respostas, preparamos um plano sob medida para você.</p>
     </div>
-    <div>
-      <div class="label">Objetivo</div>
-      <div class="valor highlight" id="display-objetivo">—</div>
-    </div>
-    <div>
-      <div class="label">Score Bem-Estar</div>
-      <div class="valor" id="display-score">— / 22</div>
-    </div>
-    <div>
-      <div class="label">Investimento</div>
-      <div class="valor highlight" id="display-investimento">—</div>
-    </div>
-  </div>
 
-  <!-- ═══ PROPOSTA PRINCIPAL (recomendada) ═══ -->
-  <div id="proposta-container">
-    <!-- Injetado via JS -->
-  </div>
-
-  <!-- ═══ TABELA COMPLETA DE PROPOSTAS ═══ -->
-  <div class="propostas-grid">
-    <h2>📊 Todas as opções para seu perfil</h2>
-    <p class="desc">
-      Veja abaixo as combinações de produtos organizadas por faixa de investimento diário.
-      A opção <strong style="color:#F5A623;">destacada em dourado</strong> é a recomendada para o seu objetivo e orçamento.
-    </p>
-    <div id="tabela-completa">
-      <!-- Injetado via JS -->
-    </div>
-  </div>
-
-  <a class="btn-voltar" href="perfil.html">← Voltar e ajustar respostas</a>
-
-  <div class="disclaimer-box">
-    <strong>⚠️ Aviso importante:</strong> Esta é uma proposta preliminar baseada nas suas respostas. Os valores são sugeridos e podem variar conforme disponibilidade e atualização de preços. Consulte seu Distribuidor Independente Herbalife para confirmar valores, prazos e montar seu pedido personalizado. Resultados variam de pessoa para pessoa. Consulte um profissional de saúde antes de iniciar qualquer programa nutricional.
-  </div>
-
-  <div class="footer">
-    <strong>Eduardo Sidegum</strong> — Distribuidor Independente Herbalife • Novo Hamburgo/RS<br>
-    <a href="https://wa.me/5551999966320" target="_blank">WhatsApp: (51) 99996-6320</a> &nbsp;|&nbsp;
-    <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank">Catálogo Oficial</a>
-  </div>
-
-</div>
-
-<script>
-/* ══════════════════════════════════════════════
-   MATRIZ DE PRODUTOS — valores da tabela HLF Premium 2026
-   ══════════════════════════════════════════════ */
-const PRODUTOS = {
-  shake550:     { nome: 'Shake 550g', preco: 246.00, porcao: 14,     precoPorcao: 17.57, pv: 25.75 },
-  shake1976:    { nome: 'Shake 1976g (Chocolate)', preco: 786.00, porcao: 50, precoPorcao: 15.72, pv: 96.90 },
-  shake2080:    { nome: 'Shake 2080g (Baunilha/DDL/Morango)', preco: 786.00, porcao: 50, precoPorcao: 15.72, pv: 102.00 },
-  shakeSache:   { nome: 'Shake Sachê (Baunilha)', preco: 87.00, porcao: 5, precoPorcao: 17.40, pv: 9.55 },
-  nutrev10:     { nome: 'NutreV (10 unidades)', preco: 790.00, porcao: 10, precoPorcao: 79.00, pv: 80.90, isNutrev: true },
-  nutrev1:      { nome: 'NutreV (unidade)', preco: 79.00, porcao: 1, precoPorcao: 79.00, pv: 7.40, isNutrev: true },
-  herbal51:     { nome: 'Herbal Concentrate 51g', preco: 222.00, porcao: 30, precoPorcao: 7.40, pv: 21.45 },
-  herbal102:    { nome: 'Herbal Concentrate 102g', preco: 364.00, porcao: 60, precoPorcao: 6.07, pv: 37.60 },
-  proteina240:  { nome: 'Proteína em pó 240g', preco: 221.00, porcao: 15, precoPorcao: 14.73, pv: 19.30 },
-  proteina480:  { nome: 'Proteína em pó 480g', preco: 401.00, porcao: 30, precoPorcao: 13.37, pv: 39.25 },
-  fiberConc:    { nome: 'Fiber Concentrate 450ml', preco: 206.00, porcao: 28, precoPorcao: 7.36, pv: 20.30 },
-  fiberPowder:  { nome: 'Fiber Powder', preco: 243.00, porcao: 30, precoPorcao: 8.10, pv: 24.65 },
-  whey3W:       { nome: 'Whey Protein 3W 510g', preco: 256.00, porcao: 15, precoPorcao: 17.07, pv: 24.55 },
-  creatina:     { nome: 'Creatina 150g', preco: 181.00, porcao: 30, precoPorcao: 6.03, pv: 18.45 },
-  bcaa:         { nome: 'BCAA 5:1:1 204g (120 tab)', preco: 264.00, porcao: 60, precoPorcao: 4.40, pv: 25.85 },
-  cr7drive:     { nome: 'CR7 Drive Berry Mix', preco: 243.00, porcao: 15, precoPorcao: 16.20, pv: 26.75 },
-  multivit:     { nome: 'Multivitamínicos e Minerais', preco: 122.00, porcao: 60, precoPorcao: 2.03, pv: 10.75 },
-  nrgguara:     { nome: 'N-R-G 100g Guaraná Tropical', preco: 252.00, porcao: 20, precoPorcao: 12.60, pv: 24.45 },
-  soup:         { nome: 'Nutri Soup 416g (Frango c/ Legumes)', preco: 246.00, porcao: 12, precoPorcao: 20.50, pv: 25.75 },
-  shape:        { nome: 'Shape Control', preco: 338.00, porcao: 60, precoPorcao: 5.63, pv: 35.35 },
-  barra:        { nome: 'Barra de Proteína 245g', preco: 110.00, porcao: 7, precoPorcao: 15.71, pv: 10.40 },
-  colageno:     { nome: 'Beauty Booster Colágeno 240g', preco: 301.00, porcao: 30, precoPorcao: 10.03, pv: 27.80 }
-};
-
-/* ══════════════════════════════════════════════
-   MAPEAMENTO: objetivo → faixa de investimento → cesta
-   ══════════════════════════════════════════════ */
-const OBJETIVOS = {
-  'reduzir-peso':    { label: 'Reduzir peso',        emoji: '⚖️' },
-  'ganhar-musculos': { label: 'Ganhar músculos',     emoji: '💪' },
-  'manter-peso':     { label: 'Manter seu peso',     emoji: '✅' },
-  'vida-saudavel':   { label: 'Vida mais saudável',  emoji: '🌿' },
-  'rendimento-esporte': { label: 'Rendimento no Esporte', emoji: '🏃' }
-};
-
-/* Estratégia: para cada objetivo, montamos combinações por faixa de investimento.
-   Cada combo = { nome, produtos: [{id, qtd}], total, destaque, beneficios[] }
-   */
-const MONTAR_CESTA = (objetivoKey, investimento) => {
-  const i = investimento; // valor diário em R$
-
-  const cestas = {
-    'reduzir-peso': [
-      { nome: 'Initiação — Shake + Chá',         faixa: 10, produtos: [{id:'shakeSache', qtd:1}, {id:'herbal51', qtd:1}], beneficios: ['Substituição de refeição', 'Termogênico natural', 'Controle de apetite'] },
-      { nome: 'Básico Seco — 15 dias',            faixa: 15, produtos: [{id:'shake550', qtd:1}, {id:'nutrev1', qtd:1}, {id:'herbal51', qtd:1}], beneficios: ['Perda gradual', 'Nutrição completa', 'Chá acelera metabolismo'] },
-      { nome: 'Básico 30 dias',                   faixa: 20, produtos: [{id:'shake550', qtd:2}, {id:'nutrev1', qtd:2}, {id:'herbal51', qtd:1}], beneficios: ['2 refeições/dia substituídas', '30 dias de programa', 'Resultados consistentes'] },
-      { nome: 'Plano Turbo 30 dias',              faixa: 25, produtos: [{id:'shake1976', qtd:1}, {id:'nutrev10', qtd:1}, {id:'herbal51', qtd:1}], beneficios: ['Shake granel (50 porções)', 'NutreV 10 unidades', 'Melhor custo-benefício'] },
-      { nome: 'Turbo Acelerado',                  faixa: 30, produtos: [{id:'shake1976', qtd:1}, {id:'nutrev10', qtd:1}, {id:'herbal102', qtd:1}, {id:'proteina240', qtd:1}], beneficios: ['Chá para 60 dias', 'Proteína nos lanches', 'Máxima aceleração'] },
-      { nome: 'Super Turbo 30d',                  faixa: 35, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'nutrev10', qtd:1}, {id:'herbal51', qtd:1}, {id:'proteina240', qtd:1}], beneficios: ['Dois sabores de shake', 'Variedade na dieta', 'Resultados acelerados'] },
-      { nome: 'Seca Barriga Premium',             faixa: 40, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'nutrev10', qtd:1}, {id:'herbal51', qtd:1}, {id:'proteina240', qtd:1}, {id:'fiberConc', qtd:1}], beneficios: ['Fibras + saciedade', 'Redução de medidas', 'Programa Seca Barriga completo'] },
-      { nome: 'Seca Barriga + Colágeno',          faixa: 45, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'nutrev10', qtd:1}, {id:'herbal102', qtd:1}, {id:'proteina480', qtd:1}, {id:'fiberConc', qtd:1}], beneficios: ['Chá para 60 dias', 'Proteína para 30 dias', 'Fibra + colágeno total'] },
-      { nome: 'Transformação Completa',           faixa: 50, produtos: [{id:'shake2080', qtd:1}, {id:'shake550', qtd:1}, {id:'nutrev10', qtd:1}, {id:'herbal102', qtd:1}, {id:'proteina480', qtd:1}, {id:'fiberConc', qtd:1}, {id:'colageno', qtd:1}], beneficios: ['Shake 2080g premium', 'Pacote completo 60+ dias', 'Colágeno + pele e articulações'] }
-    ],
-    'ganhar-musculos': [
-      { nome: 'Iniciante Muscular',               faixa: 10, produtos: [{id:'shakeSache', qtd:1}, {id:'proteina240', qtd:1}], beneficios: ['Proteína pós-treino', 'Refeição substituída'] },
-      { nome: 'Pré-Workout Básico',               faixa: 15, produtos: [{id:'shake550', qtd:1}, {id:'proteina240', qtd:1}], beneficios: ['17g proteína por shake', 'Recuperação muscular'] },
-      { nome: 'Mass Muscular 15d',                faixa: 20, produtos: [{id:'shake550', qtd:1}, {id:'proteina240', qtd:1}, {id:'nutrev1', qtd:1}], beneficios: ['Nutrição completa', 'Ganho de massa magra'] },
-      { nome: 'Mass Muscular 30d',                faixa: 25, produtos: [{id:'shake550', qtd:2}, {id:'proteina480', qtd:1}, {id:'nutrev1', qtd:2}], beneficios: ['30 dias de programa', '60g+ proteína/dia'] },
-      { nome: 'Hipertrofia Turbo',                faixa: 30, produtos: [{id:'shake1976', qtd:1}, {id:'proteina480', qtd:1}, {id:'nutrev10', qtd:1}, {id:'creatina', qtd:1}], beneficios: ['Creatina + força', 'NutreV 10 unidades', 'Shake granel premium'] },
-      { nome: 'Hipertrofia + BCAA',               faixa: 35, produtos: [{id:'shake1976', qtd:1}, {id:'proteina480', qtd:1}, {id:'nutrev10', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}], beneficios: ['BCAA + creatina', 'Máximo rendimento', 'Recuperação acelerada'] },
-      { nome: 'Mass Elite',                       faixa: 40, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'proteina480', qtd:1}, {id:'nutrev10', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}], beneficios: ['60 dias de shake', 'Proteína + creatina + BCAA', 'Pacote atleta'] },
-      { nome: 'Mass Elite + Whey',                faixa: 45, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'whey3W', qtd:1}, {id:'nutrev10', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}], beneficios: ['Whey Protein 3W', '3 fontes de proteína', 'Máxima hipertrofia'] },
-      { nome: 'Performance Máxima',               faixa: 50, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'whey3W', qtd:1}, {id:'proteina480', qtd:1}, {id:'nutrev10', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}], beneficios: ['7 produtos premium', '60+ dias de suplementação', 'Resultados profissionais'] }
-    ],
-    'manter-peso': [
-      { nome: 'Manutenção Leve',                  faixa: 10, produtos: [{id:'shakeSache', qtd:1}, {id:'fiberPowder', qtd:1}], beneficios: ['1 refeição substituída', 'Fibras + saciedade'] },
-      { nome: 'Manutenção Ativa',                 faixa: 15, produtos: [{id:'shake550', qtd:1}, {id:'fiberConc', qtd:1}], beneficios: ['Refeição + fibras', 'Equilíbrio diário'] },
-      { nome: 'Estilo Saudável',                  faixa: 20, produtos: [{id:'shake550', qtd:1}, {id:'fiberConc', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Multivitamínico diário', 'Nutrição preventiva'] },
-      { nome: 'Bem-Estar Plus',                   faixa: 25, produtos: [{id:'shake550', qtd:2}, {id:'fiberConc', qtd:1}, {id:'herbal51', qtd:1}], beneficios: ['Chá antioxidante', '2 refeições saudáveis'] },
-      { nome: 'Equilíbrio Premium',               faixa: 30, produtos: [{id:'shake1976', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal51', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Shake granel', 'Rotina completa de bem-estar'] },
-      { nome: 'Longevidade Ativa',                faixa: 35, produtos: [{id:'shake1976', qtd:1}, {id:'fiberPowder', qtd:1}, {id:'herbal51', qtd:1}, {id:'multivit', qtd:1}, {id:'colageno', qtd:1}], beneficios: ['Colágeno + pele', 'Fibras + vitaminas', 'Programa anti-idade'] },
-      { nome: 'Manutenção Total',                 faixa: 40, produtos: [{id:'shake2080', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal102', qtd:1}, {id:'multivit', qtd:1}, {id:'proteina240', qtd:1}], beneficios: ['60+ dias de shake', 'Proteína nos lanches', 'Cobertura total'] },
-      { nome: 'Premium Completo',                 faixa: 45, produtos: [{id:'shake2080', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal102', qtd:1}, {id:'multivit', qtd:1}, {id:'proteina240', qtd:1}, {id:'colageno', qtd:1}], beneficios: ['Pacote premium', 'Saúde integral'] },
-      { nome: 'Manutenção VIP',                   faixa: 50, produtos: [{id:'shake2080', qtd:1}, {id:'shake550', qtd:1}, {id:'fiberConc', qtd:1}, {id:'fiberPowder', qtd:1}, {id:'herbal102', qtd:1}, {id:'multivit', qtd:1}, {id:'colageno', qtd:1}], beneficios: ['Dois tipos de fibra', 'Variedade de sabores', 'Programa vitalício'] }
-    ],
-    'vida-saudavel': [
-      { nome: 'Start Saudável',                   faixa: 10, produtos: [{id:'shakeSache', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Vitaminas diárias', '1 refeição nutritiva'] },
-      { nome: 'Viva Leve',                        faixa: 15, produtos: [{id:'shake550', qtd:1}, {id:'multivit', qtd:1}, {id:'fiberConc', qtd:1}], beneficios: ['Fibras + vitaminas', 'Energia diária'] },
-      { nome: 'Nutrição Essencial',               faixa: 20, produtos: [{id:'shake550', qtd:1}, {id:'nutrev1', qtd:1}, {id:'fiberConc', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['NutreV + vitaminas', '4 pilares da nutrição'] },
-      { nome: 'Bem-Estar 360°',                   faixa: 25, produtos: [{id:'shake550', qtd:2}, {id:'nutrev1', qtd:1}, {id:'fiberConc', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Cobertura nutricional completa', 'Rotina saudável'] },
-      { nome: 'Equilíbrio Corporal',              faixa: 30, produtos: [{id:'shake1976', qtd:1}, {id:'nutrev10', qtd:1}, {id:'fiberConc', qtd:1}, {id:'multivit', qtd:1}, {id:'herbal51', qtd:1}], beneficios: ['NutreV 10 un.', 'Chá antioxidante', 'Pacote mensal completo'] },
-      { nome: 'Vitalidade Total',                 faixa: 35, produtos: [{id:'shake1976', qtd:1}, {id:'nutrev10', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal51', qtd:1}, {id:'colageno', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Colágeno + vitaminas', 'Saúde de A a Z'] },
-      { nome: 'Premium Saúde',                    faixa: 40, produtos: [{id:'shake2080', qtd:1}, {id:'nutrev10', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal51', qtd:1}, {id:'colageno', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Shake premium 2080g', 'Programa completo 60d'] },
-      { nome: 'Saúde Integral',                   faixa: 45, produtos: [{id:'shake2080', qtd:1}, {id:'shake550', qtd:1}, {id:'nutrev10', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal102', qtd:1}, {id:'colageno', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Chá 60 dias', 'Shake variedade', 'Saúde total'] },
-      { nome: 'Vida Premium Elite',               faixa: 50, produtos: [{id:'shake2080', qtd:1}, {id:'shake550', qtd:1}, {id:'nutrev10', qtd:1}, {id:'fiberPowder', qtd:1}, {id:'fiberConc', qtd:1}, {id:'herbal102', qtd:1}, {id:'colageno', qtd:1}, {id:'multivit', qtd:1}], beneficios: ['Kit completo saudável', '2 tipos de fibra', '90+ dias de programa'] }
-    ],
-    'rendimento-esporte': [
-      { nome: 'Energia Pré-Treino',               faixa: 10, produtos: [{id:'shakeSache', qtd:1}, {id:'nrgguara', qtd:1}], beneficios: ['Energia guaraná', 'Recuperação básica'] },
-      { nome: 'Performance Básica',               faixa: 15, produtos: [{id:'shake550', qtd:1}, {id:'whey3W', qtd:1}], beneficios: ['Whey pós-treino', '17g proteína/shake'] },
-      { nome: 'Potencial Esportivo',              faixa: 20, produtos: [{id:'shake550', qtd:1}, {id:'whey3W', qtd:1}, {id:'nrgguara', qtd:1}], beneficios: ['Pré + pós-treino', 'Energia + recuperação'] },
-      { nome: 'Rendimento Turbo',                 faixa: 25, produtos: [{id:'shake550', qtd:2}, {id:'whey3W', qtd:1}, {id:'creatina', qtd:1}], beneficios: ['Creatina + força', '30 dias de suplementação'] },
-      { nome: 'Atleta Performance',               faixa: 30, produtos: [{id:'shake1976', qtd:1}, {id:'whey3W', qtd:1}, {id:'creatina', qtd:1}, {id:'nrgguara', qtd:1}], beneficios: ['Shake granel', 'Força + energia', 'Pré-treino inclusa'] },
-      { nome: 'Competidor',                       faixa: 35, produtos: [{id:'shake1976', qtd:1}, {id:'whey3W', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}, {id:'cr7drive', qtd:1}], beneficios: ['CR7 Drive Berry', 'BCAA + creatina', 'Máximo desempenho'] },
-      { nome: 'Elite Esportiva',                  faixa: 40, produtos: [{id:'shake1976', qtd:1}, {id:'whey3W', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}, {id:'cr7drive', qtd:1}, {id:'nutrev10', qtd:1}], beneficios: ['NutreV + recuperação', 'Kit atleta completo'] },
-      { nome: 'High Performance',                 faixa: 45, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'whey3W', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}, {id:'cr7drive', qtd:1}, {id:'nutrev10', qtd:1}], beneficios: ['Shake variedade', 'Stack completo de performance'] },
-      { nome: 'Profissional Total',               faixa: 50, produtos: [{id:'shake1976', qtd:1}, {id:'shake550', qtd:1}, {id:'whey3W', qtd:1}, {id:'proteina480', qtd:1}, {id:'creatina', qtd:1}, {id:'bcaa', qtd:1}, {id:'cr7drive', qtd:1}, {id:'nutrev10', qtd:1}], beneficios: ['8 produtos elite', '60+ dias de treino', 'Resultado profissional'] }
-    ]
-  };
-
-  // Retorna a cesta que melhor encaixa no orçamento
-  const opcoes = cestas[objetivoKey] || cestas['vida-saudavel'];
-  // Filtra pela faixa <= investimento (pega a maior que ainda cabe)
-  let escolhida = null;
-  for (let c of opcoes) {
-    if (c.faixa <= i) escolhida = c;
-  }
-  // Se não encontrou, pega a primeira
-  if (!escolhida) escolhida = opcoes[0];
-
-  // Retorna TODAS as opções + a escolhida marcada
-  return { todas: opcoes, recomendada: escolhida, indiceRecomendada: opcoes.indexOf(escolhida) };
-};
-
-/* ══════════════════════════════════════════════
-   CALCULAR CUSTOS
-   ══════════════════════════════════════════════ */
-function calcularCesta(produtosLista) {
-  let total = 0;
-  const itens = produtosLista.map(p => {
-    const prod = PRODUTOS[p.id];
-    const subtotal = prod.preco * p.qtd;
-    total += subtotal;
-    return { ...prod, qtd: p.qtd, subtotal };
-  });
-  return { itens, total };
-}
-
-/* ══════════════════════════════════════════════
-   RENDERIZAR PROPOSTA
-   ══════════════════════════════════════════════ */
-function renderizarProposta(cesta, objetivoLabel, investimento, isRecomendada) {
-  const calc = calcularCesta(cesta.produtos);
-  const porDia = (calc.total / 30).toFixed(2);
-  const html = `
-    <div class="proposta ${isRecomendada ? 'recomendada' : ''}">
-      <div class="proposta-header">
-        <div>
-          <h2>${isRecomendada ? '⭐ ' : ''}${cesta.nome}</h2>
-          <div>
-            ${isRecomendada ? '<span class="tag recomendada">Recomendado para você</span>' : '<span class="tag">' + objetivoLabel + '</span>'}
-          </div>
-        </div>
-        <div class="valor-dia">R$ ${porDia.replace('.', ',')}/dia</div>
+    <div id="proposta-content">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Calculando sua proposta personalizada...</p>
       </div>
+    </div>
 
-      <table class="tbl-produtos">
-        <thead>
-          <tr><th>Produto</th><th>Qtd</th><th>Preço Unit.</th><th>Subtotal</th></tr>
-        </thead>
-        <tbody>
-          ${calc.itens.map(item => `
-            <tr>
-              <td>${item.nome}</td>
-              <td>${item.qtd}</td>
-              <td>R$ ${item.preco.toFixed(2).replace('.',',')}</td>
-              <td>R$ ${item.subtotal.toFixed(2).replace('.',',')}</td>
-            </tr>
-          `).join('')}
-          <tr class="total-row">
-            <td colspan="3"><strong>Total (30 dias)</strong></td>
-            <td><strong>R$ ${calc.total.toFixed(2).replace('.',',')}</strong></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="beneficios">
-        ${cesta.beneficios.map(b => `<span class="chip">✨ ${b}</span>`).join('')}
-      </div>
-
-      <div class="proposta-footer">
-        <a class="btn-whats" href="https://wa.me/5551999966320?text=${encodeURIComponent(
-          'Olá! Eu fiz minha Autoavaliação de Bem-Estar e me interessei pela proposta "' + cesta.nome + '" (R$ ' + porDia + '/dia).\n\n' +
-          '✅ Objetivo: ' + objetivoLabel + '\n' +
-          '📦 Produtos: ' + calc.itens.map(i => i.qtd + 'x ' + i.nome).join(', ') + '\n' +
-          '💰 Total: R$ ' + calc.total.toFixed(2)
-        )}" target="_blank" rel="noopener">
+    <div id="acoes" style="display:none;">
+      <div class="btn-row">
+        <a id="btn-whatsapp" class="btn-whatsapp" href="#" target="_blank" rel="noopener">
           💬 Quero essa proposta no WhatsApp
         </a>
-        <button class="btn-detalhes" onclick="alert('Programa: ${cesta.nome}\\nProdutos: ${calc.itens.map(i => i.qtd + 'x ' + i.nome).join(', ')}\\nTotal: R$ ${calc.total.toFixed(2)}\\nCusto por dia: R$ ${porDia}')">📄 Ver detalhes</button>
+        <button class="btn-primary" onclick="window.print()">🖨️ Imprimir</button>
+        <a class="btn-secondary" href="perfil.html">🔄 Refazer avaliação</a>
       </div>
     </div>
-  `;
-  return html;
-}
 
-/* ══════════════════════════════════════════════
-   RENDERIZAR TABELA COMPLETA
-   ══════════════════════════════════════════════ */
-function renderizarTabelaCompleta(objetivoKey, investimento, todasCestas, indiceRecomendada) {
-  const obj = OBJETIVOS[objetivoKey] || OBJETIVOS['vida-saudavel'];
-  return todasCestas.map((cesta, idx) => {
-    const calc = calcularCesta(cesta.produtos);
-    const porDia = (calc.total / 30).toFixed(2);
-    const isRec = idx === indiceRecomendada;
-    const linha = `
-      <tr style="${isRec ? 'background: rgba(245,166,35,0.08); border-left: 3px solid #F5A623;' : ''}">
-        <td style="font-weight:${isRec ? '700' : '400'}; color:${isRec ? '#F5A623' : '#fff'}">
-          ${isRec ? '⭐ ' : ''}${cesta.nome}
-        </td>
-        <td>R$ ${cesta.faixa},00/dia</td>
-        <td>R$ ${porDia.replace('.',',')}</td>
-        <td>R$ ${calc.total.toFixed(2).replace('.',',')}</td>
-        <td style="font-size:.82rem">${calc.itens.map(i => i.qtd + '× ' + i.nome.split(' ').slice(0,3).join(' ')).join('<br>')}</td>
-      </tr>
-    `;
-    return linha;
-  }).join('');
-}
+    <div class="disclaimer">
+      <strong>⚠️ Aviso importante:</strong> Esta proposta tem finalidade exclusivamente informativa e educacional. Os valores são baseados na tabela HLF Premium 2026 (sujeitos a alterações). Consulte sempre um profissional de saúde antes de iniciar qualquer programa nutricional. Distribuidor Independente Herbalife — Eduardo Sidegum.
+    </div>
+  </div>
 
-/* ══════════════════════════════════════════════
-   MAIN — CARREGAR DADOS E RENDERIZAR
-   ══════════════════════════════════════════════ */
-(function() {
-  // Tenta ler do localStorage (vindo do perfil.html)
-  let dados;
-  try {
-    dados = JSON.parse(localStorage.getItem('dadosPerfil'));
-  } catch(e) { dados = null; }
+  <!-- JS do ecossistema -->
+  <script src="https://edusidegum.github.io/HLF/assets/js/bloco-proposta.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        // Lê dados do localStorage (enviados por perfil.html)
+        const raw = localStorage.getItem('dadosPerfil');
+        if (!raw) {
+          document.getElementById('proposta-content').innerHTML = `
+            <div class="erro-card">
+              <h2>😕 Nenhum dado encontrado</h2>
+              <p>Você ainda não preencheu a ficha de autoavaliação. Volte e responda ao formulário primeiro.</p>
+              <a class="btn-primary" href="perfil.html">Ir para o formulário</a>
+            </div>
+          `;
+          return;
+        }
 
-  // Se não veio, usar valores padrão para demonstração
-  if (!dados) {
-    dados = {
-      nome: '— (preencha no formulário)',
-      objetivo: 'vida-saudavel',
-      score: { alimentacao: 0, estilo: 0, peso: 0, total: 0 },
-      investimento: 25,
-      peso: 0,
-      altura: 0,
-      idade: 0
-    };
-    document.getElementById('display-nome').textContent = '⚠️ Faça o teste no perfil.html primeiro';
-  } else {
-    document.getElementById('display-nome').textContent = dados.nome || '—';
-  }
+        const dados = JSON.parse(raw);
 
-  const objetivoKey = dados.objetivo || 'vida-saudavel';
-  const investimento = dados.investimento || 25;
-  const score = dados.score || { total: 0 };
+        // Valida campos obrigatórios
+        if (!dados.objetivo || !dados.investimento) {
+          document.getElementById('proposta-content').innerHTML = `
+            <div class="erro-card">
+              <h2>⚠️ Dados incompletos</h2>
+              <p>Selecione seu <strong>objetivo pessoal</strong> e o <strong>investimento diário</strong> no formulário.</p>
+              <a class="btn-primary" href="perfil.html">Voltar e preencher</a>
+            </div>
+          `;
+          return;
+        }
 
-  document.getElementById('display-objetivo').textContent = (OBJETIVOS[objetivoKey]?.emoji || '') + ' ' + (OBJETIVOS[objetivoKey]?.label || objetivoKey);
-  document.getElementById('display-score').textContent = (score.total || 0) + ' / 22';
-  document.getElementById('display-investimento').textContent = 'R$ ' + investimento + ',00/dia (~R$ ' + (investimento * 30) + '/mês)';
+        // Gera a proposta principal
+        const htmlProposta = gerarHTMLProposta(dados);
+        const htmlComparativo = gerarTabelaComparativa(dados.objetivo);
+        const linkWhatsApp = gerarLinkWhatsApp(dados);
 
-  // Montar cestas
-  const { todas, recomendada, indiceRecomendada } = MONTAR_CESTA(objetivoKey, investimento);
+        document.getElementById('proposta-content').innerHTML = `
+          <div class="card">${htmlProposta}</div>
+          <div class="card">${htmlComparativo}</div>
+        `;
 
-  // Renderizar proposta recomendada
-  const container = document.getElementById('proposta-container');
-  container.innerHTML = renderizarProposta(recomendada, OBJETIVOS[objetivoKey]?.label || objetivoKey, investimento, true);
+        // Atualiza botão WhatsApp
+        document.getElementById('btn-whatsapp').href = linkWhatsApp;
+        document.getElementById('acoes').style.display = 'block';
 
-  // Renderizar tabela completa
-  const tabelaEl = document.getElementById('tabela-completa');
-  tabelaEl.innerHTML = `
-    <table class="tbl-produtos" style="margin-top:10px;">
-      <thead>
-        <tr>
-          <th>Programa</th>
-          <th>Orçamento/dia</th>
-          <th>Custo/dia</th>
-          <th>Total/mês</th>
-          <th>Produtos</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${renderizarTabelaCompleta(objetivoKey, investimento, todas, indiceRecomendada)}
-      </tbody>
-    </table>
-    <p style="color:var(--muted);font-size:.82rem;margin-top:8px;">⭐ Linha destacada = recomendada para seu orçamento de R$ ${investimento},00/dia</p>
-  `;
-})();
-</script>
+      } catch (e) {
+        document.getElementById('proposta-content').innerHTML = `
+          <div class="erro-card">
+            <h2>❌ Erro ao processar</h2>
+            <p>Ocorreu um erro ao gerar sua proposta: ${e.message}</p>
+            <a class="btn-primary" href="perfil.html">Tentar novamente</a>
+          </div>
+        `;
+      }
+    });
+  </script>
 </body>
-</html></body></html>
+</html>
