@@ -1,0 +1,16 @@
+/* ===== style_green.css (Base: Hype Drink) ===== */
+.selos-carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 10px 0;
+}
+.background-fixed {
+    background-image: url('../img/novoconsultor.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+.sticky-header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px); }

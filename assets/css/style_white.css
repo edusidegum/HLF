@@ -1,0 +1,16 @@
+/* =========================================
+Protocolo de Bem-Estar — Estilos Modulares
+Arquivo: style_white.css (Base: Perfil)
+Otimizado para Core Web Vitals 2026
+========================================= */
+:root {
+    --garden-green: #78BE20;
+    --leaf-dark: #005221;
+    --text-main: #333;
+    --bg-light: #f9f9f9;
+}
+body { font-family: 'Open Sans', sans-serif; background: var(--bg-light); color: var(--text-main); }
+.card { background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; }
+.question-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+*:focus-visible { outline: 2px solid var(--garden-green); outline-offset: 2px; }
+/* Estilos de formulário e acessibilidade preservados conforme original */

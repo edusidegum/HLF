@@ -1,0 +1,1492 @@
+=====================================================================
+HLF — ECOSSISTEMA HERBALIFE: DOCUMENTO DE IMPLEMENTAÇÃO
+=====================================================================
+
+Versão: Final (Julho/2026)
+Autor: Edu Sidegum — Distribuidor Independente Herbalife
+Local: Novo Hamburgo/RS — Brasil
+Licença: Nacional (BR), com cobertura internacional
+Escopo: Ecossistema digital Pro2Col — páginas de captação e conversão
+Domínio raiz oficial: https://edusidegum.github.io/HLF/
+
+> Este documento consolida as diretrizes de implementação do ecossistema HLF.
+> Ele complementa — e em nenhum ponto substitui ou contradiz — o Manual de
+> Normas do Distribuidor Independente Herbalife para o Brasil, que permanece
+> como documento-base soberano.
+
+---------------------------------------------------------------------
+
+## 1. Visão Geral e Propósito
+
+O Ecossistema HLF Pro2Col é um conjunto de páginas web, scripts e ativos
+digitais projetado para:
+
+- Atrair e qualificar prospects por meio de conteúdo consultivo e geolocalizado
+- Direcionar leads para conversão via WhatsApp, catálogo oficial e cadastro Herbalife
+- Sustentar autoridade local em Novo Hamburgo/RS e região do Vale do Sinos
+- Operar com performance, conformidade e rastreabilidade
+
+### 1.1 Princípios Fundamentais
+
+- Atendimento humano assistido: respostas rápidas com apoio de IA consultiva
+  e atalhos de digitação — sem bots conversacionais
+- Identidade visível: toda página exibe, acima da dobra, a identificação
+  "Distribuidor Independente Herbalife: Edu Sidegum"
+- Uso padrão de componentes compartilhados: CSS, scripts, header, footer e
+  blocos legais são mantidos em diretório comum
+- Conformidade total: disclaimer oficial Herbalife presente em todas as páginas
+- SEO local: Novo Hamburgo/RS como âncora geográfica principal
+
+---------------------------------------------------------------------
+
+## 2. Arquitetura do Ecossistema
+
+### 2.1 Estrutura de Diretórios (pasta raiz HLF/)
+
+```
+HLF/
+├── index.html                    # Página principal (home)
+├── manifesto.html                # Manifesto do consultor
+├── links.html                    # Agregador central de links do ecossistema
+├── robots.txt                     # Diretrizes para bots
+├── sitemap.xml                    # Mapa do site
+├── google[HASH].html              # Verificação Search Console
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css              # CSS base compartilhado
+│   └── js/
+│       ├── bloco-incluir.js       # Injeção de componentes
+│       ├── bloco-protecao.js      # Proteção de conteúdo
+│       ├── dinamico.js            # Funcionalidades dinâmicas
+│       └── novo_dir_dinamico.js   # Navegação avançada
+│
+├── scripts/
+│   └── bloco-proposta.js          # Lógica de proposta de kit (pasta /perfil/)
+│
+├── components/
+│   └── (componentes reutilizáveis HTML)
+│
+├── data/
+│   └── (arquivos JSON/CSV de dados estruturados)
+│
+├── music/
+│   └── (arquivos de áudio)
+│
+├── img/                           # Imagens otimizadas (WebP)
+│
+├── doc/                           # Documentos institucionais
+│   ├── politicadeprivacidade.html
+│   └── termosdeusodistribuidorindependenteherbalife.html
+│
+├── menu/
+│   ├── templates/
+│   │   └── head_padrao.txt        # Template de <head>
+│   └── compartilhado/
+│       ├── topbar.html            # Componente topbar
+│       ├── bloco-cookies.html     # Banner LGPD / cookies
+│       └── bloco-ga4-gtm.html     # GA4 e pixel de controle
+│
+├── perfil/
+│   ├── perfil.html                # Formulário de autoavaliação do bem-estar
+│   └── avaliacao.html             # Folha de propostas personalizadas (noindex)
+│
+├── cadastro/
+│   └── cadastro.html              # Página de cadastro (Cliente Premium / Novo Consultor)
+│
+├── ajuda/
+│   ├── ajuda.html                 # Página de ajuda e suporte
+│   └── faq.html                   # Perguntas frequentes
+│
+├── transformacao21/
+│   └── index.html                 # Programa Transformação 21
+│
+└── hypedrink/
+    └── index.html                 # Página Hype Drink
+```
+
+### 2.2 Hierarquia de Páginas
+
+| Ordem | Página | Objetivo |
+|---|---|---|
+| 1 | Home (index.html) | Porta de entrada do ecossistema; H1 local; autoridade |
+| 2 | Manifesto (manifesto.html) | Conexão pessoal, identidade e propósito |
+| 3 | Catálogo (externo) | https://catalogoherbalife.com.br/edusidegum — gerido pela organização |
+| 4 | Páginas de Captação (landing pages) | Conversão por intenção de busca |
+| 5 | Cliente Premium / Novo Consultor (cadastro/cadastro.html) | Página fim de direcionamento pós-filtro |
+| 6 | Cadastro Herbalife (externo) | https://accounts.myherbalife.com/... |
+
+### 2.3 Páginas de Captação (Landing Pages por Intenção)
+
+As páginas de captação são adaptáveis conforme campanha, público-alvo,
+sazonalidade e objetivo de conversão.
+
+O que PODE variar: título, hero visual, cores de apoio, oferta específica,
+CTA contextual e conteúdo editorial.
+
+O que permanece FIXO: head template, header/topbar, footer, schema,
+disclaimer, injeção de scripts, identificação do distribuidor, links oficiais.
+
+| # | Tópico (Keyword) | Foco SEO (Título sugerido) | Perfil Atraído |
+|---|---|---|---|
+| 1 | Reset Metabólico | "Protocolo Detox Inverno: Como reduzir medidas no RS" | Cético |
+| 2 | Hype Drink | "Hype Drink: A estratégia de energia para o inverno gaúcho" | Pragmático |
+| 3 | Emagrecimento | "Shakes Herbalife Novo Hamburgo: Seu jantar prático e nutritivo" | Social |
+| 4 | Performance | "Protocolo 21 Dias: Definição e energia para treinos" | Pragmático |
+| 5 | Transição Imune | "Imunidade e Energia: Nutrição inteligente para a primavera" | Cético |
+
+### 2.4 Agregador de Links (links.html)
+
+O arquivo links.html na raiz do projeto funciona como hub centralizador de
+todos os links do ecossistema. Sua função é:
+
+- Ser a única URL divulgada nos scripts de atendimento (atalhos de teclado)
+- Evitar links quebrados quando uma página mudar de endereço
+- Permitir atualização centralizada sem editar scripts individuais
+- Servir como ponto único de entrada para leads em diferentes estágios do funil
+
+Regra: Atualizar o links.html sempre que uma nova página for criada ou um
+link for alterado.
+
+### 2.5 Composição Visual de Cada Página
+
+1. Header/Topbar — fixa, identidade + navegação
+2. Header-spacer — compensa altura da topbar fixa
+3. Hero acima da dobra — H1 local, subtítulo, CTA para WhatsApp,
+   identificação visível do distribuidor
+4. Body — dores/problemas, tabelas nutricionais, listas do protocolo,
+   conexão local
+5. Footer — semântico, cross-linking, disclaimer, links oficiais
+
+---------------------------------------------------------------------
+
+## 3. Head Template Padrão
+
+O head_padrao.txt do diretório menu/templates/ é o template mestre.
+Copia-se integralmente para cada página, alterando apenas os campos
+variáveis:
+
+- <title>
+- <meta name="description">
+- <meta property="og:title">
+- <meta property="og:description">
+- <link rel="canonical"> href
+- href do preload da imagem LCP
+- Campos variáveis do JSON-LD
+
+ATENÇÃO: O caminho do bloco-incluir.js aponta para assets/js/ dentro do
+próprio projeto (não para um diretório externo).
+
+### 3.1 Template de Referência (reconstruído a partir da página Hype Drink)
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Script de injeção compartilhado (defer = não bloqueante) -->
+  <script src="assets/js/bloco-incluir.js" defer></script>
+
+  <!-- Título e Description (VARIÁVEIS) -->
+  <title>[TÍTULO DA PÁGINA] | Distribuidor Independente Herbalife</title>
+  <meta name="description" content="[DESCRIÇÃO ÚNICA — máx. 160 caracteres]">
+  <meta name="author" content="Edu Sidegum — Consultor Independente Herbalife">
+
+  <!-- Geo (FIXO) -->
+  <meta name="geo.region" content="BR-RS">
+  <meta name="geo.placename" content="Novo Hamburgo">
+
+  <!-- Proteção de conteúdo (FIXO, exceto páginas institucionais) -->
+  <meta name="protecao-copia" content="ativado">
+
+  <!-- Robots — padrão Anexo 1 §4.3 (páginas indexáveis) -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+  <!-- Canonical — SEMPRE com arquivo .html explícito e domínio /HLF/ -->
+  <link rel="canonical" href="https://edusidegum.github.io/HLF/[caminho]/[arquivo].html">
+
+  <!-- Open Graph (VARIÁVEL) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[TÍTULO] | Distribuidor Herbalife">
+  <meta property="og:description" content="[DESCRIÇÃO OG — máx. 155 caracteres]">
+  <meta property="og:url" content="https://edusidegum.github.io/HLF/[caminho]/[arquivo].html">
+  <meta property="og:image" content="https://edusidegum.github.io/HLF/img/[IMAGEM_OG].webp">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[TÍTULO] | Distribuidor Herbalife">
+  <meta name="twitter:description" content="[DESCRIÇÃO OG — máx. 155 caracteres]">
+  <meta name="twitter:image" content="https://edusidegum.github.io/HLF/img/[IMAGEM_OG].webp">
+
+  <!-- Preload da imagem LCP (VARIÁVEL) -->
+  <link rel="preload" as="image" href="https://edusidegum.github.io/HLF/img/[LCP_IMAGE].webp">
+
+  <!-- CSS (FIXO) -->
+  <link rel="preload" as="style" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Fontes (FIXO) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- JSON-LD (VARIÁVEL — campos de conteúdo conforme Seção 6.2) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [ ... ]
+  }
+  </script>
+
+  <!-- CSS crítico inline (FIXO) -->
+  <style>
+    .sticky-header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: #78BE20; z-index: 1000; text-align: center;
+      padding: 12px 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .sticky-header a {
+      color: #fff; font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .header-spacer { height: 56px; }
+    body { font-family: 'Open Sans', Arial, Helvetica, sans-serif; }
+    h1, h2, h3 { font-family: 'Montserrat', Arial Black, sans-serif; }
+  </style>
+</head>
+```
+
+### 3.2 Campos Variáveis por Página
+
+| Campo | Onde usar | Exemplo (Hype Drink) |
+|---|---|---|
+| [TÍTULO DA PÁGINA] | <title> e og:title | "Hype Drink — Nutrição de Alta Performance" |
+| [DESCRIÇÃO ÚNICA] | meta description | "Distribuidor Independente Herbalife - RS / BR. Conheça o Hype Drink..." |
+| [DESCRIÇÃO OG] | og:description | "Refrescância, foco e queima calórica inteligente..." |
+| [PROJETO] | caminhos de URL | hypedrink |
+| [LCP_IMAGE] | preload | HypeDrink.webp |
+| [URL_CANÔNICA] | canonical + og:url | https://edusidegum.github.io/HLF/hypedrink/index.html |
+
+### 3.3 Regras
+
+- Uso padrão do template para todas as páginas
+- Elementos marcados como FIXOS não podem ser removidos
+- Elementos marcados como VARIÁVEIS são alterados por página
+- CSS adicional específico só com justificativa técnica registrada
+- O caminho do bloco-incluir.js é sempre assets/js/bloco-incluir.js
+  (relativo ao projeto)
+- O canonical deve sempre apontar para o arquivo real (.html explícito),
+  nunca para a forma curta de diretório (ex: usar hypedrink/index.html,
+  não hypedrink/)
+- Links públicos (WhatsApp, topbar, footer) podem usar a forma curta
+  (hypedrink/) — o GitHub Pages resolve automaticamente para index.html.
+  Mas a tag <link rel="canonical"> dentro de cada página deve sempre
+  apontar para o arquivo real.
+
+---------------------------------------------------------------------
+
+## 4. CSS Base Compartilhado (style.css)
+
+### 4.1 Regras de Uso
+
+- Uso padrão de style.css como CSS global do ecossistema
+- O arquivo reside em assets/css/style.css
+- CSS adicional por componente (ex.: topbar.css) é permitido como
+  complemento, desde que documentado e com justificativa
+- Adaptações pontuais ao perfil declarado como base são permitidas para
+  páginas-fim (Catálogo, Cliente Premium, Cadastro)
+
+### 4.2 Diretrizes Técnicas
+
+```css
+/* Reset base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* Variáveis */
+:root {
+  --primary: #78BE20;
+  --primary-glow: #8ae029;
+  --dark: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --light-bg: #F8F9FA;
+  --white: #FFFFFF;
+  --text-light: #d6d6d6;
+  --whatsapp: #25D366;
+}
+
+/* Fontes */
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+  background: var(--light-bg);
+  line-height: 1.6;
+}
+
+/* Container */
+.container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+/* Topbar fixa */
+.sticky-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  min-height: 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  background: rgba(26,26,26,0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(120,190,32,0.25);
+  padding: 5px 5%;
+}
+
+/* Logo — DIMENSÕES EXPLÍCITAS PARA EVITAR CLS */
+.sticky-header .topbar-logo {
+  width: 128px;
+  height: 128px;
+}
+
+.sticky-header .topbar-nome {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Header spacer — COMPENSA TOPBAR FIXA */
+.header-spacer { height: 56px; }
+
+/* Menu dropdown sem JS */
+.menu-toggle { cursor: pointer; }
+.menu-dropdown { display: none; }
+.menu-toggle:hover .menu-dropdown,
+.menu-toggle:focus-within .menu-dropdown { display: block; }
+
+/* Botão WhatsApp na topbar */
+.sticky-header .btn-cta {
+  background: var(--whatsapp);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 16px 40px;
+  background: linear-gradient(180deg, var(--light-bg) 0%, #fff 100%);
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 640px;
+  margin: 0 auto 24px;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--dark);
+  color: var(--text-light);
+  padding: 40px 5% 20px;
+  margin-top: 60px;
+}
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.5;
+  padding: 14px 18px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .sticky-header {
+    grid-template-columns: 1fr auto;
+    padding: 5px 3%;
+  }
+  .sticky-header .topbar-nome { display: none; }
+  .hero h1 { font-size: 1.5rem; }
+  .container { padding: 0 12px; }
+}
+```
+
+---------------------------------------------------------------------
+
+## 5. Scripts JS Compartilhados
+
+### 5.1 Tabela de Scripts
+
+| Script | Função | Carregamento |
+|---|---|---|
+| bloco-incluir.js | Injeção dinâmica de topbar, footer, cookies e blocos compartilhados | defer |
+| bloco-protecao.js | Proteção de conteúdo (desabilita clique direito, seleção, arrastar) | defer |
+| dinamico.js | Funcionalidades dinâmicas (scroll suave, animações de entrada, tabs) | defer |
+| novo_dir_dinamico.js | Navegação avançada e criação de diretórios dinâmicos | defer |
+| bloco-proposta.js | Monta e apresenta a proposta de kit de produtos na pasta /perfil/ | defer |
+
+### 5.2 Regras de Uso
+
+- Todos os scripts residem em assets/js/ exceto bloco-proposta.js que reside
+  em scripts/ (fora de assets/js/, conforme estrutura real)
+- Todos os scripts são carregados com atributo defer
+- O bloco-incluir.js é o único script referenciado no <head> do template
+  base; os demais são injetados dinamicamente por ele ou carregados
+  conforme necessidade da página
+- bloco-proposta.js é carregado apenas por avaliacao.html (página de
+  propostas em /perfil/)
+- Scripts em /scripts/ e /assets/js/ são bloqueados para rastreamento
+  via robots.txt (ver Anexo 1 §3.4) — isso não impede o carregamento
+  funcional via <script src> no navegador do usuário
+
+---------------------------------------------------------------------
+
+## 6. SEO e Dados Estruturados
+
+### 6.1 Meta-Tags por Página
+
+Toda página indexável deve conter as meta-tags robots conforme Anexo 1 §4.3.
+Toda página não-indexável deve conter as meta-tags robots conforme Anexo 1 §4.4.
+A Seção 10.1 (Estrutura Obrigatória) referencia o Anexo 1 §4.3/§4.4 como
+única fonte de verdade para meta robots — não usar versão simplificada.
+
+### 6.2 Schema JSON-LD
+
+Todo JSON-LD deve usar @graph com referências @id, sempre incluindo /HLF/
+no domínio raiz oficial:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://edusidegum.github.io/HLF/#person",
+      "name": "Eduardo Sidegum",
+      "jobTitle": "Distribuidor Independente Herbalife"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://edusidegum.github.io/HLF/#business",
+      "name": "Eduardo Sidegum | Distribuidor Independente Herbalife",
+      "founder": { "@id": "https://edusidegum.github.io/HLF/#person" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Novo Hamburgo",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://edusidegum.github.io/HLF/#website",
+      "url": "https://edusidegum.github.io/HLF/",
+      "publisher": { "@id": "https://edusidegum.github.io/HLF/#person" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://edusidegum.github.io/HLF/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "[NOME_DA_PAGINA]",
+          "item": "[URL_CANÔNICA]"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### 6.3 Tipos de JSON-LD por Página
+
+| Tipo de página | JSON-LD obrigatório |
+|---|---|
+| Landing / Programa | WebPage + Organization + BreadcrumbList |
+| Ferramenta (perfil) | WebPage + Organization |
+| Cadastro | WebPage + Organization |
+| Avaliação (noindex) | Nenhum (não será indexado) |
+
+### 6.4 Hierarquia de Cabeçalhos (H1–H6)
+
+- Um único <h1> por página — deve conter o título principal com a keyword
+  do projeto
+- <h2> para seções principais (Hero, Contexto, Conversão)
+- <h3> para subseções dentro de cada <h2>
+- <h4>–<h6> apenas quando houver profundidade real de conteúdo
+
+Padrão por página:
+
+```html
+<h1>[Título do Projeto] | Distribuidor Herbalife</h1>
+  <h2>O que é [Projeto]</h2>
+    <h3>Benefícios</h3>
+    <h3>Como funciona</h3>
+  <h2>Seus Resultados</h2>
+  <h2>Próximos Passos</h2>
+```
+
+---------------------------------------------------------------------
+
+## 7. Topbar (Header)
+
+### 7.1 Estrutura da Topbar
+
+A topbar é fixa, injetada via bloco-incluir.js, e contém: logo do
+distribuidor, nome do distribuidor, menu de navegação e botão de WhatsApp.
+
+Reconstruída a partir da página Hype Drink ao vivo, com domínio /HLF/
+e convenção de WhatsApp do Anexo 1 §4.2:
+
+```html
+<header class="sticky-header" role="banner" aria-label="Barra de navegação principal">
+    <a href="https://edusidegum.github.io/HLF/" aria-label="Página inicial" class="topbar-brand">
+        <img src="https://edusidegum.github.io/HLF/img/Herbalife-Logo.webp"
+             alt="Edu Sidegum — Distribuidor Independente Herbalife"
+             class="topbar-logo" width="128" height="128"
+             loading="eager" fetchpriority="high">
+    </a>
+
+    <nav class="menu-toggle" aria-label="Menu principal">
+        <button class="menu-btn" aria-label="Abrir menu">☰ Menu</button>
+        <ul class="menu-dropdown">
+            <li><a href="https://edusidegum.github.io/HLF/index.html">Home</a></li>
+            <li><a href="https://edusidegum.github.io/HLF/manifesto.html">Manifesto</a></li>
+            <li><a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener">📖 Catálogo Oficial</a></li>
+            <li><a href="https://edusidegum.github.io/HLF/cadastro/cadastro.html" target="_blank" rel="noopener">⭐ Cliente Premium</a></li>
+            <li><a href="https://edusidegum.github.io/HLF/cadastro/cadastro.html" target="_blank" rel="noopener">🚀 Novo Consultor</a></li>
+        </ul>
+    </nav>
+
+    <a href="https://wa.me/5551999663200?text=Vim_da_Pagina_[SLUG]" class="btn-cta"
+       target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        💬 Fale Conosco
+    </a>
+</header>
+<div class="header-spacer"></div>
+```
+
+NOTA: O [SLUG] deve ser substituído pelo slug da página conforme a tabela
+do Anexo 1 §4.2. Como o footer é componente fixo injetado por
+bloco-incluir.js, o [SLUG] precisa ser injetado dinamicamente ou definido
+manualmente por página no momento da cópia do template.
+
+---------------------------------------------------------------------
+
+## 8. Footer
+
+### 8.1 Estrutura do Footer
+
+O footer é semântico, com cross-linking, disclaimer, links oficiais e
+dados de identificação. É injetado via bloco-incluir.js.
+
+```html
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-wrap">
+        <div>
+            <div style="font-weight:600;color:#fff;margin-bottom:4px;">
+                Eduardo Sidegum
+            </div>
+            <div>Distribuidor Independente Herbalife • Novo Hamburgo/RS</div>
+            <div style="font-size:.78rem;margin-top:4px;color:#999;">
+                Este site é mantido por um Distribuidor Independente Herbalife
+                e não representa a Herbalife Ltd.
+            </div>
+            <div style="font-size:.78rem;margin-top:6px;">
+                © <span id="ano-atual"></span> — Todos os direitos reservados.
+            </div>
+        </div>
+        <div style="text-align:right;">
+            <a href="https://edusidegum.github.io/HLF/manifesto.html">Manifesto de Autoridade</a><br>
+            <a href="https://edusidegum.github.io/HLF/doc/politicadeprivacidade.html">Política de Privacidade</a><br>
+            <a href="https://edusidegum.github.io/HLF/doc/termosdeusodistribuidorindependenteherbalife.html">Termos de Uso e Políticas</a><br>
+            <a href="https://edusidegum.github.io/HLF/ajuda/ajuda.html">Ajuda</a><br>
+            <a href="https://wa.me/5551999663200?text=Vim_da_Pagina_[SLUG]" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+    </div>
+</footer>
+```
+
+### 8.2 Regras do Footer
+
+- O footer é FIXO e não pode ser alterado por página
+- O disclaimer oficial Herbalife deve estar presente em todas as páginas
+- Os links institucionais apontam para /HLF/doc/ com domínio raiz oficial
+- O link de WhatsApp usa a convenção ?text=Vim_da_Pagina_[SLUG]
+- O link de cadastro aponta para /HLF/cadastro/cadastro.html
+- O link de ajuda aponta para /HLF/ajuda/ajuda.html
+
+---------------------------------------------------------------------
+
+## 9. Páginas Específicas
+
+### 9.1 Perfil (perfil.html)
+
+Localização: HLF/perfil/perfil.html
+Indexação: index, follow (página pública de captação)
+
+Formulário de autoavaliação do bem-estar com 22 perguntas divididas em
+3 blocos:
+- Alimentação Saudável (10 perguntas)
+- Estilo de Vida (7 perguntas)
+- Controle de Peso (5 perguntas)
+
+Campos de dados pessoais: nome, e-mail, endereço, telefone, nascimento,
+idade, peso, altura.
+
+Campos de decisão: objetivo pessoal (5 opções) e investimento diário
+(R$ 10 a R$ 50).
+
+Botão "Gerar Proposta Personalizada" salva os dados no localStorage e
+redireciona para avaliacao.html.
+
+### 9.2 Avaliação (avaliacao.html)
+
+Localização: HLF/perfil/avaliacao.html
+Indexação: noindex, follow (página dependente de localStorage)
+
+Lê os dados do localStorage, aplica a matriz objetivo × investimento
+(5 objetivos × 9 faixas = 45 combinações) e gera:
+- Resumo do perfil do cliente com interpretação do score
+- Proposta recomendada (destacada) com tabela de produtos, custos e benefícios
+- Tabela comparativa com todas as 9 faixas de investimento para o objetivo
+- Botão de WhatsApp com resumo automático da proposta
+- Link para refazer a avaliação
+
+Script de apoio: HLF/scripts/bloco-proposta.js
+
+### 9.3 Cadastro (cadastro/cadastro.html)
+
+Localização: HLF/cadastro/cadastro.html
+Indexação: index, follow
+
+Página de direcionamento pós-filtro para Cliente Premium e Novo Consultor.
+Contém link externo oficial para https://accounts.myherbalife.com/...
+
+### 9.4 Ajuda (ajuda/ajuda.html e ajuda/faq.html)
+
+Localização: HLF/ajuda/ajuda.html e HLF/ajuda/faq.html
+Indexação: index, follow
+
+Página de ajuda e suporte ao visitante, com perguntas frequentes (FAQ).
+Movida para pasta dedicada ajuda/ para melhor gerenciamento.
+
+### 9.5 Transformação 21 (transformacao21/index.html)
+
+Localização: HLF/transformacao21/index.html
+Indexação: index, follow
+
+Programa de 21 dias com conteúdo de transformação física e nutricional.
+
+### 9.6 Hype Drink (hypedrink/index.html)
+
+Localização: HLF/hypedrink/index.html
+Indexação: index, follow
+
+Landing page do produto Hype Drink com foco em energia e performance.
+
+---------------------------------------------------------------------
+
+## 10. SEO Técnico
+
+### 10.1 Estrutura Obrigatória (por página)
+
+| Elemento | Valor | Tipo |
+|---|---|---|
+| charset | UTF-8 | Fixo |
+| viewport | width=device-width, initial-scale=1.0 | Fixo |
+| lang | pt-BR | Fixo |
+| title | [TÍTULO] | Distribuidor Independente Herbalife | Variável |
+| description | [DESCRIÇÃO ÚNICA — máx. 160 chars] | Variável |
+| geo.region | BR-RS | Fixo |
+| geo.placename | Novo Hamburgo | Fixo |
+| robots / googlebot / bingbot | Ver padrão completo no Anexo 1 §4.3 (indexáveis) ou §4.4 (não-indexáveis) | Padrão |
+| canonical | https://edusidegum.github.io/HLF/[caminho]/[arquivo].html | Variável |
+| og:type | website | Fixo |
+| og:title | [TÍTULO] | Distribuidor Herbalife | Variável |
+| og:description | [DESCRIÇÃO OG — máx. 155 chars] | Variável |
+| og:url | [URL_CANÔNICA] | Variável |
+| og:image | https://edusidegum.github.io/HLF/img/[IMAGEM_OG].webp | Variável |
+| og:locale | pt_BR | Fixo |
+| twitter:card | summary_large_image | Fixo |
+| JSON-LD | @graph com @id (ver Seção 6.2) | Variável |
+
+### 10.2 robots.txt Canônico
+
+O robots.txt na raiz do repositório HLF/ DEVE conter exatamente:
+
+```
+# Robots.txt — Ecossistema HLF
+# Regra geral (todos os bots)
+User-agent: *
+Allow: /
+Disallow: /doc/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /assets/js/novo_dir_dinamico.js
+
+# Googlebot — regra específica
+User-agent: Googlebot
+Allow: /
+Disallow: /doc/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /assets/js/novo_dir_dinamico.js
+
+# Bingbot — regra específica
+User-agent: bingbot
+Allow: /
+Disallow: /doc/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /assets/js/novo_dir_dinamico.js
+
+# Sitemap
+Sitemap: https://edusidegum.github.io/HLF/sitemap.xml
+```
+
+Observação: O GitHub Pages não suporta .htaccess nem cabeçalhos HTTP
+customizados (X-Robots-Tag). Toda proteção deve ser feita via meta tag
+inline no <head> (para HTML) e robots.txt (para bloqueio de
+diretório/arquivo).
+
+### 10.3 sitemap.xml
+
+Páginas que DEVEM entrar no sitemap: todas as páginas com index, follow.
+Páginas que NÃO DEVEM entrar no sitemap: páginas com noindex, páginas
+bloqueadas no robots.txt, arquivos .js, .css, .json.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://edusidegum.github.io/HLF/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/manifesto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/transformacao21/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/perfil/perfil.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/cadastro/cadastro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/hypedrink/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/ajuda/ajuda.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/ajuda/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
+```
+
+### 10.4 Tratamento de Imagens
+
+- Todas as imagens devem ser .webp
+- Imagem LCP (acima da dobra) deve ter fetchpriority="high" e preload no <head>
+- Imagens não-críticas devem ter loading="lazy"
+
+Atributos obrigatórios para toda imagem:
+
+```html
+<img src="[URL].webp"
+     alt="[Descrição descritiva e específica]"
+     width="[LARGURA]"
+     height="[ALTURA]"
+     loading="lazy"
+     decoding="async">
+```
+
+Imagem LCP (acima da dobra):
+
+```html
+<link rel="preload" as="image" href="https://edusidegum.github.io/HLF/img/[LCP_IMAGE].webp">
+```
+
+```html
+<img src="https://edusidegum.github.io/HLF/img/[LCP_IMAGE].webp"
+     alt="[Descrição]"
+     width="[LARGURA]"
+     height="[ALTURA]"
+     fetchpriority="high"
+     decoding="async">
+```
+
+### 10.5 Monitoramento
+
+- Indexação, monitoramento de sitemaps e SEO local são realizados
+  semanalmente via Google Search Console
+- Verificação de links quebrados mensalmente
+- Auditoria de conformidade do disclaimer em todas as páginas a cada
+  atualização
+
+---------------------------------------------------------------------
+
+## 11. Conformidade e LGPD
+
+### 11.1 Disclaimer Oficial
+
+Toda página deve conter o disclaimer oficial:
+
+"Este site é mantido por um Distribuidor Independente Herbalife e não
+representa a Herbalife Ltd. Os produtos Herbalife não são medicamentos
+e não têm finalidade de diagnóstico, tratamento, cura ou prevenção de
+doenças. Consulte sempre um profissional de saúde antes de iniciar
+qualquer programa nutricional ou de atividade física."
+
+### 11.2 LGPD — Banner de Cookies
+
+O bloco-cookies.html (em menu/compartilhado/) é injetado dinamicamente
+em todas as páginas via bloco-incluir.js. Deve conter:
+
+- Aviso de uso de cookies
+- Link para Política de Privacidade
+- Botão "Aceitar" e "Recusar"
+- Registro de consentimento no localStorage
+
+### 11.3 Proteção de Dados
+
+- Nenhum dado pessoal é coletado via formulário sem consentimento
+- Os dados do perfil.html são armazenados apenas no localStorage do
+  navegador do usuário (não enviados para servidor)
+- O link de WhatsApp transmite os dados via URL parameter (texto
+  codificado) — o usuário é informado de que seus dados serão enviados
+  via WhatsApp ao clicar no botão
+
+---------------------------------------------------------------------
+
+## 12. Padrões de URL e Links
+
+### 12.1 Domínio Raiz Oficial
+
+O domínio raiz oficial do ecossistema HLF é:
+
+    https://edusidegum.github.io/HLF/
+
+Todas as URLs canônicas, og:url, links internos do footer, topbar e
+schema JSON-LD devem usar este domínio como base.
+
+### 12.2 Canonical
+
+- Sempre usar URL absoluta com https://
+- Sempre terminar com .html (não com /)
+- Páginas não-indexáveis não recebem canonical (evita conflito com noindex)
+
+### 12.3 Links Públicos vs. Canonical
+
+- Links públicos (WhatsApp, topbar, footer) podem usar a forma curta
+  (ex: hypedrink/) — o GitHub Pages resolve automaticamente para index.html
+- A tag <link rel="canonical"> dentro de cada página deve sempre apontar
+  para o arquivo real (ex: hypedrink/index.html)
+
+### 12.4 Convenção de Strings de Origem do WhatsApp
+
+As strings de origem devem seguir o formato:
+
+    ?text=Vim_da_Pagina_[SLUG]
+
+Onde [SLUG] é o slug do projeto em PascalCase, sem acentos:
+
+| Página | String |
+|---|---|
+| index.html (Home) | Vim_da_Pagina_Home |
+| manifesto.html | Vim_da_Pagina_Manifesto |
+| perfil.html | Vim_da_Pagina_Perfil |
+| avaliacao.html | Vim_da_Pagina_Avaliacao |
+| transformacao21/index.html | Vim_da_Pagina_Transformacao21 |
+| hypedrink/index.html | Vim_da_Pagina_Hypedrink |
+| cadastro/cadastro.html | Vim_da_Pagina_Cadastro |
+| ajuda/ajuda.html | Vim_da_Pagina_Ajuda |
+
+---------------------------------------------------------------------
+
+## 13. Migração de Páginas Existentes
+
+As páginas já publicadas (transformacao21, hypedrink, perfil, cadastro)
+entram no escopo e migram para o diretório raiz HLF/ e respectivas
+subpastas, seguindo estas etapas:
+
+1. Mover cada página para sua subpasta correspondente em HLF/
+2. Atualizar todas as URLs canônicas, og:url, og:image para incluir /HLF/
+3. Atualizar canonical para usar arquivo .html explícito
+4. Atualizar strings de WhatsApp para a convenção Vim_da_Pagina_[SLUG]
+5. Atualizar links internos (topbar, footer) para apontar para /HLF/
+6. Mover cadastro.html para cadastro/cadastro.html
+7. Mover ajuda.html para ajuda/ajuda.html
+8. Registrar nova propriedade no Google Search Console
+9. Submeter novo sitemap.xml
+10. Configurar redirecionamentos (se aplicável via GitHub Pages — nota:
+    GitHub Pages não suporta .htaccess, então redirecionamentos devem
+    ser feitos via meta refresh ou JS em páginas antigas)
+
+---------------------------------------------------------------------
+
+## 14. Diretórios Novos — Documentação
+
+Os seguintes diretórios e arquivos foram adicionados à estrutura e
+precisam ser documentados:
+
+| Diretório/Arquivo | Função |
+|---|---|
+| components/ | Componentes HTML reutilizáveis (blocos de conteúdo, cards, seções) |
+| data/ | Arquivos JSON/CSV com dados estruturados (tabelas de preços, programas) — bloqueado via robots.txt |
+| music/ | Arquivos de áudio para páginas que utilizam elementos sonoros |
+| scripts/ | Scripts JS de lógica de negócio (bloco-proposta.js) — bloqueado via robots.txt |
+| ajuda/ | Pasta dedicada a ajuda e FAQ (ajuda.html + faq.html) |
+| perfil/ | Pasta dedicada ao formulário de autoavaliação e propostas |
+
+---------------------------------------------------------------------
+
+=====================================================================
+ANEXO 1 — PROTOCOLO DE INTEGRIDADE E EFICIÊNCIA HLF 2026
+=====================================================================
+
+---------------------------------------------------------------------
+
+### 1. Regra de Preservação de Conteúdo (Anti-Simplificação)
+
+#### 1.1. Manifesto de Componentes Obrigatórios
+
+Toda página gerada DEVE conter, nesta ordem:
+
+1. [Header Topbar] — com logo, identificação do distribuidor e navegação
+2. [Hero Section] — com H1 único e subtítulo de contexto
+3. [Context Content Block] — conteúdo informativo aprovado
+4. [Conversion Loop] — Trio de Saída (ver Seção 4)
+5. [Footer HLF] — com disclaimer, links legais e identificação
+
+#### 1.2. Proibição de Sumarização
+
+É terminantemente proibido reduzir, parafrasear ou omitir blocos de texto
+fornecidos como "Contexto de Página". O conteúdo deve ser transposto
+integralmente, otimizando:
+
+- Marcação HTML semântica (H1–H6, <article>, <section>, <nav>, <aside>)
+- Atributos de performance (loading="lazy" em imagens não-LCP, preload,
+  preconnect, fetchpriority)
+- Acessibilidade (ARIA labels, alt descritivo, role, tabindex)
+- Estrutura de dados estruturados (JSON-LD)
+
+Sem jamais reduzir o conteúdo informativo aprovado.
+
+#### 1.3. Exceção de Performance
+
+Minificação de CSS e JS é permitida, desde que:
+
+- O arquivo original não-minificado seja preservado no repositório
+- O arquivo minificado receba sufixo .min.css ou .min.js
+- A funcionalidade seja idêntica à versão original
+
+---------------------------------------------------------------------
+
+### 2. Injeção Dinâmica via PowerShell (Rastreamento)
+
+#### 2.1. Variáveis Obrigatórias
+
+Os scripts de deploy devem utilizar obrigatoriamente as variáveis:
+
+    $GA4_ID
+    $GTM_ID
+    $META_PIXEL_ID
+
+#### 2.2. Tratamento de Variável Nula
+
+Se a variável for nula, o script deve injetar um comentário HTML:
+
+    <!-- Tracking ID Missing: [NOME_DA_VARIAVEL] -->
+
+Isso evita erros de execução no JS e mantém rastreabilidade de qual tag
+faltou.
+
+#### 2.3. Ordem de Inserção
+
+As tags devem ser inseridas no <head> nesta ordem:
+
+1. GTM (dataLayer + script)
+2. GA4 (se não via GTM)
+3. Meta Pixel (noscript no <body>)
+
+---------------------------------------------------------------------
+
+### 3. Blindagem de Bots (Preços e Lógicas)
+
+#### 3.1. Nível de Arquivo — Páginas HTML com Valores Explícitos
+
+Todo arquivo HTML que exiba tabela de preços, valores de programas ou
+fórmulas de decisão deve receber, no <head>:
+
+    <meta name="robots" content="noindex, nofollow">
+
+#### 3.2. Nível de Arquivo — Páginas Dependentes de Estado
+
+Páginas que dependem de localStorage, sessionStorage ou interação prévia
+para renderizar conteúdo (ex: avaliacao.html) devem receber:
+
+    <meta name="robots" content="noindex, follow">
+
+O follow permite que os bots sigam links do footer/topbar, mas não
+indexem o conteúdo dinâmico.
+
+#### 3.3. Nível de Arquivo — Scripts JS Puros
+
+Arquivos .js que contenham lógica de decisão (ex: bloco-proposta.js,
+novo_dir_dinamico.js) devem receber no topo do arquivo:
+
+    /* HLF — Arquivo protegido: noindex, nofollow */
+
+E ser bloqueados via robots.txt (ver Seção 3.4).
+
+#### 3.4. Nível de Diretório — robots.txt Canônico
+
+O robots.txt na raiz do repositório DEVE conter exatamente:
+
+    # Robots.txt — Ecossistema HLF
+    # Regra geral (todos os bots)
+    User-agent: *
+    Allow: /
+    Disallow: /doc/
+    Disallow: /data/
+    Disallow: /scripts/
+    Disallow: /assets/js/novo_dir_dinamico.js
+
+    # Googlebot — regra específica
+    User-agent: Googlebot
+    Allow: /
+    Disallow: /doc/
+    Disallow: /data/
+    Disallow: /scripts/
+    Disallow: /assets/js/novo_dir_dinamico.js
+
+    # Bingbot — regra específica
+    User-agent: bingbot
+    Allow: /
+    Disallow: /doc/
+    Disallow: /data/
+    Disallow: /scripts/
+    Disallow: /assets/js/novo_dir_dinamico.js
+
+    # Sitemap
+    Sitemap: https://edusidegum.github.io/HLF/sitemap.xml
+
+#### 3.5. Observação sobre GitHub Pages
+
+O GitHub Pages NÃO suporta .htaccess nem cabeçalhos HTTP customizados
+(X-Robots-Tag). Portanto, toda proteção deve ser feita via:
+
+- Meta tag inline no <head> (para HTML)
+- robots.txt (para bloqueio de diretório/arquivo)
+- Comentário no topo do arquivo (para JS puro, como documentação)
+
+---------------------------------------------------------------------
+
+### 4. Fechamento do Círculo (Loop de Conversão)
+
+#### 4.1. Trio de Saída Obrigatório
+
+Nenhuma página pode ser considerada "Finalizada" sem o Trio de Saída:
+
+| Posição | Tipo | Destino | Obrigatório |
+|---|---|---|---|
+| Primária | Botão de Cadastro | Link oficial myherbalife.com ou /HLF/cadastro/cadastro.html | Sim |
+| Secundária | Link para Catálogo Digital | https://catalogoherbalife.com.br/edusidegum | Sim |
+| Suporte | Botão flutuante ou CTA de WhatsApp | https://wa.me/5551999663200 com string de origem | Sim |
+
+#### 4.2. Convenção de Strings de Origem do WhatsApp
+
+As strings de origem devem seguir o formato:
+
+    ?text=Vim_da_Pagina_[SLUG]
+
+Onde [SLUG] é o slug do projeto em PascalCase, sem acentos:
+
+| Página | String |
+|---|---|
+| index.html (Home) | Vim_da_Pagina_Home |
+| manifesto.html | Vim_da_Pagina_Manifesto |
+| perfil.html | Vim_da_Pagina_Perfil |
+| avaliacao.html | Vim_da_Pagina_Avaliacao |
+| transformacao21/index.html | Vim_da_Pagina_Transformacao21 |
+| hypedrink/index.html | Vim_da_Pagina_Hypedrink |
+| cadastro/cadastro.html | Vim_da_Pagina_Cadastro |
+| ajuda/ajuda.html | Vim_da_Pagina_Ajuda |
+
+#### 4.3. Meta-Tags Padrão para Páginas Indexáveis
+
+Toda página indexável deve conter, no <head>:
+
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+#### 4.4. Meta-Tags Padrão para Páginas Não-Indexáveis
+
+Toda página protegida deve conter, no <head>:
+
+    <meta name="robots" content="noindex, follow">
+    <meta name="googlebot" content="noindex, follow">
+    <meta name="bingbot" content="noindex, follow">
+
+---------------------------------------------------------------------
+
+=====================================================================
+ANEXO 2 — MAPA DE INDEXAÇÃO E PADRÕES DE SEO POR TIPO DE PÁGINA
+=====================================================================
+
+---------------------------------------------------------------------
+
+### 1. Mapa de Indexação do Ecossistema HLF
+
+Cada página do ecossistema tem um tratamento de indexação definido.
+Nenhuma página pode ficar sem classificação.
+
+| Página | Caminho | Indexar? | Motivo |
+|---|---|---|---|
+| Home / Landing principal | /index.html | index, follow | Porta de entrada |
+| Manifesto | /manifesto.html | index, follow | Identidade pública |
+| Transformação 21 | /transformacao21/index.html | index, follow | Programa público |
+| Hype Drink | /hypedrink/index.html | index, follow | Produto público |
+| Perfil (formulário) | /perfil/perfil.html | index, follow | Ferramenta pública de captação |
+| Avaliação (resultado) | /perfil/avaliacao.html | noindex, follow | Depende de localStorage |
+| Cadastro | /cadastro/cadastro.html | index, follow | Conversão pública |
+| Ajuda | /ajuda/ajuda.html | index, follow | Suporte público |
+| FAQ | /ajuda/faq.html | index, follow | Suporte público |
+| Tabela de Preços | /menu/tabelas/tabelahlfpremium2026.html | noindex, nofollow | Contém valores explícitos |
+| Programas HLF | /menu/programashlf2026.html | noindex, nofollow | Contém valores explícitos |
+| Documentos legais | /doc/* | Bloqueado via robots.txt (Disallow: /doc/) | Conteúdo legal, não otimizar SEO |
+| Scripts de decisão | /scripts/bloco-proposta.js | Bloqueado via robots.txt | Lógica de negócio |
+| Scripts dinâmicos | /assets/js/novo_dir_dinamico.js | Bloqueado via robots.txt | Lógica de negócio |
+| Dados estruturados | /data/* | Bloqueado via robots.txt | Dados sensíveis de preços |
+
+---------------------------------------------------------------------
+
+### 2. Padrão de URL Canônica
+
+#### 2.1. Formato
+
+Toda página indexável deve conter:
+
+    <link rel="canonical" href="https://edusidegum.github.io/HLF/[caminho]/[arquivo].html">
+
+#### 2.2. Regras
+
+- Sempre usar URL absoluta com https://
+- Sempre incluir /HLF/ no caminho
+- Sempre terminar com .html (não com /)
+- Páginas não-indexáveis não recebem canonical (evita conflito com noindex)
+
+---------------------------------------------------------------------
+
+### 3. Padrão de Open Graph e Twitter Card
+
+#### 3.1. Páginas Indexáveis — Obrigatório
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="[TÍTULO] | Distribuidor Herbalife">
+    <meta property="og:description" content="[DESCRIÇÃO ÚNICA — máx. 155 chars]">
+    <meta property="og:url" content="[URL_CANÔNICA]">
+    <meta property="og:image" content="https://edusidegum.github.io/HLF/img/[IMAGEM_OG].webp">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[TÍTULO] | Distribuidor Herbalife">
+    <meta name="twitter:description" content="[DESCRIÇÃO OG — máx. 155 chars]">
+    <meta name="twitter:image" content="https://edusidegum.github.io/HLF/img/[IMAGEM_OG].webp">
+
+#### 3.2. Páginas Não-Indexáveis — Isento
+
+Páginas com noindex não precisam de Open Graph nem Twitter Card.
+
+---------------------------------------------------------------------
+
+### 4. Padrão de JSON-LD por Tipo de Página
+
+| Tipo de página | JSON-LD obrigatório |
+|---|---|
+| Landing / Programa | WebPage + Organization + BreadcrumbList |
+| Ferramenta (perfil) | WebPage + Organization |
+| Cadastro | WebPage + Organization |
+| Avaliação (noindex) | Nenhum (não será indexado) |
+
+#### 4.1. Estrutura Base do @graph
+
+Todo JSON-LD deve usar @graph com referências @id, sempre incluindo /HLF/
+no domínio raiz oficial:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://edusidegum.github.io/HLF/#person",
+      "name": "Eduardo Sidegum",
+      "jobTitle": "Distribuidor Independente Herbalife"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://edusidegum.github.io/HLF/#business",
+      "name": "Eduardo Sidegum | Distribuidor Independente Herbalife",
+      "founder": { "@id": "https://edusidegum.github.io/HLF/#person" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Novo Hamburgo",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://edusidegum.github.io/HLF/#website",
+      "url": "https://edusidegum.github.io/HLF/",
+      "publisher": { "@id": "https://edusidegum.github.io/HLF/#person" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://edusidegum.github.io/HLF/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "[NOME_DA_PAGINA]",
+          "item": "[URL_CANÔNICA]"
+        }
+      ]
+    }
+  ]
+}
+```
+
+---------------------------------------------------------------------
+
+### 5. Hierarquia de Cabeçalhos (H1–H6)
+
+#### 5.1. Regra Obrigatória
+
+- Um único <h1> por página — deve conter o título principal com a keyword
+  do projeto
+- <h2> para seções principais (Hero, Contexto, Conversão)
+- <h3> para subseções dentro de cada <h2>
+- <h4>–<h6> apenas quando houver profundidade real de conteúdo
+
+#### 5.2. Padrão por Página
+
+```html
+<h1>[Título do Projeto] | Distribuidor Herbalife</h1>
+  <h2>O que é [Projeto]</h2>
+    <h3>Benefícios</h3>
+    <h3>Como funciona</h3>
+  <h2>Seus Resultados</h2>
+  <h2>Próximos Passos</h2>
+```
+
+---------------------------------------------------------------------
+
+### 6. Sitemap — Padrão de Geração
+
+#### 6.1. Páginas que DEVEM entrar no sitemap
+
+Todas as páginas com index, follow.
+
+#### 6.2. Páginas que NÃO DEVEM entrar no sitemap
+
+- Páginas com noindex
+- Páginas bloqueadas no robots.txt
+- Arquivos .js, .css, .json
+
+#### 6.3. Estrutura
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://edusidegum.github.io/HLF/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/manifesto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/transformacao21/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/perfil/perfil.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/cadastro/cadastro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/hypedrink/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/ajuda/ajuda.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/HLF/ajuda/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
+```
+
+---------------------------------------------------------------------
+
+### 7. Tratamento de Imagens
+
+#### 7.1. Formato
+
+- Todas as imagens devem ser .webp
+- LCP image deve ter fetchpriority="high" e preload no <head>
+- Imagens não-críticas devem ter loading="lazy"
+
+#### 7.2. Atributos Obrigatórios
+
+```html
+<img src="[URL].webp"
+     alt="[Descrição descritiva e específica]"
+     width="[LARGURA]"
+     height="[ALTURA]"
+     loading="lazy"
+     decoding="async">
+```
+
+#### 7.3. Imagem LCP (acima da dobra)
+
+```html
+<link rel="preload" as="image" href="https://edusidegum.github.io/HLF/img/[LCP_IMAGE].webp">
+```
+
+```html
+<img src="https://edusidegum.github.io/HLF/img/[LCP_IMAGE].webp"
+     alt="[Descrição]"
+     width="[LARGURA]"
+     height="[ALTURA]"
+     fetchpriority="high"
+     decoding="async">
+```
+
+---------------------------------------------------------------------
+
+FIM DO DOCUMENTO
+
+Documento gerado em Julho/2026.
+Autor: Edu Sidegum — Distribuidor Independente Herbalife
+Local: Novo Hamburgo/RS — Brasil
+Domínio raiz oficial: https://edusidegum.github.io/HLF/
+
+ANEXO 1 — PROTOCOLO DE INTEGRIDADE E EFICIÊNCIA HLF 2026 (ADENDO)
+================================================================
+
+3. Blindagem de Bots (Preços e Lógicas)
+---------------------------------------
+- Bloqueio Híbrido Obrigatório:
+  1. Meta-Tag: Inserir <meta name="robots" content="noindex, nofollow"> em páginas com valores explícitos.
+  2. Robots.txt: Bloqueio de diretórios /data/, /scripts/ e /doc/.
+  3. X-Robots-Tag: Como o GitHub Pages não suporta headers, usar meta tags em todos os arquivos HTML de apoio.
+
+10.6 Estratégia de Expansão Regional (Novo Hamburgo e Vale do Sinos)
+-------------------------------------------------------------------
+- Local Business Schema: Adicionar propriedade "areaServed" no JSON-LD com: ["Novo Hamburgo", "São Leopoldo", "Estância Velha", "Campo Bom"].
+- Location Pages: Criar subpastas nominais para cidades vizinhas quando o tráfego local justificar (ex: /hlf/sao-leopoldo/index.html).
+- Relevância Geográfica: O <h2> de conexão deve citar pontos de referência da cidade alvo para aumentar o "E-A-T" local.
+
+12.4 Unificação de Strings de Conversão
+---------------------------------------
+- O parâmetro ?text= deve SEMPRE seguir o padrão: Vim_da_Pagina_[SLUG].
+- Proibido o uso de textos genéricos como "Quero saber mais" sem o identificador de origem.
+
+# =====================================================================
+# ADENDO 2026: ESTRATÉGIA NOVO HAMBURGO & CIDADES VIZINHAS
+# =====================================================================
+1. SEO LOCAL ÂNCORA: Novo Hamburgo/RS deve constar no <title> e H1 de todas as páginas raiz.
+2. EXPANSÃO REGIONAL: Para cidades vizinhas (São Leopoldo, Campo Bom, Estância Velha), 
+   criar subpastas físicas com index.html próprio, injetando referências geográficas locais.
+3. JSON-LD: Incluir a propriedade "areaServed": ["Novo Hamburgo", "São Leopoldo", "Campo Bom", "Estância Velha"].
+4. BLINDAGEM DE BOTS: Arquivos em /data/ e /scripts/ DEVEM portar a meta tag noindex.
+
+# =====================================================================
+# ADENDO 2026: ESTRATÉGIA NOVO HAMBURGO & CIDADES VIZINHAS
+# =====================================================================
+1. SEO LOCAL ÂNCORA: Novo Hamburgo/RS deve constar no <title> e H1 de todas as páginas raiz.
+2. EXPANSÃO REGIONAL: Para cidades vizinhas (São Leopoldo, Campo Bom, Estância Velha), 
+   criar subpastas físicas com index.html próprio, injetando referências geográficas locais.
+3. JSON-LD: Incluir a propriedade "areaServed": ["Novo Hamburgo", "São Leopoldo", "Campo Bom", "Estância Velha"].
+4. BLINDAGEM DE BOTS: Arquivos em /data/ e /scripts/ DEVEM portar a meta tag noindex.

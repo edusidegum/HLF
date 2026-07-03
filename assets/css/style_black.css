@@ -1,0 +1,11 @@
+/* ===== style_black.css (Base: Transformação 21) ===== */
+:root {
+    --dark: #121212;
+    --text-light: #e0e0e0;
+    --accent-green: #78BE20;
+}
+body { background-color: var(--dark); color: var(--text-light); font-family: 'Open Sans', sans-serif; }
+.pilares-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.pilar-card { background: #1e1e1e; border: 1px solid rgba(120,190,32,0.2); border-radius: 16px; padding: 20px; transition: 0.3s; }
+.pilar-card:hover { border-color: var(--accent-green); transform: translateY(-5px); }
+.img-resumo { border-radius: 16px; border: 2px solid rgba(120, 190, 32, 0.25); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4); }

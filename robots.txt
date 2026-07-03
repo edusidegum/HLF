@@ -1,9 +1,16 @@
+# Robots.txt — Ecossistema HLF (Vs 2026)
 User-agent: *
-Disallow: /doc/
-Disallow: /assets/
-Disallow: /menu/
-Disallow: /perfil/emobras.html
-Disallow: /perfil/programashlf2026.html
-Disallow: /perfil/tabelahlfpremium2026.html
 Allow: /
-Sitemap: https://edusidegum.github.io/sitemap.xml
+Disallow: /doc/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /assets/js/novo_dir_dinamico.js
+
+User-agent: Googlebot
+Allow: /
+Disallow: /doc/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /assets/js/novo_dir_dinamico.js
+
+Sitemap: https://edusidegum.github.io/HLF/sitemap.xml
