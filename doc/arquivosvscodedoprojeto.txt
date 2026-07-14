@@ -1,0 +1,381 @@
+D:\GitHub\google82b0e011e22c61ab.html
+D:\GitHub\bioniq\bioniq.html
+D:\GitHub\bioniq\bioniqClaude.html
+D:\GitHub\bioniq\bioniqGPT.html
+D:\GitHub\bioniq\bioniq_DeepSeek_Vs1.html
+D:\GitHub\bioniq\bioniq_Vs1.html
+D:\GitHub\bioniq\bioniq_Vs2.html
+D:\GitHub\bioniq\README.md
+D:\GitHub\cadastro\ajuda_cadastro.html
+D:\GitHub\cadastro\cadastro.html
+D:\GitHub\cadastro\index.html
+D:\GitHub\cadastro\readme.md
+D:\GitHub\cadastro\robots.txt
+D:\GitHub\cadastro\sitemap.xml
+D:\GitHub\cadastro\assets\css\style.css
+D:\GitHub\cadastro\img\novoconsultor.jpg
+D:\GitHub\cadastro\img\qrcodeedusidegum.png
+D:\GitHub\clientepremium\1 Apresentação para Novo Cliente Premium (3).pdf
+D:\GitHub\clientepremium\2 Cadastro Consultor Herbalife On Line (1).pdf
+D:\GitHub\clientepremium\carrosel,js.txt
+D:\GitHub\clientepremium\carrosel.js
+D:\GitHub\clientepremium\consultor.html
+D:\GitHub\clientepremium\google82b0e011e22c61ab (2).html
+D:\GitHub\clientepremium\index.html
+D:\GitHub\clientepremium\lealdade.html
+D:\GitHub\clientepremium\assets\css\style.css
+D:\GitHub\clientepremium\assets\css\topbar.css
+D:\GitHub\clientepremium\img\lealdade2026-4.jpg
+D:\GitHub\clientepremium\img\lealdade2026.jpg
+D:\GitHub\clientepremium\img\lealdade2026_2.jpg
+D:\GitHub\clientepremium\img\lealdade2026_3.jpg
+D:\GitHub\clientepremium\img\lealdade2026_5.jpg
+D:\GitHub\clientepremium\img\lealdade2026_6.jpg
+D:\GitHub\clientepremium\img\lealdade2026_7.jpg
+D:\GitHub\clientepremium\img\logo_5k_premios.png
+D:\GitHub\clientepremium\img\premium1.jpg
+D:\GitHub\clientepremium\img\apresentacao\1-Apresentação-para-Novo-Cliente-Premium-3\1 Apresentação para Novo Client...
+D:\GitHub\clientepremium\img\apresentacao\2-Cadastro-Consultor-Herbalife-On-Line-1\2 Cadastro Consultor Herbalife On...
+D:\GitHub\desktop-tutorial\README.md
+D:\GitHub\edusidegum\index.html
+D:\GitHub\edusidegum\manifesto.html
+D:\GitHub\edusidegum\sobre.html
+D:\GitHub\edusidegum\assets\branding\consultoria-automotiva-eduardo-sidegum.webp
+D:\GitHub\edusidegum\assets\branding\favicon-e-sid-tech.webp
+D:\GitHub\edusidegum\assets\branding\logo-header-institucional.webp
+D:\GitHub\edusidegum\assets\branding\logo-rodape-e-sid-tech.webp
+D:\GitHub\edusidegum\assets\branding\logo-vertical-e-sid-tech.webp
+D:\GitHub\edusidegum\assets\content\consultor-eduardo-sidegum-caoa-chery.webp
+D:\GitHub\edusidegum\assets\social\og-e-sid-tech-social.webp
+D:\GitHub\edusidegum\img\banner.png
+D:\GitHub\edusidegum\img\favicon.png
+D:\GitHub\edusidegum\img\footer.png
+D:\GitHub\edusidegum\img\header-largo.png
+D:\GitHub\edusidegum\img\modelo.png
+D:\GitHub\edusidegum\img\og-image-e.png
+D:\GitHub\edusidegum\img\vertical-staked.png
+D:\GitHub\HLF\ajuda.html
+D:\GitHub\HLF\cadastro.html
+D:\GitHub\HLF\google82b0e011e22c61ab.html
+D:\GitHub\HLF\index.html
+D:\GitHub\HLF\links.html
+D:\GitHub\HLF\manifesto.html
+D:\GitHub\HLF\README.md
+D:\GitHub\HLF\robots.txt
+D:\GitHub\HLF\sitemap.xml
+D:\GitHub\HLF\assets\css\fonts.css
+D:\GitHub\HLF\assets\css\style_black.css
+D:\GitHub\HLF\assets\css\style_branco.css
+D:\GitHub\HLF\assets\css\style_dark.css
+D:\GitHub\HLF\assets\css\style_green.css
+D:\GitHub\HLF\assets\css\style_verde.css
+D:\GitHub\HLF\assets\css\style_white.css
+D:\GitHub\HLF\assets\js\bloco-incluir.js
+D:\GitHub\HLF\assets\js\bloco-proposta.js
+D:\GitHub\HLF\assets\js\bloco-protecao.js
+D:\GitHub\HLF\data\perfil-data.json
+D:\GitHub\HLF\doc\politicadeprivacidade.html
+D:\GitHub\HLF\doc\termosdeuso.html
+D:\GitHub\HLF\emagrecimento\index.html
+D:\GitHub\HLF\hypedrink\index.html
+D:\GitHub\HLF\hypedrink\investimento.html
+D:\GitHub\HLF\img\composicaocorporal.webp
+D:\GitHub\HLF\img\cristiano-ronaldo-parceria-herbalife.webp
+D:\GitHub\HLF\img\desafio21dias_incluir.webp
+D:\GitHub\HLF\img\HB-Selo-Controle-Peso-Com-Logo.webp
+D:\GitHub\HLF\img\HB-Selo-Controle-Peso-Sem-Logo.webp
+D:\GitHub\HLF\img\HB-Selo-Shake-Proteina-Sem-Logo.webp
+D:\GitHub\HLF\img\HB_Sello Active Lifestyle-PT-Com-Logo.webp
+D:\GitHub\HLF\img\HB_Sello Active Lifestyle-PT-Sem-Logo.webp
+D:\GitHub\HLF\img\Herbalife-Logo-Distribuidor-Horizontal-RGB.webp
+D:\GitHub\HLF\img\Herbalife-Logo-Distribuidor-Vertical-RGB.webp
+D:\GitHub\HLF\img\Herbalife-Logo.webp
+D:\GitHub\HLF\img\HypeDrink.webp
+D:\GitHub\HLF\img\HypeIlustrado.webp
+D:\GitHub\HLF\img\HypeSelo.webp
+D:\GitHub\HLF\img\HypeVantagens.webp
+D:\GitHub\HLF\img\laboratorio.webp
+D:\GitHub\HLF\img\LOGO 5K EM PRÊMIOS.webp
+D:\GitHub\HLF\img\novoconsultor.jpg
+D:\GitHub\HLF\img\novoconsultor.webp
+D:\GitHub\HLF\img\numeroumdomundo.webp
+D:\GitHub\HLF\img\qrcodeedusidegum.png
+D:\GitHub\HLF\img\qrcodeedusidegum.webp
+D:\GitHub\HLF\img\QR_invitation.jpg
+D:\GitHub\HLF\img\QR_invitation.webp
+D:\GitHub\HLF\img\resultado1.webp
+D:\GitHub\HLF\img\resultado2.webp
+D:\GitHub\HLF\img\resultado3.webp
+D:\GitHub\HLF\img\resultado4.webp
+D:\GitHub\HLF\img\resultado5.webp
+D:\GitHub\HLF\img\robots.webp
+D:\GitHub\HLF\img\selo1.webp
+D:\GitHub\HLF\img\selo12.webp
+D:\GitHub\HLF\img\selo123.webp
+D:\GitHub\HLF\img\selo4.webp
+D:\GitHub\HLF\img\selo45.webp
+D:\GitHub\HLF\img\selo456.webp
+D:\GitHub\HLF\img\selo7.webp
+D:\GitHub\HLF\img\selo78.webp
+D:\GitHub\HLF\img\selo789.webp
+D:\GitHub\HLF\img\selo9.webp
+D:\GitHub\HLF\img\selo91.webp
+D:\GitHub\HLF\img\selo911.webp
+D:\GitHub\HLF\img\selo913.webp
+D:\GitHub\HLF\img\selo914.webp
+D:\GitHub\HLF\img\video\InscricaoT21.mp4
+D:\GitHub\HLF\imunidade\index.html
+D:\GitHub\HLF\menu\compartilhado\bloco-cookies.html
+D:\GitHub\HLF\menu\compartilhado\bloco-ga4-gtm.html
+D:\GitHub\HLF\menu\compartilhado\footer.html
+D:\GitHub\HLF\menu\compartilhado\topbar.html
+D:\GitHub\HLF\music\alexgrohl-electronic-stylish-rock.mp3
+D:\GitHub\HLF\perfil\ajuda-premium.html
+D:\GitHub\HLF\perfil\ajuda.html
+D:\GitHub\HLF\perfil\avaliacao.html
+D:\GitHub\HLF\perfil\avaliacao.html.html
+D:\GitHub\HLF\perfil\avaliacaoindex.html.html
+D:\GitHub\HLF\perfil\avaliacaoOld.html.html
+D:\GitHub\HLF\perfil\emobras.html
+D:\GitHub\HLF\perfil\index.html
+D:\GitHub\HLF\perfil\perfil.html
+D:\GitHub\HLF\perfil\perfil_Old.html
+D:\GitHub\HLF\perfil\programashlf2026.html
+D:\GitHub\HLF\perfil\script.js
+D:\GitHub\HLF\perfil\style.css
+D:\GitHub\HLF\perfil\tabelahlfpremium2026.html
+D:\GitHub\HLF\performance\index.html
+D:\GitHub\HLF\reset-metabolico\index.html
+D:\GitHub\HLF\transformacao21\index.html
+D:\GitHub\hypedrink\google82b0e011e22c61ab.html
+D:\GitHub\hypedrink\index.html
+D:\GitHub\hypedrink\index_Vs1.html
+D:\GitHub\hypedrink\index_Vs2.html
+D:\GitHub\hypedrink\index_Vs3.html
+D:\GitHub\hypedrink\index_Vs4.html
+D:\GitHub\hypedrink\index_Vs5.html
+D:\GitHub\hypedrink\index_Vs7.html
+D:\GitHub\hypedrink\index_Vs8.html
+D:\GitHub\hypedrink\index_Vs9.html
+D:\GitHub\hypedrink\investimento.html
+D:\GitHub\hypedrink\preparo.html
+D:\GitHub\hypedrink\readme.md
+D:\GitHub\hypedrink\readme.txt
+D:\GitHub\hypedrink\robots.txt
+D:\GitHub\hypedrink\sitemap.xml
+D:\GitHub\hypedrink\assets\css\estilo_velho_sujo_css.txt
+D:\GitHub\hypedrink\assets\css\style.css
+D:\GitHub\hypedrink\img\composicaocorporal.jpg
+D:\GitHub\hypedrink\img\composicaocorporal.webp
+D:\GitHub\hypedrink\img\cr7_20anos.jpg
+D:\GitHub\hypedrink\img\cr7_20anos.webp
+D:\GitHub\hypedrink\img\Herbalife-Logo.png
+D:\GitHub\hypedrink\img\Herbalife-Logo.webp
+D:\GitHub\hypedrink\img\HypeDrink.jpg
+D:\GitHub\hypedrink\img\HypeDrink.webp
+D:\GitHub\hypedrink\img\HypeIlustrado.png
+D:\GitHub\hypedrink\img\HypeIlustrado.webp
+D:\GitHub\hypedrink\img\HypeSelo.png
+D:\GitHub\hypedrink\img\HypeSelo.webp
+D:\GitHub\hypedrink\img\HypeVantagens.jpg
+D:\GitHub\hypedrink\img\HypeVantagens.webp
+D:\GitHub\hypedrink\img\laboratorio.jpg
+D:\GitHub\hypedrink\img\laboratorio.webp
+D:\GitHub\hypedrink\img\novoconsultor.jpg
+D:\GitHub\hypedrink\img\novoconsultor.webp
+D:\GitHub\hypedrink\img\numeroumdomundo.jpg
+D:\GitHub\hypedrink\img\numeroumdomundo.webp
+D:\GitHub\hypedrink\img\qrcodeedusidegum.png
+D:\GitHub\hypedrink\img\qrcodeedusidegum.webp
+D:\GitHub\hypedrink\img\selos\selo1.jpg
+D:\GitHub\hypedrink\img\selos\selo1.webp
+D:\GitHub\hypedrink\img\selos\selo12.jpg
+D:\GitHub\hypedrink\img\selos\selo12.webp
+D:\GitHub\hypedrink\img\selos\selo123.jpg
+D:\GitHub\hypedrink\img\selos\selo123.webp
+D:\GitHub\hypedrink\img\selos\selo4.jpg
+D:\GitHub\hypedrink\img\selos\selo4.webp
+D:\GitHub\hypedrink\img\selos\selo45.jpg
+D:\GitHub\hypedrink\img\selos\selo45.webp
+D:\GitHub\hypedrink\img\selos\selo456.jpg
+D:\GitHub\hypedrink\img\selos\selo456.webp
+D:\GitHub\hypedrink\img\selos\selo7.jpg
+D:\GitHub\hypedrink\img\selos\selo7.webp
+D:\GitHub\hypedrink\img\selos\selo78.jpg
+D:\GitHub\hypedrink\img\selos\selo78.webp
+D:\GitHub\hypedrink\img\selos\selo789.jpg
+D:\GitHub\hypedrink\img\selos\selo789.webp
+D:\GitHub\hypedrink\img\selos\selo9.jpg
+D:\GitHub\hypedrink\img\selos\selo9.webp
+D:\GitHub\hypedrink\img\selos\selo91.jpg
+D:\GitHub\hypedrink\img\selos\selo91.webp
+D:\GitHub\hypedrink\img\selos\selo911.jpg
+D:\GitHub\hypedrink\img\selos\selo911.webp
+D:\GitHub\hypedrink\img\selos\selo913.jpg
+D:\GitHub\hypedrink\img\selos\selo913.webp
+D:\GitHub\hypedrink\img\selos\selo914.jpg
+D:\GitHub\hypedrink\img\selos\selo914.webp
+D:\GitHub\menu\bloco-includes.js
+D:\GitHub\menu\bloco-includesVs1.js
+D:\GitHub\menu\diretrizes_Sites_HLF.txt
+D:\GitHub\menu\google82b0e011e22c61ab.html
+D:\GitHub\menu\index.html
+D:\GitHub\menu\menu.html
+D:\GitHub\menu\programashlf2026.html
+D:\GitHub\menu\readme.md
+D:\GitHub\menu\readme.txt
+D:\GitHub\menu\robots.txt
+D:\GitHub\menu\sItemap.xml
+D:\GitHub\menu\topbar.css
+D:\GitHub\menu\topbar.html
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Controle-Peso-Com-Logo.png
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Controle-Peso-Com-Logo.webp
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Controle-Peso-Sem-Logo.png
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Controle-Peso-Sem-Logo.webp
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Shake-Proteina-Com-Logo.png
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Shake-Proteina-Sem-Logo.png
+D:\GitHub\menu\ArtesOficiais\HB-Selo-Shake-Proteina-Sem-Logo.webp
+D:\GitHub\menu\ArtesOficiais\HB_Sello Active Lifestyle-PT-Com-Logo.png
+D:\GitHub\menu\ArtesOficiais\HB_Sello Active Lifestyle-PT-Com-Logo.webp
+D:\GitHub\menu\ArtesOficiais\HB_Sello Active Lifestyle-PT-Sem-Logo.png
+D:\GitHub\menu\ArtesOficiais\HB_Sello Active Lifestyle-PT-Sem-Logo.webp
+D:\GitHub\menu\ArtesOficiais\Herbalife-Banner-40x90cm.pdf
+D:\GitHub\menu\ArtesOficiais\Herbalife-Logo-Distribuidor-Horizontal-RGB.png
+D:\GitHub\menu\ArtesOficiais\Herbalife-Logo-Distribuidor-Horizontal-RGB.webp
+D:\GitHub\menu\ArtesOficiais\Herbalife-Logo-Distribuidor-Vertical-RGB.png
+D:\GitHub\menu\ArtesOficiais\Herbalife-Logo-Distribuidor-Vertical-RGB.webp
+D:\GitHub\menu\ArtesOficiais\Herbalife-Logo.webp
+D:\GitHub\menu\ArtesOficiais\index.html
+D:\GitHub\menu\ArtesOficiais\QR_invitation.webp
+D:\GitHub\menu\compartilhado\bloco-cookies.html
+D:\GitHub\menu\compartilhado\bloco-ga4-gtm.html
+D:\GitHub\menu\compartilhado\em_obras.html
+D:\GitHub\menu\compartilhado\index.html
+D:\GitHub\menu\compartilhado\politicadeprivacidade.html
+D:\GitHub\menu\compartilhado\programashlf2026.html
+D:\GitHub\menu\compartilhado\programashlf2026_fracionados.html
+D:\GitHub\menu\compartilhado\Termos de Uso e Identificação — Eduardo Sidegum.html
+D:\GitHub\menu\compartilhado\termosdeuso.html
+D:\GitHub\menu\compartilhado\termosdeusodistribuidorindependenteHerbalife.html
+D:\GitHub\menu\compartilhado\termosdeusodistribuidorindependenteHerbalife_Vs1.html
+D:\GitHub\menu\compartilhado\termos_uso_hlf.html
+D:\GitHub\menu\compartilhado\topbar.css
+D:\GitHub\menu\compartilhado\topbar.html
+D:\GitHub\menu\doc\Anexo 2 - Notas Tecnicas Ecossitema Herbalife EduSidegum.txt
+D:\GitHub\menu\doc\a_Aditivo_melhorias_tecnicas.txt
+D:\GitHub\menu\doc\a_anexo_autoridade_hlf.txt
+D:\GitHub\menu\doc\A_Arquitetura de Sistemas Web — Vs4 (Diretriz Global, Padrão Ouro) _Final_revisado.txt
+D:\GitHub\menu\doc\A_Arquitetura de Sistemas Web — Vs4 (Diretriz Global, Padrão Ouro).md
+D:\GitHub\menu\doc\A_Consolidacao_diretrizes_ecossistema_HLF.txt
+D:\GitHub\menu\doc\A_DIRETRIZ_AUDITORIA_SEO_HLF.md
+D:\GitHub\menu\doc\A_documento_mestre_diretriz_ecossistema_hlf.txt
+D:\GitHub\menu\doc\A_Instrução para o Programador_Uso de imagens do Arquiteto de dados SOBRE.txt
+D:\GitHub\menu\doc\A_ProjetoEcossistemaHLF — Versão Consolidada 2026 (corrigida e explícita)_final_revisado.md
+D:\GitHub\menu\doc\A_Tecnica_ecossistema_HLF.txt
+D:\GitHub\menu\doc\Contexto desenvolvimento Herbalife.txt
+D:\GitHub\menu\doc\contexto.txt
+D:\GitHub\menu\doc\diretrizes-seo.txt
+D:\GitHub\menu\doc\diretrizes_Sites_HLF.txt
+D:\GitHub\menu\doc\Documento de Implementacao do Ecossistema Herbalife - Consultor Edu Sidegum Vs10 Texto.txt
+D:\GitHub\menu\doc\Documento de Implementacao do Ecossistema Herbalife - Consultor Edu Sidegum Vs10.docx
+D:\GitHub\menu\doc\Edu Sidegum — Distribuidor Independente Herbalife Vs7.txt
+D:\GitHub\menu\doc\GitHub_VSCode_Guia.txt
+D:\GitHub\menu\doc\googleTagManager.txt
+D:\GitHub\menu\doc\index.html
+D:\GitHub\menu\doc\Modelo Genérico — Ecossistema de Desenvolvimento Estático.md
+D:\GitHub\menu\doc\PRO2COL — ECOSSISTEMA DIGITAL PROJETO EXECUTIVO VS.5.txt
+D:\GitHub\menu\doc\Pro2Col_Aditivo_anexo1_Vs4.txt
+D:\GitHub\menu\doc\Pro2Col_Anexo_1_Vs4.txt
+D:\GitHub\menu\doc\Pro2Col_Ecossisema_ProjetoExecutivo_Vs4.txt
+D:\GitHub\menu\doc\Projeto Executivo Ecossitema Herbalife EduSidegum.txt
+D:\GitHub\menu\doc\projetoecossistemahlf_final_revisado.txt
+D:\GitHub\menu\doc\projetofinal.txt
+D:\GitHub\menu\doc\Protocolo Consolidado HLF — Baseline Oficial.md
+D:\GitHub\menu\doc\readme.txt
+D:\GitHub\menu\doc\📑 ANEXO 1 — Protocolo Ecossitema Herbalife EduSidegum.txt
+D:\GitHub\menu\doc\📑 ANEXO 1 — PROTOCOLO OPERACIONAL SUCESSO ORGÂNICO 90 DIAS Vs5.txt
+D:\GitHub\menu\img\Herbalife-Logo.png
+D:\GitHub\menu\img\Herbalife-Logo.webp
+D:\GitHub\menu\img\img1.png
+D:\GitHub\menu\img\img1.webp
+D:\GitHub\menu\img\robots.jpeg
+D:\GitHub\menu\img\robots.webp
+D:\GitHub\menu\music\alexgrohl-electronic-stylish-rock.mp3
+D:\GitHub\menu\scripts\bloco-incluir.js
+D:\GitHub\menu\scripts\bloco-incluir_Original.js
+D:\GitHub\menu\scripts\bloco-protecao.js
+D:\GitHub\menu\scripts\dinamico.js
+D:\GitHub\menu\scripts\novo_dir_dinamico.js
+D:\GitHub\menu\setup\index.html
+D:\GitHub\menu\setup\manualfiborulesVs1.html
+D:\GitHub\menu\setup\setupVs1.html
+D:\GitHub\menu\tabelas\index.html
+D:\GitHub\menu\tabelas\style.css
+D:\GitHub\menu\tabelas\tabelahlfpremium2026.html
+D:\GitHub\menu\tabelas\tabelahlfsupervisor2026.html
+D:\GitHub\menu\template\head_padrao.txt
+D:\GitHub\modelo_CSS\Modelo1 SaaS dark premium.css
+D:\GitHub\modelo_CSS\Modelo10 White space editorial.css
+D:\GitHub\modelo_CSS\modelo2 Editorial minimal.css
+D:\GitHub\modelo_CSS\modelo3 Industrial tecnico.css
+D:\GitHub\modelo_CSS\modelo4 Agencia Clean.css
+D:\GitHub\modelo_CSS\modelo5 Glass Soft.css
+D:\GitHub\modelo_CSS\modelo6 Brutalist moderno.css
+D:\GitHub\modelo_CSS\modelo7 Corporate premium.css
+D:\GitHub\modelo_CSS\modelo8 Product showcase lux.css
+D:\GitHub\modelo_CSS\Modelo9 Dark mode interface.css
+D:\GitHub\modelo_CSS\Modelos CSS – Banco de 10 referencias.txt
+D:\GitHub\modelo_CSS\Modelos CSS – Banco de 10 referências.md
+D:\GitHub\modelo_CSS\Modelos descricao Arquivo CSS.txt
+D:\GitHub\novoconsultor\index.html
+D:\GitHub\novoconsultor\novoconsultor.jpg
+D:\GitHub\novoconsultor\qrcodeedusidegum.png
+D:\GitHub\novoconsultor\readme.md
+D:\GitHub\novoconsultor\robots.txt
+D:\GitHub\novoconsultor\sitemap.xml
+D:\GitHub\perfil\Departamento de Tecnologia e Nutrição Clínica.txt
+D:\GitHub\perfil\FICHA_AUTOAVALIACAO_2026.pdf
+D:\GitHub\perfil\index.html
+D:\GitHub\perfil\perfil.html
+D:\GitHub\perfil\perfil2.html
+D:\GitHub\perfil\protocolo.html
+D:\GitHub\perfil\readme.md
+D:\GitHub\perfil\robots.txt
+D:\GitHub\perfil\sitemap.xml
+D:\GitHub\perfil\tabelahlfpremium2026-otimizada.html
+D:\GitHub\perfil\tree.txt
+D:\GitHub\perfil\assets\tabelahlfpremium2026-dados.json
+D:\GitHub\perfil\assets\js\analise.js
+D:\GitHub\perfil\assets\js\avaliacao.js
+D:\GitHub\perfil\assets\js\Não confirmado 825064.crdownload
+D:\GitHub\perfil\assets\js\produtos.json
+D:\GitHub\perfil\assets\js\styles.css
+D:\GitHub\perfil\css\styles.css
+D:\GitHub\perfil\img\Logo Distribuidor Independente Herbalife.webp
+D:\GitHub\perfil\img\tabelahlfpremium2026-otimizada.html
+D:\GitHub\transformacao21\google82b0e011e22c61ab (2).html
+D:\GitHub\transformacao21\index.html
+D:\GitHub\transformacao21\index_Vs1.html
+D:\GitHub\transformacao21\readme.md
+D:\GitHub\transformacao21\robots.txt
+D:\GitHub\transformacao21\sitemap.xml
+D:\GitHub\transformacao21\transformacao.css
+D:\GitHub\transformacao21\transformacao.html
+D:\GitHub\transformacao21\Transformacao21.txt
+D:\GitHub\transformacao21\assets\css\style.css
+D:\GitHub\transformacao21\assets\css\transformacao.css
+D:\GitHub\transformacao21\img\desafio21dias_incluir.jpg
+D:\GitHub\transformacao21\img\desafio21dias_incluir.webp
+D:\GitHub\transformacao21\img\InscricaoT21.mp4
+D:\GitHub\transformacao21\img\LOGO 5K EM PRÊMIOS.png
+D:\GitHub\transformacao21\img\LOGO 5K EM PRÊMIOS.webp
+D:\GitHub\transformacao21\img\resultado1.jpg
+D:\GitHub\transformacao21\img\resultado1.webp
+D:\GitHub\transformacao21\img\resultado2.jpg
+D:\GitHub\transformacao21\img\resultado2.webp
+D:\GitHub\transformacao21\img\resultado3.jpg
+D:\GitHub\transformacao21\img\resultado3.webp
+D:\GitHub\transformacao21\img\resultado4.jpg
+D:\GitHub\transformacao21\img\resultado4.webp
+D:\GitHub\transformacao21\img\resultado5.jpg
+D:\GitHub\transformacao21\img\resultado5.webp
