@@ -1,0 +1,78 @@
+/* Modelos Animados De Referencia */ 
+
+
+## Objetivo
+Criar uma base visual mais madura, editorial e premium para a página sobre, sem menu, sem remover conteúdo original, com animações discretas e forte presença institucional.
+
+## Direção escolhida
+A melhor síntese dos referenciais enviados é:
+- **Marie Morelle** para respiro, elegância e composição editorial.
+- **KIKK** para personalidade visual e contraste contemporâneo.
+- **Species in Pieces** para movimento em camadas e transições vivas.
+- **Your Plan, Your Planet** para fluidez narrativa e leitura confortável.
+
+## Princípios do modelo
+1. **Conteúdo preservado**: nenhum texto original deve ser removido ou reescrito.
+2. **Sem menu**: a página é de apresentação, não de navegação.
+3. **Links de referência invisíveis**: não exibidos como elementos de apoio visual.
+4. **Herbalife discreto**: a seção deve existir, porém sem protagonismo.
+5. **Visual executivo**: aparência mais próxima de arquitetura de sistemas do que de landing page promocional.
+6. **Motion sutil**: animações elegantes, lentas e úteis, sem exagero.
+
+## Componentes visuais do modelo
+### Hero
+- `banner.png` como imagem principal.
+- Título com peso editorial.
+- Subtítulo com leitura técnica e sóbria.
+- CTA visual, mas discreto.
+
+### Blocos e boxes
+- Cards com borda suave, sombra muito leve e animação de entrada.
+- Efeito de hover refinado.
+- Espaçamento generoso entre seções.
+- Hierarquia clara entre título, corpo e destaque.
+
+### Rodapé
+- `footer.png` como base visual do rodapé.
+- Cor do texto alinhada à paleta do footer.
+- Construção mais institucional e menos comercial.
+
+### OG image
+- `og-image-e.png` como imagem social principal.
+- Padronização com o tom visual da página.
+
+## Paleta sugerida
+- Fundo: grafite profundo ou branco quente, conforme legibilidade do conteúdo.
+- Texto principal: quase preto ou branco gelo.
+- Texto secundário: cinza técnico.
+- Accent: azul frio, violeta contido ou dourado discreto.
+- Superfícies: tons neutros com contraste controlado.
+
+## Tipografia sugerida
+- Títulos: sans serif contemporânea, forte, limpa e com presença.
+- Corpo: sans serif altamente legível.
+- Destaques: peso médio ou semi-bold, sem excesso de tracking.
+
+## Animações sugeridas
+- Fade-in com deslocamento vertical leve.
+- Parallax sutil no hero.
+- Revelação progressiva de seções.
+- Hover suave nos boxes.
+- Linha de destaque animada em títulos secundários.
+
+## Estrutura de aplicação futura
+1. Criar `animado1.css` como base principal.
+2. Aplicar esse CSS no `index.html` sem alterar o conteúdo original.
+3. Inserir apenas efeitos visuais e troca de imagens permitidas.
+4. Revisar “Por que Herbalife” para permanecer discreto.
+
+## Resultado esperado
+Uma página que transmita:
+- maturidade visual
+- autoridade técnica
+- sofisticação editorial
+- experiência de produto bem desenhada
+- aparência de projeto sólido, não de site iniciante
+
+## Próximo passo
+Quando você enviar **"próximo"**, sigo para o **Passo 2** e gero o arquivo **`animado1.css`** refinado.

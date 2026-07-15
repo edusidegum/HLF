@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <url>
+    <loc>https://edusidegum.github.io/hypedrink/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://edusidegum.github.io/hypedrink/img/HypeDrink.webp</image:loc>
+      <image:title>Hype Drink Fresh — bebida refrescante de nutrição Herbalife</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://edusidegum.github.io/hypedrink/img/HypeSelo.webp</image:loc>
+      <image:title>Hype Drink — Instruções de Preparo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/hypedrink/preparo.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://edusidegum.github.io/hypedrink/investimento.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

@@ -1,0 +1,11 @@
+Arquivo	CSS Direção	Uso ideal
+modelo1.css	SaaS dark premium	landing pages de conversão
+modelo2.css	Editorial minimal	portfólio, site institucional
+modelo3.css	Industrial técnico	produtos, manufatura, construção
+modelo4.css	Agência criativa clean	marketing, branding, talent hub
+modelo5.css	Glassmorphism soft	apps, dashboards, fintech
+modelo6.css	Brutalist moderno	projetos autorais, tech experimental
+modelo7.css	Corporate premium	consultoria, B2B, serviço profissional
+modelo8.css	Product showcase lux	e-commerce premium, catálogo
+modelo9.css	Dark mode interface	SaaS, plataformas, painéis
+modelo10.css	White space editorial	revistas digitais, conteúdo, storytelling

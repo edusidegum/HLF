@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocolo de Recomendação | Distribuidor Independente Herbalife</title>
+  <meta name="description" content="Preencha o formulário e receba seu protocolo personalizado de suplementação e nutrição Herbalife.">
+  <meta property="og:title" content="Protocolo de Recomendação | Distribuidor Independente Herbalife">
+  <meta property="og:description" content="Descubra o plano ideal para seus objetivos: emagrecimento, energia, performance ou imunidade.">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="analise.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+      padding: 0 12px;
+    }
+
+    header {
+      background: #007A33;
+      color: #fff;
+      padding: 24px 16px;
+      text-align: center;
+      border-radius: 0 0 12px 12px;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    article {
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    #msgErro {
+      display: none;
+      background: #fee2e2;
+      color: #dc2626;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #007A33;
+      box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.1);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin-top: 3px;
+      transform: scale(1.1);
+    }
+
+    button[type="submit"] {
+      background: #007A33;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    button[type="submit"]:hover {
+      background: #005c26;
+    }
+
+    button[type="submit"]:focus-visible {
+      outline: 3px solid #85d7a7;
+      outline-offset: 2px;
+    }
+
+    .how-it-works {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid #eee;
+    }
+
+    .how-it-works h2 {
+      font-size: 1.4rem;
+      color: #007A33;
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      background: #f0fdf4;
+      padding: 20px 16px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #bbf7d0;
+    }
+
+    .steps li strong {
+      display: block;
+      font-size: 2rem;
+      color: #007A33;
+      margin-bottom: 6px;
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 16px;
+      background: #fffbe6;
+      border-left: 4px solid #facc15;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .notice em {
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 24px 16px;
+      background: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      border-radius: 12px 12px 0 0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #78BE20;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .links {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 480px) {
+      article {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Protocolo de Recomendação</h1>
+    <p>Preencha o formulário para receber seu plano personalizado</p>
+  </header>
+
+  <main>
+    <article>
+      <div id="msgErro" role="alert"></div>
+
+      <form id="formRecomendacao" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+        </div>
+
+        <div class="form-group">
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" name="idade" min="18" required placeholder="Ex: 30">
+        </div>
+
+        <div class="form-group">
+          <label for="objetivo">Objetivo principal</label>
+          <select id="objetivo" name="objetivo" required>
+            <option value="" disabled selected>Selecione...</option>
+            <option value="emagrecimento">Emagrecimento</option>
+            <option value="energia">Energia</option>
+            <option value="performance">Performance</option>
+            <option value="imunidade">Imunidade</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="atividade">Nível de atividade física</label>
+          <select id="atividade" name="atividade" required>
+            <option value="" disabled selected>Selecione...</option>
+            <option value="leve">Leve (até 2x/semana)</option>
+            <option value="moderada">Moderada (3 a 4x/semana)</option>
+            <option value="intensa">Intensa (5x ou mais/semana)</option>
+          </select>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="consentimento" name="consentimento" required>
+          <label for="consentimento">Concordo com o uso dos meus dados conforme a Lei Geral de Proteção de Dados (LGPD).</label>
+        </div>
+
+        <button type="submit">Gerar Meu Protocolo (PDF)</button>
+      </form>
+
+      <section class="how-it-works">
+        <h2>Como Funciona</h2>
+        <ol class="steps">
+          <li>
+            <strong>1</strong>
+            <span>Preencha seus dados e objetivos</span>
+          </li>
+          <li>
+            <strong>2</strong>
+            <span>Nosso sistema gera seu protocolo personalizado</span>
+          </li>
+          <li>
+            <strong>3</strong>
+            <span>Receba o PDF e entre em contato para orientações</span>
+          </li>
+        </ol>
+      </section>
+
+      <div class="notice">
+        <em>Este questionário possui finalidade exclusivamente informativa. Não substitui consulta com profissionais de saúde.</em>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="https://wa.me/5551999663200" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener">Catálogo</a>
+      <a href="https://accounts.myherbalife.com/Account/Create?appId=1&qrFlow=1&locale=pt-BR&SponsorId=ZRdWSj1jMGH1aeeGrHPR2A==&cmp=m_pt_br_wbs_dssignup_btn_nap_copylink_20250305" target="_blank" rel="noopener">Cadastro</a>
+    </div>
+    <p>© 2026 Distribuidor Independente Herbalife — Edu Sidegum</p>
+  </footer>
+</body>
+</html>

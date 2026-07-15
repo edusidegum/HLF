@@ -1,0 +1,133 @@
+Hype Drink | Transformação 21
+
+PLANO DE DESENVOLVIMENTO: PÁGINA TRANSFORMAÇÃO 21
+
+Especificações Técnicas de SEO, UX e Implementação Web
+
+09 de junho de 2026
+
+---
+
+### 1. Configurações de Head (SEO e Social Media)
+
+A configuração do cabeçalho técnico visa garantir a indexação prioritária nos motores de busca e a correta renderização de "snippets" em aplicativos de mensagens como WhatsApp e Telegram. A estrutura deve seguir rigorosamente os padrões de SEO Brasil para maximizar a taxa de clique (CTR).
+
+- **Title Tag:** Transformação 21 | Seu Estilo de Vida Ativo e Saudável
+- **Meta Description:** Participe do Desafio de 21 dias com Carlos Eduardo & Marise. Planejamento alimentar, exercícios e suporte exclusivo para sua melhor versão.
+- **Link Canonical:** `https://edusidegum.github.io/hypedrink/transformacao.html`
+
+#### 1.1. Protocolo Open Graph (Social)
+Para garantir que o compartilhamento do link gere um card visual atrativo, as seguintes tags devem ser implementadas:
+
+- **og:title:** Transformação 21 - Desafio de Estilo de Vida Ativo
+- **og:description:** Planejamento, exercícios e suporte em um só lugar.
+- **og:image:** `https://via.placeholder.com/1200x630` (Substituir por imagem real do projeto)
+- **og:url:** `https://edusidegum.github.io/hypedrink/transformacao.html`
+- **og:type:** website
+
+---
+
+### 2. Topbar Padrão (Arquitetura de Navegação)
+
+A Topbar deve utilizar a lógica de CSS Grid para garantir a centralização matemática do menu, independentemente do tamanho dos elementos laterais, conforme revisado anteriormente.
+
+- **Lado Esquerdo (Brand):** Logo visual acompanhado do texto **■ TRANSFORMAÇÃO 21**.
+- **Centro (Menu Dropdown):** Elemento de destaque com fonte Montserrat, peso 800, contendo os links: Início, Benefícios, Cadastro e Suporte.
+- **Lado Direito (CTA):** Botão de ação rápida "Quero Perguntar Sobre" com fundo verde WhatsApp (`#25D366`).
+
+
+Atenção: O link do WhatsApp deve conter o texto codificado: Quero%20Perguntar%20Sobre%20a%20Transformação%2021 para facilitar o rastreio da origem do lead.
+
+
+---
+
+### 3. Seção Hero (Conversão Primária)
+
+A seção de abertura substitui o carrossel tradicional por um elemento de vídeo estático, aumentando o tempo de permanência na página e a autoridade do conteúdo.
+
+- **H1 (Título Principal):** Junte-se ao Movimento por um Estilo de Vida Ativo e Saudável.
+- **Integração de Vídeo:** Utilizar `iframe` responsivo para o vídeo do YouTube (`mmCFEbGIvzQ`). O container deve manter a proporção 16:9.
+- **CTA Principal:** Botão de alta visibilidade com o texto **"QUERO MEU ACESSO PREMIUM"**, direcionando para o fluxo de cadastro.
+
+---
+
+### 4. Seção "Tudo em um só lugar" (Pilares do Programa)
+
+Esta seção detalha a entrega de valor do programa. Cada item deve ser acompanhado de um ícone minimalista e descrição objetiva.
+
+1. **Planejamento Alimentar:** Guia completo para nutrir seu corpo.
+2. **Exercícios Físicos:** Rotinas adaptadas para todos os níveis.
+3. **Receitas Exclusivas:** Opções saudáveis e saborosas para o dia a dia.
+4. **Acompanhamento:** Suporte direto para garantir seus resultados.
+5. **Suplementação:** Orientação sobre o uso correto dos produtos.
+6. **Lista de Compras:** Facilidade e organização para sua rotina.
+7. **Ebook Digital:** Material de apoio para consulta rápida.
+8. **Chat de Apoio:** Comunidade ativa para troca de experiências.
+
+---
+
+### 5. Seção Cliente Premium e Benefícios Financeiros
+
+Apresentação clara da progressão de descontos para incentivar a fidelização do cliente no ecossistema Herbalife.
+
+
+
+
+Nível de Desconto
+Categoria
+Vantagem
+
+
+
+
+14%
+Bronze
+Desconto inicial imediato
+
+
+23%
+Prata
+Acúmulo de pontos progressivo
+
+
+32%
+Ouro
+Benefício máximo para consumo
+
+
+
+
+Inscrição Promocional: Destacar o valor de R$ 20,00 para inscrições online por tempo determinado, criando senso de urgência (gatilho de escassez).
+
+---
+
+### 6. Footer e Consultoria
+
+O rodapé deve reforçar a autoridade dos consultores responsáveis e fornecer os canais de suporte técnico e comercial.
+
+- **Consultores Responsáveis:** Carlos Eduardo & Marise.
+- **Suporte:** Links diretos para FAQ, Termos de Uso e Redes Sociais.
+- **Copyright:** © 2026 Hype Drink - Todos os direitos reservados.
+
+---
+
+### 7. Diretrizes Técnicas e Deploy
+
+O desenvolvimento deve seguir o fluxo de trabalho estabelecido para o ambiente Windows 11 + WSL2/Ubuntu, garantindo performance e compatibilidade.
+
+#### 7.1. Comandos de Terminal (WSL2)
+Para otimização de assets e publicação, utilize os seguintes comandos no diretório raiz do projeto:
+
+- **Otimização de Imagens:** `for f in img/*.png; do cwebp -q 80 "$f" -o "${f%.png}.webp"; done`
+- **Validação de HTML:** `tidy -q -e transformacao.html`
+- **Deploy GitHub Pages:** `git add . && git commit -m "feat: implementacao transformacao.html" && git push`
+
+#### 7.2. Recursos Visuais
+- **Placeholder Hero:** `https://via.placeholder.com/1200x630`
+- **Placeholder Benefícios:** `https://via.placeholder.com/400x400`
+
+---
+
+Local e data: Porto Alegre, 09 de junho de 2026
+
+*Documento elaborado em 09 de junho de 2026. As informações contidas são de responsabilidade do solicitante.*
