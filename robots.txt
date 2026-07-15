@@ -1,15 +1,5 @@
-﻿User-agent: *
-Allow: /
+User-agent: *
+Disallow: /
+Allow: /google82b0e011e22c61ab.html
+
 Sitemap: https://edusidegum.github.io/HLF/sitemap.xml
-
-# Desallow areas
-Disallow: /*_Old*.html
-Disallow: /cadastro_Old*.html
-Disallow: /manifesto_Old*.html
-Disallow: /index_Old*.html
-Disallow: /ajuda_Old*.html
-Disallow: /links_Old*.html
-Disallow: /privacidade_Old*.html
-
-# Google verification
-Allow: /google*.html

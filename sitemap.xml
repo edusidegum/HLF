@@ -1,27 +1,52 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://edusidegum.github.io/HLF/index.html</loc>
-    <priority>1.0</priority>
+    <loc>https://edusidegum.github.io/HLF/</loc>
   </url>
+
   <url>
-    <loc>https://edusidegum.github.io/HLF/manifesto.html</loc>
-    <priority>0.9</priority>
+    <loc>https://edusidegum.github.io/HLF/bioniq</loc>
   </url>
+
   <url>
-    <loc>https://edusidegum.github.io/HLF/privacidade.html</loc>
-    <priority>0.8</priority>
+    <loc>https://edusidegum.github.io/HLF/data/</loc>
   </url>
+
   <url>
-    <loc>https://edusidegum.github.io/HLF/cadastro.html</loc>
-    <priority>0.9</priority>
+    <loc>https://edusidegum.github.io/HLF/doc/</loc>
   </url>
+
   <url>
-    <loc>https://edusidegum.github.io/HLF/ajuda.html</loc>
-    <priority>0.8</priority>
+    <loc>https://edusidegum.github.io/HLF/emagrecimento/</loc>
   </url>
+
   <url>
-    <loc>https://edusidegum.github.io/HLF/links.html</loc>
-    <priority>0.7</priority>
+    <loc>https://edusidegum.github.io/HLF/hypedrink/</loc>
   </url>
+
+  <url>
+    <loc>https://edusidegum.github.io/HLF/imunidade/</loc>
+  </url>
+
+  <url>
+    <loc>https://edusidegum.github.io/HLF/music/</loc>
+  </url>
+
+  <url>
+    <loc>https://edusidegum.github.io/HLF/perfil/</loc>
+  </url>
+
+  <url>
+    <loc>https://edusidegum.github.io/HLF/performance/</loc>
+  </url>
+
+  <url>
+    <loc>https://edusidegum.github.io/HLF/reset-metabolico/</loc>
+  </url>
+
+  <url>
+    <loc>https://edusidegum.github.io/HLF/transformacao21/</loc>
+  </url>
+
 </urlset>
