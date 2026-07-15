@@ -1,0 +1,256 @@
+﻿:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #eef2f6;
+  --text: #101828;
+  --muted: #667085;
+  --accent: #1f6f4a;
+  --accent-2: #154d34;
+  --accent-soft: #edf7f1;
+  --line: rgba(16,24,40,.08);
+  --shadow: 0 18px 44px rgba(16,24,40,.08);
+  --radius: 16px;
+  --maxw: 1180px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
+.container,
+.wrapper,
+.content,
+main,
+section > div {
+  width: min(100% - 32px, var(--maxw));
+  margin-inline: auto;
+}
+
+section { padding: 72px 0; }
+
+.hero,
+.banner,
+.section-hero,
+header + section {
+  background:
+    radial-gradient(circle at top right, rgba(31,111,74,.08), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.94));
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 16px;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.8rem); max-width: 12ch; }
+h2 { font-size: clamp(1.8rem, 3vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
+
+p, li {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+strong { color: var(--text); }
+
+.card,
+.box,
+.panel,
+.feature,
+.highlight,
+.cta-box,
+article,
+aside,
+form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card,
+.box,
+.panel,
+.feature,
+.highlight,
+.cta-box,
+article,
+aside,
+form {
+  padding: 24px;
+}
+
+.grid-2,
+.grid-3,
+.cards,
+.features,
+.columns {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2,
+.columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3,
+.cards,
+.features {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.btn,
+button,
+input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: var(--accent-2);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(21,77,52,.16);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--accent-2);
+  border-color: rgba(21,77,52,.18);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-soft);
+}
+
+.badge,
+.tag,
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-2);
+  border: 1px solid rgba(21,77,52,.10);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(16,24,40,.14);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+footer {
+  margin-top: 48px;
+  padding: 32px 0 48px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+footer p,
+footer li,
+footer a {
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .grid-3,
+  .grid-2,
+  .cards,
+  .features,
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  section { padding: 56px 0; }
+  h1 { max-width: none; }
+}
+
+@media (max-width: 640px) {
+  .container,
+  .wrapper,
+  .content,
+  main,
+  section > div {
+    width: min(100% - 24px, var(--maxw));
+  }
+
+  .card,
+  .box,
+  .panel,
+  .feature,
+  .highlight,
+  .cta-box,
+  article,
+  aside,
+  form {
+    padding: 20px;
+  }
+
+  .btn,
+  button,
+  input[type="submit"] {
+    width: 100%;
+  }
+}

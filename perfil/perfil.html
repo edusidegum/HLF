@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><style>
+﻿<!DOCTYPE html><html><head><meta charset='utf-8'><style>
 @page {
     size: A4;
     margin: 2.2cm 2.4cm;
@@ -40,7 +40,8 @@ pre { background: #f6f6f6; padding: 11px 13px; border-radius: 5px; white-space: 
 pre code { background: none; padding: 0; }
 blockquote { margin: 0.6em 0; padding: 0.2em 0 0.2em 1em; border-left: 3px solid #ccc; color: #555; font-style: italic; }
 img { max-width: 100%; }
-</style></head><body><h1>Ficha de Autoavaliação do Bem-Estar — Herbalife</h1><!doctype html>
+</style>    <link rel="stylesheet" href="assets/css/perfil.css">
+</head><body><h1>Ficha de Autoavaliação do Bem-Estar — Herbalife</h1><!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -48,16 +49,16 @@ img { max-width: 100%; }
   <title>Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum — Distribuidor Independente Herbalife</title>
   <meta name="description" content="Ficha de Autoavaliação do Bem-Estar Herbalife. Responda Sim ou Não para Alimentação Saudável, Estilo de Vida e Controle de Peso. Resultado automático e orientações personalizadas com um Distribuidor Independente em Novo Hamburgo/RS.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow,max-snippet:-1,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
   <meta name="keywords" content="Autoavaliação do Bem-Estar, Ficha Herbalife, Alimentação Saudável, Estilo de Vida, Controle de Peso, Distribuidor Independente Herbalife, Novo Hamburgo RS, Eduardo Sidegum, Nutrição Personalizada">
 
-  <link rel="canonical" href="https://edusidegum.github.io/autoavaliacao-bem-estar.html">
+  <link rel="canonical" href="https://edusidegum.github.io/HLF/perfil/perfil.html">
   <link rel="preload" as="image" href="https://edusidegum.github.io/menu/img/Herbalife-Logo.webp">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum">
   <meta property="og:description" content="Preencha a ficha interativa e descubra como está seu bem-estar em Alimentação, Estilo de Vida e Controle de Peso.">
-  <meta property="og:url" content="https://edusidegum.github.io/autoavaliacao-bem-estar.html">
+  <meta property="og:url" content="https://edusidegum.github.io/HLF/perfil/perfil.html">
   <meta property="og:image" content="https://edusidegum.github.io/menu/img/Herbalife-Logo.webp">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -89,41 +90,7 @@ img { max-width: 100%; }
         }
       }
     ]
-  }    
-
-      /* ── Gerar Proposta ──────────────────── */
-function gerarProposta() {
-  const nome = document.getElementById('nome').value.trim();
-  const objetivo = document.getElementById('objetivo-pessoal').value;
-  const investimento = parseInt(document.getElementById('investimento').value);
-
-  if (!objetivo || !investimento) {
-    alert('Por favor, selecione seu objetivo pessoal e quanto deseja investir por dia.');
-    return;
   }
-
-  const dados = {
-    nome: nome || 'Cliente',
-    objetivo: objetivo,
-    investimento: investimento,
-    score: {
-      alimentacao: respostas.alimentacao.filter(v => v === 'sim').length,
-      estilo: respostas.estilo.filter(v => v === 'sim').length,
-      peso: respostas.peso.filter(v => v === 'sim').length,
-      total: respostas.alimentacao.filter(v => v === 'sim').length +
-             respostas.estilo.filter(v => v === 'sim').length +
-             respostas.peso.filter(v => v === 'sim').length
-    },
-    peso: parseFloat(document.getElementById('peso').value) || 0,
-    altura: parseFloat(document.getElementById('altura').value) || 0,
-    idade: parseInt(document.getElementById('idade').value) || 0
-  };
-
-  localStorage.setItem('dadosPerfil', JSON.stringify(dados));
-  window.location.href = 'avaliacao.html';
-}
-
-      
   </script>
 
   <style>
@@ -470,6 +437,7 @@ function gerarProposta() {
       .footer-wrap { grid-template-columns: 1fr; text-align: center; }
     }
   </style>
+    <link rel="stylesheet" href="assets/css/perfil.css">
 </head>
 <body>
 
@@ -504,7 +472,32 @@ function gerarProposta() {
       </section>
 
       <!-- ═══════════ RESULTADOS ═══════════ -->
-  
+      <section class="results-card" aria-label="Resultados da autoavaliação" aria-live="polite">
+        <h3>📊 Seus Resultados</h3>
+        <div class="result-row">
+          <span class="result-label">🍎 Alimentação Saudável</span>
+          <span class="result-value" id="score-alimentacao">0 / 10</span>
+        </div>
+        <div class="result-bar"><div class="result-bar-fill" id="bar-alimentacao" style="width:0%"></div></div>
+
+        <div class="result-row" style="margin-top:10px;">
+          <span class="result-label">🏃 Estilo de Vida</span>
+          <span class="result-value" id="score-estilo">0 / 7</span>
+        </div>
+        <div class="result-bar"><div class="result-bar-fill" id="bar-estilo" style="width:0%"></div></div>
+
+        <div class="result-row" style="margin-top:10px;">
+          <span class="result-label">⚖️ Controle de Peso</span>
+          <span class="result-value" id="score-peso">0 / 5</span>
+        </div>
+        <div class="result-bar"><div class="result-bar-fill" id="bar-peso" style="width:0%"></div></div>
+
+        <div class="result-row" style="margin-top:10px;">
+          <span class="result-label"><strong>🔢 Total Geral</strong></span>
+          <span class="result-value" id="score-total" style="color:#fff;">0 / 22</span>
+        </div>
+      </section>
+
       <!-- ═══════════ ALIMENTAÇÃO SAUDÁVEL ═══════════ -->
       <section class="card" aria-label="Alimentação Saudável">
         <h2>🍎 Alimentação Saudável</h2>
@@ -753,39 +746,12 @@ function gerarProposta() {
 
       <!-- ═══════════ BOTÕES ═══════════ -->
       <div class="btn-row">
-  
-        <button class="btn-primary" onclick="gerarProposta()">📋 Gerar Proposta Personalizada</button>
-        
-    
+        <button class="btn-primary" onclick="imprimir()">🖨️ Imprimir Ficha</button>
+        <button class="btn-secondary" onclick="limparTudo()">🔄 Limpar Respostas</button>
       </div>
 
     </div>
   </main>
-    <section class="results-card" aria-label="Resultados da autoavaliação" aria-live="polite">
-        <h3>📊 Seus Resultados</h3>
-        <div class="result-row">
-          <span class="result-label">🍎 Alimentação Saudável</span>
-          <span class="result-value" id="score-alimentacao">0 / 10</span>
-        </div>
-        <div class="result-bar"><div class="result-bar-fill" id="bar-alimentacao" style="width:0%"></div></div>
-
-        <div class="result-row" style="margin-top:10px;">
-          <span class="result-label">🏃 Estilo de Vida</span>
-          <span class="result-value" id="score-estilo">0 / 7</span>
-        </div>
-        <div class="result-bar"><div class="result-bar-fill" id="bar-estilo" style="width:0%"></div></div>
-
-        <div class="result-row" style="margin-top:10px;">
-          <span class="result-label">⚖️ Controle de Peso</span>
-          <span class="result-value" id="score-peso">0 / 5</span>
-        </div>
-        <div class="result-bar"><div class="result-bar-fill" id="bar-peso" style="width:0%"></div></div>
-
-        <div class="result-row" style="margin-top:10px;">
-          <span class="result-label"><strong>🔢 Total Geral</strong></span>
-          <span class="result-value" id="score-total" style="color:#fff;">0 / 22</span>
-        </div>
-      </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="site-footer" role="contentinfo">
@@ -878,52 +844,9 @@ function gerarProposta() {
     function imprimir() {
       window.print();
     }
- /* ── Gerar proposta ───────────────────────── */
-/* ── Gerar Proposta ──────────────────── */
-function gerarProposta() {
-  const nome = document.getElementById('nome').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const endereco = document.getElementById('endereco').value.trim();
-  const telefone = document.getElementById('telefone').value.trim();
-  const nascimento = document.getElementById('nascimento').value;
-  const idade = document.getElementById('idade').value;
-  const peso = document.getElementById('peso').value;
-  const altura = document.getElementById('altura').value;
-  const objetivo = document.getElementById('objetivo-pessoal').value;
-  const investimento = parseInt(document.getElementById('investimento').value);
-
-  if (!objetivo || !investimento) {
-    alert('Por favor, selecione seu objetivo pessoal e quanto deseja investir por dia.');
-    return;
-  }
-
-  const dados = {
-    nome: nome || 'Cliente',
-    email: email,
-    endereco: endereco,
-    telefone: telefone,
-    nascimento: nascimento,
-    idade: idade,
-    peso: peso,
-    altura: altura,
-    objetivo: objetivo,
-    investimento: investimento,
-    score: {
-      alimentacao: respostas.alimentacao.filter(v => v === 'sim').length,
-      estilo: respostas.estilo.filter(v => v === 'sim').length,
-      peso: respostas.peso.filter(v => v === 'sim').length,
-      total: respostas.alimentacao.filter(v => v === 'sim').length +
-             respostas.estilo.filter(v => v === 'sim').length +
-             respostas.peso.filter(v => v === 'sim').length
-    }
-  };
-
-  localStorage.setItem('dadosPerfil', JSON.stringify(dados));
-  window.location.href = 'avaliacao.html';
-}
-
-      
   </script>
   <script src="/menu/scripts/bloco-incluir.js" defer></script>
 </body>
 </html></body></html>
+
+

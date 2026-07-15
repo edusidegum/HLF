@@ -1,25 +1,203 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══════════ PRECONNECT ═══════════ -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ═══════════ FONTES ═══════════ -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"></noscript>
+
+    <!-- ═══════════ SEO ═══════════ -->
+    <meta name="description" content="Manifesto de Performance e Propósito — Consultoria Independente Herbalife baseada em evidência, protocolos estruturados e acompanhamento próximo. Lajeado/RS e todo Brasil.">
+    <meta name="author" content="Eduardo Sidegum — Consultor Independente Herbalife">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d0d0d">
+
+    <!-- ═══════════ OPEN GRAPH ═══════════ -->
+    <meta property="og:title" content="Manifesto: Performance e Propósito | Consultor Independente Herbalife">
+    <meta property="og:description" content="Consultoria Baseada em Evidência, Resultados Baseados em Ação. Ciência aplicada, acompanhamento próximo e economia inteligente.">
+    <meta property="og:image" content="https://edusidegum.github.io/HLF/img/Herbalife-Logo-Distribuidor-Horizontal-RGB.png">
+    <meta property="og:url" content="https://edusidegum.github.io/HLF/manifesto.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <title>Manifesto: Performance e Propósito | Consultor Independente Herbalife</title>
+    <link rel="canonical" href="https://edusidegum.github.io/HLF/manifesto.html">
+
+    <!-- ═══════════ PROTEÇÃO CONTRA CÓPIA ═══════════ -->
     <meta name="protecao-copia" content="ativado">
-    <title>Manifesto: A Lente de Sistemas | Carlos Silva — HLF</title>
-    <link rel="stylesheet" href="assets/css/style_verde.css">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <style>
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+
+    <!-- ═══════════ JSON-LD ═══════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Manifesto: Performance e Propósito",
+        "description": "Consultoria Baseada em Evidência, Resultados Baseados em Ação. Metodologia pautada em ciência aplicada, acompanhamento próximo e economia inteligente.",
+        "about": {
+            "@type": "Person",
+            "name": "Eduardo Sidegum",
+            "jobTitle": "Consultor Independente Herbalife — Mentor de Protocolos de Performance",
+            "description": "Atuação como Distribuidor Independente Herbalife com metodologia baseada em protocolos estruturados, métricas de acompanhamento e constância.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lajeado",
+                "addressRegion": "RS",
+                "addressCountry": "BR"
+            },
+            "knowsAbout": [
+                "Nutrição de Alta Performance",
+                "Controle de Peso",
+                "Suporte para Atletas",
+                "Composição Corporal",
+                "Consultoria Nutricional"
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{
+            font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            background:#0d0d0d;color:#c0c0c0;line-height:1.75;
+            font-weight:300;overflow-x:hidden;
+        }
+        h1,h2,h3{font-family:'Montserrat',-apple-system,sans-serif;font-weight:600;color:#fff;letter-spacing:-.3px}
+        a{color:#78BE20;text-decoration:none;transition:color .2s}
+        a:hover{color:#a0e040}
+
+        /* ── CONTAINER ── */
+        .page{max-width:720px;margin:0 auto;padding:60px 20px 80px}
+
+        /* ── CABEÇALHO ── */
+        .header-manifesto{text-align:center;margin-bottom:48px}
+        .header-manifesto .logo{height:48px;width:auto;margin-bottom:20px;opacity:.9}
+        .header-manifesto h1{font-size:1.5rem;font-weight:700;margin-bottom:6px;letter-spacing:-.5px}
+        .header-manifesto .tagline{font-size:.85rem;color:#78BE20;font-weight:400;letter-spacing:1.5px;text-transform:uppercase}
+
+        /* ── SEPARADOR ── */
+        .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(120,190,32,.25),transparent);margin:40px 0}
+
+        /* ── SEÇÕES ── */
+        .section{margin-bottom:40px}
+        .section h2{font-size:1.1rem;color:#78BE20;margin-bottom:16px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+        .section p{margin-bottom:14px;font-size:.92rem;color:#b0b0b0}
+        .section p strong{color:#ddd;font-weight:600}
+
+        /* ── CITAÇÃO / DESTAQUE ── */
+        blockquote{
+            border-left:3px solid rgba(120,190,32,.4);
+            padding:16px 20px;margin:24px 0;
+            background:rgba(120,190,32,.04);
+            border-radius:0 8px 8px 0;
+            font-style:italic;color:#aaa;font-size:.88rem;
+        }
+
+        /* ── PILARES ── */
+        .pilares{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
+        .pilar{
+            background:#141414;border:1px solid rgba(255,255,255,.06);
+            border-radius:10px;padding:18px;transition:border-color .3s;
+        }
+        .pilar:hover{border-color:rgba(120,190,32,.25)}
+        .pilar h3{font-size:.85rem;color:#78BE20;margin-bottom:6px;font-weight:600;text-transform:none;letter-spacing:0}
+        .pilar p{font-size:.78rem;color:#999;margin:0}
+
+        /* ── ASSINATURA ── */
+        .assinatura{text-align:center;margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.06)}
+        .assinatura .nome{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px}
+        .assinatura .cargo{font-size:.78rem;color:#78BE20;letter-spacing:1px;text-transform:uppercase}
+
+        /* ── DESKTOP ── */
+        @media(min-width:600px){
+            .page{padding:80px 20px 100px}
+            .header-manifesto h1{font-size:2rem}
+            .pilares{grid-template-columns:repeat(3,1fr)}
+            .section h2{font-size:1.25rem}
+            .section p{font-size:.95rem}
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/manifesto.css">
 </head>
 <body>
-    <div id="topbar-placeholder"></div>
-    <main class="container">
-        <section class="card">
-            <h1>A Lente de Sistemas no Bem-Estar</h1>
-            <p>Enquanto muitos olham para produtos, eu olho para processos. Sua rotina é um sistema que precisa de aporte preciso e manutenção constante.</p>
-            <p>Como Bacharel em Sistemas, aplico o rigor da engenharia na construção da sua melhor versão.</p>
-            <div style="text-align:center; margin-top:30px;">
-                <a href="perfil/index.html" class="btn-primary-whats">FAZER DIAGNÓSTICO DE SISTEMA</a>
+    <div class="page">
+
+        <!-- ═══════════ CABEÇALHO ═══════════ -->
+        <header class="header-manifesto">
+            <img src="https://edusidegum.github.io/HLF/img/Herbalife-Logo-Distribuidor-Horizontal-RGB.png" alt="Consultor Independente Herbalife" class="logo" width="192" height="48">
+            <h1>Manifesto: Performance e Propósito</h1>
+            <p class="tagline">Consultoria Baseada em Evidência, Resultados Baseados em Ação.</p>
+        </header>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- ═══════════ ABERTURA ═══════════ -->
+        <section class="section">
+            <p>Não acredito em atalhos metabólicos. Acredito em <strong>protocolos estruturados</strong>, métricas de acompanhamento e na constância. Como consultor, minha atuação não se resume a indicar produtos, mas a gerenciar um sistema de performance personalizado para quem vive a realidade de <strong>Lajeado e região</strong>.</p>
+        </section>
+
+        <!-- ═══════════ PILARES ═══════════ -->
+        <section class="section">
+            <h2>Metodologia — Três Pilares Inegociáveis</h2>
+            <div class="pilares">
+                <div class="pilar">
+                    <h3>🧬 Ciência Aplicada</h3>
+                    <p>Todo protocolo recomendado é fundamentado nas diretrizes do Conselho Médico da Herbalife. Aqui, o empirismo dá lugar ao dado técnico e à segurança nutricional.</p>
+                </div>
+                <div class="pilar">
+                    <h3>🤝 Acompanhamento Próximo</h3>
+                    <p>A diferença entre o sucesso e o abandono está na rotina. Seja no controle de peso ou no suporte para atletas, o acompanhamento é o que garante que a estratégia saia do papel e transforme a composição corporal.</p>
+                </div>
+                <div class="pilar">
+                    <h3>💰 Economia Inteligente</h3>
+                    <p>Performance não precisa ser um custo proibitivo. Desenvolvi um modelo de consultoria onde o acesso à nutrição de alta densidade é viabilizado pelo próprio uso — seja pelo programa de Cliente Premium, com descontos diretos, ou pela duplicação estratégica para quem busca renda extra.</p>
+                </div>
             </div>
         </section>
-    </main>
-    <div id="footer-placeholder"></div>
-    <script src="assets/js/bloco-incluir.js" defer></script>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- ═══════════ FECHAMENTO ═══════════ -->
+        <section class="section">
+            <blockquote>
+                Atuar como Distribuidor Independente é a ferramenta que utilizo para garantir que cada cliente tenha suporte, plano e acompanhamento. Se você busca uma mentoria que trata seu bem-estar com a mesma seriedade que uma decisão de negócios, você está no lugar certo.
+            </blockquote>
+        </section>
+
+        <!-- ═══════════ ASSINATURA ═══════════ -->
+        <div class="assinatura">
+            <p class="nome">Eduardo Sidegum</p>
+            <p class="cargo">Mentor de Protocolos de Performance<br> & Distribuidor Independente Herbalife</p>
+        </div>
+
+    </div>
+
+    <!-- ═══════════ SCRIPTS EXTERNOS ═══════════ -->
+    <script src="https://edusidegum.github.io/menu/scripts/bloco-incluir.js" defer></script>
 </body>
 </html>
+
+
+
+
+
