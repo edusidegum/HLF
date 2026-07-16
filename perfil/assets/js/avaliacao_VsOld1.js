@@ -197,7 +197,40 @@
     // ============================================================
     // 6. MÓDULO DE INTERFACE (Header, proteção, navegação)
     // ============================================================
-    ';
+    function injetarHeader() {
+        // Verificar se já existe header
+        if (document.querySelector('.sticky-header')) return;
+
+        const headerHTML = `
+            <header class="sticky-header" role="banner" aria-label="Barra de navegação principal">
+                <a href="/" aria-label="Página inicial" class="topbar-brand">
+                    <img src="assets/img/logo-edusidegum.webp" alt="Edu Sidegum — Distribuidor Independente Herbalife"
+                         class="topbar-logo" width="128" height="128" loading="eager" fetchpriority="high">
+                </a>
+                <nav class="menu-toggle" aria-label="Menu principal">
+                    <button class="menu-btn" aria-label="Abrir menu">☰ Menu</button>
+                    <ul class="menu-dropdown">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/manifesto.html">Manifesto</a></li>
+                        <li><a href="https://catalogoherbalife.com.br/edusidegum" target="_blank" rel="noopener">Catálogo</a></li>
+                        <li><a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" rel="noopener">Cliente Premium</a></li>
+                        <li><a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" rel="noopener">Novo Consultor</a></li>
+                    </ul>
+                </nav>
+                <a href="https://wa.me/5551999663200?text=Quero%20Saber%20mais" class="btn-cta"
+                   target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+                    💬 Fale Conosco
+                </a>
+            </header>
+            <div class="header-spacer"></div>
+        `;
+        document.body.insertAdjacentHTML('afterbegin', headerHTML);
+    }
+
+    function ativarProtecaoCopia() {
+        // Bloqueia seleção de texto
+        const style = document.createElement('style');
+        style.textContent = 'body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}';
         document.head.appendChild(style);
 
         // Intercepta Ctrl+C
@@ -239,6 +272,8 @@
     // ============================================================
     function init() {
         // Injetar header e proteção
+        injetarHeader();
+        ativarProtecaoCopia();
 
         // Inicializar módulos
         moduloIMC();

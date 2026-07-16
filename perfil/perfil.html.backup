@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><style>
+﻿<!DOCTYPE html><html><head><meta charset='utf-8'><style>
 @page {
     size: A4;
     margin: 2.2cm 2.4cm;
@@ -40,7 +40,8 @@ pre { background: #f6f6f6; padding: 11px 13px; border-radius: 5px; white-space: 
 pre code { background: none; padding: 0; }
 blockquote { margin: 0.6em 0; padding: 0.2em 0 0.2em 1em; border-left: 3px solid #ccc; color: #555; font-style: italic; }
 img { max-width: 100%; }
-</style></head><body><h1>Ficha de Autoavaliação do Bem-Estar — Herbalife</h1><!doctype html>
+</style>    <link rel="stylesheet" href="assets/css/perfil.css">
+</head><body><h1>Ficha de Autoavaliação do Bem-Estar — Herbalife</h1><!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -48,17 +49,17 @@ img { max-width: 100%; }
   <title>Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum — Distribuidor Independente Herbalife</title>
   <meta name="description" content="Ficha de Autoavaliação do Bem-Estar Herbalife. Responda Sim ou Não para Alimentação Saudável, Estilo de Vida e Controle de Peso. Resultado automático e orientações personalizadas com um Distribuidor Independente em Novo Hamburgo/RS.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
   <meta name="keywords" content="Autoavaliação do Bem-Estar, Ficha Herbalife, Alimentação Saudável, Estilo de Vida, Controle de Peso, Distribuidor Independente Herbalife, Novo Hamburgo RS, Eduardo Sidegum, Nutrição Personalizada">
 
   <link rel="canonical" href="https://edusidegum.github.io/HLF/perfil/perfil.html">
-  
+  <link rel="preload" as="image" href="https://edusidegum.github.io/menu/img/Herbalife-Logo.webp">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum">
   <meta property="og:description" content="Preencha a ficha interativa e descubra como está seu bem-estar em Alimentação, Estilo de Vida e Controle de Peso.">
   <meta property="og:url" content="https://edusidegum.github.io/HLF/perfil/perfil.html">
-  <meta property="og:image" content="https://edusidegum.github.io/HLF/assets/img/Herbalife-Logo.webp">
+  <meta property="og:image" content="https://edusidegum.github.io/menu/img/Herbalife-Logo.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <script type="application/ld+json">
@@ -436,6 +437,7 @@ img { max-width: 100%; }
       .footer-wrap { grid-template-columns: 1fr; text-align: center; }
     }
   </style>
+    <link rel="stylesheet" href="assets/css/perfil.css">
 </head>
 <body>
 
@@ -453,7 +455,7 @@ img { max-width: 100%; }
         <a href="/manifesto.html">Manifesto de Autoridade</a>
         <a href="/menu/compartilhado/termosdeusodistribuidorindependenteHerbalife.html">Termos &amp; Políticas</a>
         <a href="/contato.html">Contato</a>
-        <a class="btn-whatsapp" href="https://wa.me/5551999663200" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn-whatsapp" href="https://wa.me/5551999999999" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -737,20 +739,7 @@ img { max-width: 100%; }
         </div>
       </section>
 
-        <!-- ═══════════ KITS RECOMENDADOS ═══════════ -->
-  <section class="card" id="recomendacao-kit" style="display:none;" aria-label="Kits recomendados">
-    <h2>🎯 Kit Recomendado para Você</h2>
-    <div id="conteudo-recomendacao">
-      <p style="color:var(--muted);">Carregando recomendações...</p>
-    </div>
-    <div style="text-align:center;margin-top:20px;">
-      <a href="../compartilhado/programashlf2026.html" target="_blank" class="btn btn-whatsapp" style="display:inline-block;padding:12px 28px;background:var(--garden);color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:1.05rem;">
-        📋 Ver Programas Completos
-      </a>
-    </div>
-    <div id="disclaimer-kit" style="margin-top:16px;"></div>
-  </section>
-<!-- ═══════════ DISCLAIMER ═══════════ -->
+      <!-- ═══════════ DISCLAIMER ═══════════ -->
       <div class="disclaimer">
         <strong>⚠️ Aviso importante:</strong> Esta ficha de autoavaliação tem finalidade exclusivamente informativa e educacional. Ela não substitui consulta com profissional de saúde, nutricionista ou médico. Os resultados aqui apresentados são baseados nas suas respostas e não constituem diagnóstico. Consulte sempre um profissional qualificado antes de iniciar qualquer programa nutricional ou de atividade física. Este material é disponibilizado por um Distribuidor Independente Herbalife.
       </div>
@@ -856,122 +845,8 @@ img { max-width: 100%; }
       window.print();
     }
   </script>
-  <script src="../assets/js/bloco-incluir.js" defer></script>
-<script>
-/* ── Recomendacao de Kits via CALC_KIT ── */
-function mostrarKits() {
-  var sel = document.getElementById('objetivo-pessoal');
-  var objetivo = sel ? sel.value : '';
-  var mapa = {
-    'reduzir-peso': 'emagrecimento',
-    'ganhar-musculos': 'performance',
-    'manter-peso': 'emagrecimento',
-    'vida-saudavel': 'imunidade',
-    'rendimento-esporte': 'performance'
-  };
-  var cat = mapa[objetivo] || 'emagrecimento';
-  if (typeof CALC_KIT === 'undefined') {
-    document.getElementById('conteudo-recomendacao').innerHTML = '<p style="color:#ff6b6b;">A calculadora ainda nao carregou. Recarregue a pagina.</p>';
-    document.getElementById('recomendacao-kit').style.display = 'block';
-    return;
-  }
-  var orc = 15;
-  var kits = CALC_KIT.recomendarKit(cat, orc, 'ouro');
-  if (!kits || kits.length === 0) {
-    document.getElementById('conteudo-recomendacao').innerHTML = '<p>Nenhum kit encontrado para este perfil. Fale com seu consultor.</p>';
-  } else {
-    var h = '<p style="margin-bottom:12px;"><strong>Com base no seu objetivo, estes sao os produtos ideais:</strong></p>';
-    h += '<div style="background:var(--garden-dark);border-radius:8px;padding:16px;margin-bottom:12px;">';
-    var top = kits.slice(0, 5);
-    for (var i = 0; i < top.length; i++) {
-      var k = top[i];
-      h += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-soft);">'
-        + '<span>' + k.produto + '</span>'
-        + '<span><strong>' + CALC_KIT.fmt(k.custoRefeicao) + '/refeicao</strong>'
-        + ' <span style="color:var(--garden-light);font-size:0.85rem;">(Ouro 32%)</span></span>'
-        + '</div>';
-    }
-    h += '</div>';
-    var pct = top.length > 0 ? top[0].pctFF : '0';
-    h += '<p style="font-size:0.9rem;color:var(--garden-light);">⚡ vs Fast food: economia de ate ' + pct + '% por refeicao</p>';
-    h += CALC_KIT.disclaimerClientePremium();
-    document.getElementById('conteudo-recomendacao').innerHTML = h;
-  }
-  document.getElementById('recomendacao-kit').style.display = 'block';
-  setTimeout(function() {
-    document.getElementById('recomendacao-kit').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 100);
-}
+  <script src="/menu/scripts/bloco-incluir.js" defer></script>
+</body>
+</html></body></html>
 
-document.addEventListener('DOMContentLoaded', function() {
-  var fila = document.querySelectorAll('.btn-row');
-  if (fila.length > 0) {
-    var btn = document.createElement('button');
-    btn.className = 'btn-primary';
-    btn.style.cssText = 'background:var(--garden-dark);';
-    btn.textContent = '🎯 VER KITS RECOMENDADOS';
-    btn.onclick = mostrarKits;
-    fila[0].appendChild(btn);
-  }
-});
-</script>
 
-</html><script>
-/* ── Recomendacao de Kits via CALC_KIT ── */
-function mostrarKits() {
-  var sel = document.getElementById('objetivo-pessoal');
-  var objetivo = sel ? sel.value : '';
-  var mapa = {
-    'reduzir-peso': 'emagrecimento',
-    'ganhar-musculos': 'performance',
-    'manter-peso': 'emagrecimento',
-    'vida-saudavel': 'imunidade',
-    'rendimento-esporte': 'performance'
-  };
-  var cat = mapa[objetivo] || 'emagrecimento';
-  if (typeof CALC_KIT === 'undefined') {
-    document.getElementById('conteudo-recomendacao').innerHTML = '<p style="color:#ff6b6b;">A calculadora ainda nao carregou. Recarregue a pagina.</p>';
-    document.getElementById('recomendacao-kit').style.display = 'block';
-    return;
-  }
-  var orc = 15;
-  var kits = CALC_KIT.recomendarKit(cat, orc, 'ouro');
-  if (!kits || kits.length === 0) {
-    document.getElementById('conteudo-recomendacao').innerHTML = '<p>Nenhum kit encontrado para este perfil. Fale com seu consultor.</p>';
-  } else {
-    var h = '<p style="margin-bottom:12px;"><strong>Com base no seu objetivo, estes sao os produtos ideais:</strong></p>';
-    h += '<div style="background:var(--garden-dark);border-radius:8px;padding:16px;margin-bottom:12px;">';
-    var top = kits.slice(0, 5);
-    for (var i = 0; i < top.length; i++) {
-      var k = top[i];
-      h += '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-soft);">'
-        + '<span>' + k.produto + '</span>'
-        + '<span><strong>' + CALC_KIT.fmt(k.custoRefeicao) + '/refeicao</strong>'
-        + ' <span style="color:var(--garden-light);font-size:0.85rem;">(Ouro 32%)</span></span>'
-        + '</div>';
-    }
-    h += '</div>';
-    var pct = top.length > 0 ? top[0].pctFF : '0';
-    h += '<p style="font-size:0.9rem;color:var(--garden-light);">⚡ vs Fast food: economia de ate ' + pct + '% por refeicao</p>';
-    h += CALC_KIT.disclaimerClientePremium();
-    document.getElementById('conteudo-recomendacao').innerHTML = h;
-  }
-  document.getElementById('recomendacao-kit').style.display = 'block';
-  setTimeout(function() {
-    document.getElementById('recomendacao-kit').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 100);
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var fila = document.querySelectorAll('.btn-row');
-  if (fila.length > 0) {
-    var btn = document.createElement('button');
-    btn.className = 'btn-primary';
-    btn.style.cssText = 'background:var(--garden-dark);';
-    btn.textContent = '🎯 VER KITS RECOMENDADOS';
-    btn.onclick = mostrarKits;
-    fila[0].appendChild(btn);
-  }
-});
-</script>
-</html>
