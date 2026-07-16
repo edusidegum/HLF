@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
 # Páginas legais e internas — não indexar
 Disallow: /compartilhado/
