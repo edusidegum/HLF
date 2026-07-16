@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="protecao-copia" content="ativado">
+<script src="https://edusidegum.github.io/menu/bloco-includes.js" defer></script>    
+
+    <!-- SEO On-Page -->
+    <meta name="description" content="Participe do Desafio de 21 dias com Carlos Eduardo &amp; Marise. Planejamento alimentar, exercícios e suporte exclusivo para sua melhor versão.">
+    <meta name="author" content="Edu Sidegum — Consultor Independente Herbalife">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d0d0d">
+
+    <!-- Geo -->
+    <meta name="geo.region" content="BR-RS">
+    <meta name="geo.placename" content="Novo Hamburgo">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Transformação 21 - Desafio de Estilo de Vida Ativo">
+    <meta property="og:description" content="Planejamento, exercícios e suporte em um só lugar.">
+    <meta property="og:image" content="https://edusidegum.github.io/transformacao21/img/og-transformacao21.webp">
+    <meta property="og:url" content="https://edusidegum.github.io/HLF/transformacao21/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Transformação 21 - Desafio de Estilo de Vida Ativo">
+    <meta name="twitter:description" content="Planejamento, exercícios e suporte em um só lugar.">
+    <meta name="twitter:image" content="https://edusidegum.github.io/transformacao21/img/og-transformacao21.webp">
+
+    <title>Transformação 21 | Seu Estilo de Vida Ativo e Saudável</title>
+
+    <link rel="canonical" href="https://edusidegum.github.io/HLF/transformacao21/index.html">
+
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap">
+    
+    </head>
+<!-- ═══════════ Script Conrole Musica ═══════════ -->
+<script>
+    /* ── Áudio de Fundo: inicia mudo e desmuta ao primeiro toque ── */
+    const bgMusic = document.getElementById('bg-music');
+    document.addEventListener('click', function unmuteOnce() {
+        if (bgMusic.muted) {
+            bgMusic.muted = false;
+            bgMusic.play().catch(() => {});
+        }
+        document.removeEventListener('click', unmuteOnce);
+    });
+</script>
+
+<body>
+
+    <!-- ═══════════ Insere Musica ═══════════ -->
+<audio autoplay loop muted id="bg-music">
+    <source src="https://edusidegum.github.io/menu/music/alexgrohl-electronic-stylish-rock.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ═══════════ TOPBAR FIXA ═══════════ -->
+<header class="sticky-header" role="banner" aria-label="Barra de navegação principal">
+    <a href="https://edusidegum.github.io/transformacao21/" aria-label="Página inicial Transformação 21" class="topbar-brand">
+        <img src="https://edusidegum.github.io/menu/ArtesOficiais/Herbalife-Logo.webp" alt="Consultor Independente" class="topbar-logo">
+        <span class="topbar-nome">■ TRANSFORMAÇÃO 21</span>
+    </a>
+
+    <nav class="menu-dropdown" aria-label="Menu de navegação">
+        <button class="menu-toggle" aria-label="Abrir menu">☰ Menu</button>
+        <ul class="menu-lista">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#pilares">Benefícios</a></li>
+            <li><a href="https://edusidegum.github.io/cadastro/cadastro.html" target="_blank" rel="noopener">Cadastro</a></li>
+            <li><a href="https://wa.me/5551999663200?text=Quero%20Perguntar%20Sobre%20a%20Transformação%2021" target="_blank" rel="noopener">Suporte</a></li>
+        </ul>
+    </nav>
+
+    <a href="https://wa.me/5551999663200?text=Quero%20Perguntar%20Sobre%20a%20Transformação%2021" class="btn-cta" target="_blank" rel="noopener" aria-label="Perguntar sobre Transformação 21 no WhatsApp">
+        💬 Quero Perguntar Sobre
+    </a>
+</header>
+
+<div class="header-spacer"></div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1>Junte-se ao Movimento por um Estilo de Vida Ativo e Saudável</h1>
+        <p class="hero-sub">TRANSFORMAÇÃO 21 — Seu estilo de vida transformado o aguarda</p>
+
+                <!-- Vídeo Transformação 21 -->
+        <div class="video-wrapper">
+            <video controls playsinline poster="img/desafio21dias_incluir.webp" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;object-fit:contain;background:#000;">
+                <source src="img/InscricaoT21.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo HTML5.
+            </video>
+        </div>
+
+        <a href="https://edusidegum.github.io/cadastro/cadastro.html" class="btn-hero" target="_blank" rel="noopener">
+            🚀 QUERO MEU ACESSO PREMIUM
+        </a>
+    </div>
+</section>
+
+<!-- ═══════════ 5K EM PRÊMIOS (Spin Selling) ═══════════ -->
+<section class="section-premios">
+    <div class="container">
+        <img src="img/LOGO 5K EM PRÊMIOS.webp" alt="R$ 5.000 em Prêmios — Transforme seu corpo e ganhe prêmios" class="img-fluid img-premios" loading="lazy">
+    </div>
+</section>
+
+<!-- ═══════════ TUDO EM UM SÓ LUGAR ═══════════ -->
+<section id="pilares" class="section-pilares">
+    <div class="container">
+        <h2>Tudo em um só lugar</h2>
+        <p class="section-sub">O programa completo para sua transformação</p>
+
+        <!-- Imagem resumo com todos os itens -->
+        <img src="img/desafio21dias_incluir.webp" alt="Todos os itens do Desafio 21 Dias: planejamento, exercícios, receitas, suporte e muito mais" class="img-fluid img-resumo" loading="lazy">
+
+        <div class="pilares-grid">
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-planejamento.webp" alt="Planejamento Alimentar" loading="lazy">
+                </div>
+                <h3>Planejamento Alimentar</h3>
+                <p>Guia completo para nutrir seu corpo com equilíbrio e inteligência durante os 21 dias.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-exercicios.webp" alt="Exercícios Físicos" loading="lazy">
+                </div>
+                <h3>Exercícios Físicos</h3>
+                <p>Rotinas em vídeo adaptadas para todos os níveis, do iniciante ao avançado.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-receitas.webp" alt="Receitas Exclusivas" loading="lazy">
+                </div>
+                <h3>Receitas Exclusivas</h3>
+                <p>Opções saudáveis e saborosas para o dia a dia, sem abrir mão do prazer.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-acompanhamento.webp" alt="Acompanhamento Personalizado" loading="lazy">
+                </div>
+                <h3>Acompanhamento</h3>
+                <p>Suporte direto e individual para garantir que você alcance seus resultados.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-suplementos.webp" alt="Suplementação" loading="lazy">
+                </div>
+                <h3>Suplementação</h3>
+                <p>Orientação sobre o uso correto dos produtos Herbalife para potencializar seus resultados.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-compras.webp" alt="Lista de Compras" loading="lazy">
+                </div>
+                <h3>Lista de Compras</h3>
+                <p>Facilidade e organização para sua rotina de mercado semanal.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-ebook.webp" alt="Ebook Digital" loading="lazy">
+                </div>
+                <h3>Ebook Digital</h3>
+                <p>Material de apoio completo para consulta rápida a qualquer momento.</p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-img-box">
+                    <img src="img/pilar-chat.webp" alt="Chat de Apoio" loading="lazy">
+                </div>
+                <h3>Chat de Apoio</h3>
+                <p>Comunidade ativa para troca de experiências, motivação e resultados.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ RESULTADOS REAIS (CARROSSEL) ═══════════ -->
+<section class="section-resultados">
+    <div class="container">
+        <h2>Resultados Reais</h2>
+        <p class="section-sub">Toque na imagem para ampliar</p>
+
+        <div class="selos-carrossel">
+            <a href="img/resultado1.webp" aria-label="Ampliar resultado 1">
+                <img src="img/resultado1.webp" alt="Resultado real de transformação — antes e depois 1" loading="lazy">
+            </a>
+            <a href="img/resultado2.webp" aria-label="Ampliar resultado 2">
+                <img src="img/resultado2.webp" alt="Resultado real de transformação — antes e depois 2" loading="lazy">
+            </a>
+            <a href="img/resultado3.webp" aria-label="Ampliar resultado 3">
+                <img src="img/resultado3.webp" alt="Resultado real de transformação — antes e depois 3" loading="lazy">
+            </a>
+            <a href="img/resultado4.webp" aria-label="Ampliar resultado 4">
+                <img src="img/resultado4.webp" alt="Resultado real de transformação — antes e depois 4" loading="lazy">
+            </a>
+            <a href="img/resultado5.webp" aria-label="Ampliar resultado 5">
+                <img src="img/resultado5.webp" alt="Resultado real de transformação — antes e depois 5" loading="lazy">
+            </a>
+        </div>
+
+        <p class="disclaimer">⚠️ Imagens representativas de evolução. Os resultados variam de pessoa para pessoa. Consulte seu Consultor Independente.</p>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="this.style.display='none'">
+    <span>&times;</span>
+    <img id="lightbox-img" src="" alt="Imagem ampliada do resultado">
+</div>
+
+<!-- ═══════════ CLIENTE PREMIUM ═══════════ -->
+<section id="premium" class="section-premium">
+    <div class="container">
+        <h2>Seja Cliente Premium</h2>
+        <p class="section-sub">Acumule pontos e conquiste até <strong>32% de desconto</strong> em todos os produtos</p>
+
+        <div class="table-wrapper">
+            <table class="tabela-descontos">
+                <thead>
+                    <tr>
+                        <th>Desconto</th>
+                        <th>Categoria</th>
+                        <th>Vantagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="pct">14%</span></td>
+                        <td>🥉 Bronze</td>
+                        <td>Desconto inicial imediato</td>
+                    </tr>
+                    <tr>
+                        <td><span class="pct">23%</span></td>
+                        <td>🥈 Prata</td>
+                        <td>Acúmulo de pontos progressivo</td>
+                    </tr>
+                    <tr>
+                        <td><span class="pct">32%</span></td>
+                        <td>🥇 Ouro</td>
+                        <td>Benefício máximo para consumo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cta-premium">
+            <p class="urgente">⚠️ <strong>Inscrição Promocional:</strong> Apenas <span class="preco">R$ 20,00</span> por tempo limitado!</p>
+            <a href="https://edusidegum.github.io/cadastro/cadastro.html" class="btn-hero" target="_blank" rel="noopener">
+                🚀 QUERO MEU ACESSO PREMIUM
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+    <div class="container">
+        <p><strong>Consultores Independentes Herbalife:</strong> Carlos Eduardo &amp; Marise</p>
+        <p>Transformação 21 — Seu estilo de vida ativo e saudável</p>
+        <p class="copyright">&copy; 2026 Hype Drink — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+    /* ── Lightbox do Carrossel ── */
+    document.querySelectorAll('.selos-carrossel a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = this.href;
+            img.alt = this.querySelector('img')?.alt || '';
+            lb.style.display = 'flex';
+        });
+    });
+
+    /* ── Fecha lightbox com tecla ESC ── */
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
