@@ -1,0 +1,247 @@
+HLF/
+├── index.html                          ← Raiz (menu principal)
+├── README.md
+├── sitemap.xml                         (1074b — 12 URLs)
+├── robots.txt
+│
+├── cadastro/
+│   └── cadastro.html                   ✅ Pronto
+├── cadastro_Old1.html                  ← Lixo na raiz (backup solto)
+│
+├── perfil/
+│   ├── perfil.html                     ✅ Pronto (36KB — o maior)
+│   ├── assets/js/analise.js            (18KB — JS crítico do questionário)
+│   ├── assets/js/Não confirmado.crdownload  ← LIXO TÉCNICO
+│   ├── css/
+│   ├── assets/css/
+│   ├── script.js                       (546b)
+│   ├── tabelahlfpremium2026.html
+│   └── tabelahlfpremium2026-otimizada.html
+│
+├── hypedrink/
+│   ├── index.html                      ✅ Pronto
+│   ├── investimento.html
+│   ├── index_Vs1.html..Vs5.html        ← 5 versões acumuladas
+│   ├── robots.txt
+│   └── assets/css/style.css
+│
+├── emagrecimento/                      🔧 (pastas vazias? verificar)
+├── imunidade/                          🔧
+├── performance/                        🔧
+├── reset-metabolico/                   ← No sitemap, NÃO listado na tabela A.1
+├── bioniq/                             🔧 Novo
+├── music/                              ← No sitemap — música? Saiba mais
+├── data/                               ← No sitemap — dados?
+│
+├── transformacao21/
+│   ├── index.html
+│   ├── index_Vs1.html
+│   ├── transformacao.html / .css
+│   └── img/ (várias imagens)
+│
+├── compartilhado/                      ← DUPLICADO com menu/compartilhado/
+│   ├── bloco-cookies.html
+│   ├── bloco-ga4-gtm.html
+│   ├── politicadeprivacidade.html
+│   ├── termosdeuso.html
+│   └── programashlf2026*.html
+│
+├── menu/
+│   ├── compartilhado/                  ← Cópia do acima + extras
+│   │   ├── topbar.html / topbar.css
+│   │   ├── footer.html                 (748b)
+│   │   ├── em_obras.html
+│   │   ├── termosdeusodistribuidor*.html
+│   │   └── ... (mesmo conteúdo do compartilhado/ raiz)
+│   └── scripts/
+│       ├── bloco-incluir.js            (2277b)
+│       └── bloco-protecao.js           (existe? verificar)
+│
+├── assets/css/
+│   ├── style.css                       (3452b)
+│   ├── style_green.css                 (518b)
+│   └── fonts.css                       (313b)
+│
+├── doc/
+│   ├── politicadeprivacidade.html       (7134b)
+│   ├── politicadeprivacidade_Old1.html
+│   ├── termosdeuso.html
+│   ├── projetoecossistemahlf_final.txt  (50KB)
+│   └── arquivosvscodedoprojeto.txt
+│
+├── img/                                (centralizada — webp)
+│   └── video/InscricaoT21.mp4          (7.3MB — pesado)
+│
+├── links_Old2.html                     ← Lixo na raiz
+│
+└── referencia_CSS/                     ← Banco de estilos (correto)
+
+                    ┌─────────────────────────────────┐
+                    │        hlf (index.html)          │
+                    │   Menu dinâmico, animado,        │
+                    │   ilustrado — acesso a todas     │
+                    └──────┬──────────┬──────────┬─────┘
+                           │          │          │
+           ┌───────────────┼──────────┼──────────┼───────────────┐
+           ▼               ▼          ▼          ▼               ▼
+    ┌──────────┐   ┌──────────┐ ┌────────┐ ┌──────────┐ ┌────────────┐
+    │ Perfil   │   │  Hype    │ │Imunidade│ │Performa. │ │Transform.  │
+    │   ✅     │   │  Drink✅ │ │  🔧    │ │  🔧     │ │ 21 🔧      │
+    │ (autoav.)│   │          │ │        │ │(H24/CR7)│ │            │
+    └────┬─────┘   └──────────┘ └────────┘ └──────────┘ └────────────┘
+         │                                                   │
+         ▼                                                   ▼
+    ┌──────────────────┐                           ┌──────────────────┐
+    │  Emagrecimento   │                           │ reset-metabolico │
+    │    🔧            │                           │ (órfão — não     │
+    │ (questionário JS │                           │  mapeado A.1)    │
+    │  → Perfil)       │                           │                  │
+    └──────────────────┘                           └──────────────────┘
+
+    ┌──────────┐     ┌──────────────────┐
+    │ Biônica  │     │ Cadastro ✅       │
+    │ 🔧 (novo)│     │ (fora do sitemap) │
+    │ (pré-    │     └──────────────────┘
+    │ lançamento)│
+    └──────────┘
+
+    ┌──────────────────────────────────────────────┐
+    │          CTAs FIXAS (todas as páginas)        │
+    │  WhatsApp (wa.me/5551999663200 + msg padrão) │
+    │  Catálogo (catalogoherbalife.com.br/edusidegum)│
+    │  Cadastro (→ compra online)                   │
+    └──────────────────────────────────────────────┘
+
+    ┌──────────────────────────────────────────────┐
+    │          RODAPÉ COMPARTILHADO (via JS)        │
+    │  Política Privacidade │ Termos de Uso        │
+    │  Autor → sobre.html (link externo)           │
+    └──────────────────────────────────────────────┘
+
+# PROMPT FINAL — Ecossistema HLF (Adapta One / Sonnet 5)
+
+Você vai atuar como **desenvolvedor(a) sênior front-end e arquiteto(a) de sistemas**, revisando e evoluindo um projeto real em produção. Não assuma histórico de conversa anterior — todo o contexto necessário está neste prompt.
+
+**Repositório:** `https://github.com/edusidegum/HLF`
+**Sitemap:** `https://raw.githubusercontent.com/edusidegum/HLF/refs/heads/main/sitemap.xml`
+**Pasta local de trabalho:** `D:\GitHub\HLF` (terminal PowerShell 7.6.3 já aberto, operado manualmente por mim)
+
+---
+
+## PARTE A — Contexto do Ecossistema
+
+### A.1 Mapa de páginas e status
+
+| Página | Status | Observação |
+|---|---|---|
+| `hlf` (raiz/index) | a organizar | Menu dinâmico, animado e ilustrado, acesso a todas as páginas |
+| Emagrecimento | a montar/ajustar | Aponta para **Perfil** — contém questionário de autoavaliação com JS embutido |
+| Perfil | ✅ pronta | Define o que o cliente vai/não vai adquirir |
+| Hype Drink | ✅ pronta | Melhorar imagens, fluidez e animação (sem alterar estrutura/lógica) |
+| Imunidade | 🔧 a montar | Página sobre bem-estar, direciona ao catálogo oficial |
+| Performance | 🔧 a montar | Linha Herbalife 24 Hours, voltada a atletas profissionais. Referência de posicionamento: Cristiano Ronaldo *(ver alerta na Parte E)* |
+| Transformação 21 | 🔧 quase pronta | Ajustar tamanho de vídeo e imagens |
+| Cadastro | ✅ pronta (`cadastro/cadastro.html`) | Totalmente funcional; só melhoria visual futura |
+| Biônica | 🔧 a montar | Produto novo, já disponível em outros países. Objetivo: já cadastrar cliente que compra em outro país + posicionar SEO/Google antes do lançamento no Brasil (fim de ano). Terá sistema próprio de personalização de suplemento (linha top-premium) |
+
+### A.2 Documentos compartilhados
+- `politicadeprivacidade.html` e `termosdeuso.html` — **já prontos e em uso**. Não devem ser indexados (confirmar `noindex` via meta robots e/ou `robots.txt`).
+
+### A.3 Página "Sobre o autor"
+- URL oficial: `https://edusidegum.github.io/edusidegum/sobre.html` — todo link de "autor" no site deve apontar para cá.
+
+### A.4 SEO e indexação
+- Nenhuma página com tabela de valores em reais (R$) pode ser indexável.
+- Manter e reforçar boas práticas de **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness) em todo o site, de forma consistente com o objetivo de SEO da Biônica (posicionamento antecipado no Google).
+
+### A.5 CTAs fixas em todas as páginas (3 saídas)
+1. **WhatsApp** — link: `https://wa.me/5551999663200` com mensagem pré-preenchida: `Olá, vi sua página sobre HLF, e quero saber mais`
+2. **Catálogo Oficial Herbalife** — `https://catalogoherbalife.com.br/edusidegum`
+3. **Página Cadastro** — direciona à compra online oficial
+
+### A.6 Estrutura de pastas
+- `IMG`: imagens em formato web otimizado
+- `doc`: documentos (política, termos etc.)
+- `referencia_CSS`: pasta de referência com trechos de CSS reaproveitáveis, **separados por tipo** — usar como banco de estilos, não como arquivo ativo do site
+- Preferência: **não sobrecarregar a pasta raiz** — manter páginas referenciadas dentro de suas próprias pastas
+
+### A.7 Scripts centrais a criar/ajustar
+
+**`incluir.js`** — injeta em todas as páginas:
+- Link para Política de Privacidade
+- Link para Termos de Uso
+- Link do Autor → `https://edusidegum.github.io/edusidegum/sobre.html`
+
+**Bloco de proteção** — proteção básica contra cópia de conteúdo autoral (textos). A lógica de implementação não deve ser óbvia no código-fonte; apenas quem administra o projeto deve entender o mecanismo.
+
+**`contato.js`** (novo arquivo) — centraliza em uma única variável de configuração:
+- Número/link do WhatsApp (`https://wa.me/5551999663200` + mensagem padrão)
+- Avaliar viabilidade técnica de incluir também o link do catálogo oficial no mesmo arquivo
+
+Objetivo: alterar o contato em um único lugar e refletir automaticamente em todas as páginas.
+
+### A.8 Diretrizes de design
+- Modernizar visualmente (motion sutil, tipografia com hierarquia clara, leve, responsivo), mantendo leveza de carregamento.
+- HTML5 semântico, compatível com GitHub Pages (sem backend).
+- Espaço reservado para comunicar novidades aos clientes.
+
+---
+
+## PARTE B — Postura de trabalho: Revisão Incremental (não reescrita)
+
+Você atua como desenvolvedor(a) sênior fazendo **revisão incremental de estilo** — não reescrita, não simplificação, não reconstrução.
+
+**Contexto crítico:**
+- Existe uma planilha/ferramenta de avaliação de bem-estar (usada na página Emagrecimento) que calcula ranking de necessidade do cliente e recomenda produto/caminho. **Essa lógica em JavaScript é crítica e não pode ser alterada, simplificada ou removida sob nenhuma justificativa estética.**
+- Imagens, ícones e assets existentes fazem parte da identidade visual estabelecida e **não devem ser removidos, substituídos por placeholder ou omitidos**, salvo pedido explícito meu de trocar uma imagem específica.
+
+**Regras obrigatórias antes de qualquer alteração:**
+
+1. Nunca remova, comente ou simplifique JS funcional sem antes: (a) listar a função/bloco a alterar, (b) explicar o motivo técnico, (c) aguardar minha confirmação explícita.
+2. Nunca remova uma `<img>`, asset referenciado ou componente visual sem perguntar se deve ser mantido, movido ou substituído.
+3. Toda alteração de CSS é **refatoração** do que já existe (classes, estrutura, breakpoints) — não recriação do zero. Classe que já funciona: ajustar valores, não substituir abordagem.
+4. Mudança estrutural (ex.: Flexbox → Grid, semântica HTML) deve vir com: o que muda / por que muda (ganho real) / **o que permanece igual**.
+5. Trabalho em lote incremental — **um arquivo ou seção por vez**. Parar ao final de cada etapa e aguardar minha aprovação.
+6. Toda substituição de arquivo em produção segue diretamente para o comando de execução (ver Parte C) **com backup automático `_VsOld1`** — sem etapa intermediária de pasta de proposta separada. Arquivos antigos permanecem como referência (mesma lógica da pasta `referencia_CSS`).
+7. Semântica HTML5 (`header`, `main`, `section`, `article`, `nav`, `footer`) somente onde não quebra seletores usados pelo JS. Se precisar mudar uma tag/id/classe referenciada, **listar antes todos os pontos do JS que dependem dela**.
+
+**Nível de entrega:** código sênior, bem comentado, nomenclatura consistente (BEM ou padrão já usado no projeto), responsivo, variáveis CSS (custom properties) para cores/espaçamentos já usados — nunca valores soltos repetidos. Tendências visuais atuais (motion sutil, hierarquia tipográfica, dark mode via `prefers-color-scheme` se aplicável) sempre como incremento, nunca como pretexto de limpeza.
+
+**Antes de começar qualquer etapa, responda:**
+1. Qual arquivo/seção vai analisar primeiro?
+2. Quais funções JS dependem de quais elementos HTML/CSS?
+3. Qual o plano de refatoração passo a passo — antes de escrever qualquer código?
+
+**Não escreva código antes de eu confirmar o plano.**
+
+---
+
+## PARTE C — Protocolo de execução (PowerShell local)
+
+Toda alteração em arquivo local (`D:\GitHub\HLF`) é feita por **comandos PowerShell 7.6.3 que você gera e eu executo manualmente** — você nunca edita o arquivo diretamente nem executa comandos.
+
+1. Antes de gerar o comando, apresente: arquivo afetado, o que muda e por quê.
+2. Se o arquivo for substituído (mesma função): o comando **primeiro copia o original com sufixo `_VsOld1`** (ou `_VsOld2`, `_VsOld3`... se já houver versão anterior) e só depois sobrescreve — direto, sem pasta de proposta intermediária.
+3. Arquivos considerados desnecessários (obsoletos, duplicados, não referenciados) — **pode eliminar diretamente os que não forem necessários**, sempre com backup automático `_VsOld1` antes da remoção/substituição, para servirem como referência futura.
+4. Um arquivo/pasta por vez, salvo pedido explícito de lote maior.
+5. Você gera os comandos; a execução é sempre manual, por mim, no terminal já aberto.
+
+**Palavras-chave do fluxo:**
+- Eu pergunto "posso fazer [tarefa]?" → você propõe → **só gera o comando quando eu disser "execute"**.
+- Ao concluir uma etapa, eu digo **"próximo"** para avançar.
+
+---
+
+Imagens que julgar necessário, fornecer nome e contexto, para salvar na pasta img como webp , buscando no banco de imagens oficiais, os quais detenho todas os direitos de uso, não exclusivos. 
+
+## PARTE D — Primeira tarefa
+
+Antes de qualquer código: analise o sitemap e a estrutura atual do repositório, e me apresente:
+1. Diagnóstico geral da estrutura de pastas/arquivos hoje.
+2. Proposta de mapa de interligação entre as páginas do ecossistema (conforme Parte A.1).
+3. Plano para os três scripts (`incluir.js`, proteção, `contato.js`) — lógica antes de implementação.
+4. Por qual arquivo/página você recomenda começar, e por quê.
+
+Aguardo essa análise antes de dizer "execute".
+
+---
