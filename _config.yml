@@ -1,0 +1,26 @@
+# Configuração GitHub Pages — Ecossistema HLF Nível 5
+# Modelo P.E.R.F.E.I.T.O. Vs4 (2026.2)
+
+title: Eduardo Sidegum | Distribuidor Independente Herbalife
+description: Nutrição de alta performance em Novo Hamburgo/RS. Programas de controle de peso, nutrição esportiva e bem-estar com produtos Herbalife.
+url: "https://edusidegum.github.io"
+baseurl: "/HLF"
+lang: pt-BR
+author: Eduardo Sidegum
+
+# SEO
+google_analytics: [GA4_MEASUREMENT_ID]
+theme-color: "#2E8B57"
+
+# Redes Sociais
+social:
+  name: Eduardo Sidegum
+  links:
+    - https://catalogoherbalife.com.br/edusidegum
+    - https://instagram.com/edusidegum
+    - https://facebook.com/edusidegum
+    - https://twitter.com/edusidegum
+
+# Build
+markdown: kramdown
+permalink: pretty

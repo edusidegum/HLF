@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow">
+  <link rel="canonical" href="https://edusidegum.github.io/HLF/perfil/perfil.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .perfil-container { max-width: 800px; margin: 2rem auto; padding: 0 5%; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; color: var(--garden-soft); font-weight: 600; font-size: 0.9rem; }
+    .form-control { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: #fff; font-size: 0.95rem; }
+    .form-control:focus { outline: none; border-color: var(--garden); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .category-section { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; margin-bottom: 2rem; }
+    .category-title { color: var(--garden-light); border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.06em; font-weight: 700; }
+    .question-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04); gap: 12px; }
+    .question-row:last-child { border-bottom: none; }
+    .question-text { flex: 1; font-size: 0.92rem; color: var(--text); }
+    .toggle-group { display: flex; background: var(--border); border-radius: 20px; padding: 3px; flex-shrink: 0; }
+    .toggle-btn { border: none; background: none; color: var(--muted); padding: 6px 18px; border-radius: 18px; cursor: pointer; font-size: 0.78rem; font-weight: 700; transition: all 0.2s; }
+    .toggle-btn.active-sim { background: var(--garden); color: #fff; }
+    .toggle-btn.active-nao { background: #8B3A3A; color: #fff; }
+    #resultado-box { display: none; margin-top: 2rem; padding: 2rem; border: 2px solid var(--garden); border-radius: 14px; background: var(--garden-bg); }
+    .score-category { font-size: 1rem; margin: 0.5rem 0; color: var(--text); }
+    .score-badge { font-size: 2rem; font-weight: 800; color: var(--garden-light); display: block; margin: 12px 0; }
+    .classif-label { font-size: 1.2rem; color: #fff; margin: 0.5rem 0; }
+    .sugestoes-box { margin: 1.5rem 0; padding: 1.2rem; background: rgba(46, 139, 87, 0.1); border-left: 3px solid var(--garden); border-radius: 8px; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+    .disclaimer-medico { font-size: 0.8rem; color: var(--muted); margin-top: 2rem; padding: 1rem; border-left: 3px solid #D4A017; background: rgba(212, 160, 23, 0.05); border-radius: 6px; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .question-row { flex-direction: column; align-items: flex-start; gap: 8px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ficha de Autoavaliação do Bem-Estar HLF",
+    "url": "https://edusidegum.github.io/HLF/perfil/perfil.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "author": { "@type": "Person", "name": "Eduardo Sidegum" }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-to-content">Pular para o conteudo principal</a>
+
+  <header class="topbar">
+    <div class="topbar-wrap">
+      <a href="../index.html" class="logo-row" aria-label="Voltar para Home">
+        <img src="../assets/img/Herbalife-Logo.webp" alt="Logo Herbalife" width="44" height="44" loading="eager">
+        <span>
+          <span class="brand-name">Eduardo Sidegum</span>
+          <span class="brand-sub">Distribuidor Independente Herbalife</span>
+        </span>
+      </a>
+      <nav aria-label="Navegacao principal">
+        <a href="../index.html">Home</a>
+        <a href="../hypedrink/">Hype Drink</a>
+        <a href="../cadastro.html">Cliente Premium</a>
+        <a href="https://catalogoherbalife.com.br/edusidegum" rel="noopener noreferrer" target="_blank">Catalogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="perfil-container">
+    <h1>Ficha de Autoavaliacao do Bem-Estar</h1>
+    <p class="section-subtitle">Responda com sinceridade para receber uma analise preliminar do seu estilo de vida e sugestoes personalizadas de produtos Herbalife.</p>
+
+    <form id="perfilForm" novalidate>
+      <!-- DADOS PESSOAIS -->
+      <div class="category-section">
+        <div class="category-title">Dados Pessoais</div>
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" class="form-control" placeholder="Seu nome" aria-label="Nome completo">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" id="peso" class="form-control" placeholder="Ex: 75" step="0.1" min="20" max="300" aria-label="Peso em quilogramas">
+          </div>
+          <div class="form-group">
+            <label for="altura">Altura (cm)</label>
+            <input type="number" id="altura" class="form-control" placeholder="Ex: 170" min="100" max="250" aria-label="Altura em centimetros">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="objetivo">Objetivo Principal</label>
+          <select id="objetivo" class="form-control" aria-label="Selecione seu objetivo principal">
+            <option value="Reduzir peso">Reduzir peso</option>
+            <option value="Ganhar musculos">Ganhar musculos</option>
+            <option value="Manter peso">Manter peso</option>
+            <option value="Vida mais saudavel">Vida mais saudavel</option>
+            <option value="Rendimento no esporte">Rendimento no esporte</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="investimento">Quanto voce esta disposto a investir diariamente para melhorar seu estilo de vida?</label>
+          <select id="investimento" class="form-control" aria-label="Valor de investimento diario">
+            <option value="10">R$ 10,00 por dia</option>
+            <option value="15">R$ 15,00 por dia</option>
+            <option value="20">R$ 20,00 por dia</option>
+            <option value="25">R$ 25,00 por dia</option>
+            <option value="30">R$ 30,00 por dia</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ALIMENTACAO -->
+      <div class="category-section" id="cat-alimentacao">
+        <div class="category-title">Alimentacao Saudavel</div>
+        <div class="question-row" data-cat="alim" data-idx="0"><span class="question-text">Voce faz de 4 a 5 refeicoes por dia (cafe da manha, almoco, jantar e lanches)?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="alim" data-idx="1"><span class="question-text">Voce consome graos integrais (arroz integral, aveia, quinoa) regularmente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="alim" data-idx="2"><span class="question-text">Voce evita o consumo excessivo de acucar e doces?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="alim" data-idx="3"><span class="question-text">Voce consome gorduras saudaveis (azeite, abacate, castanhas) diariamente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="alim" data-idx="4"><span class="question-text">Voce consome frutas e vegetais em pelo menos 5 porcoes ao dia?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="alim" data-idx="5"><span class="question-text">Voce bebe pelo menos 2 litros de agua por dia?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+      </div>
+
+      <!-- ESTILO DE VIDA -->
+      <div class="category-section" id="cat-estilo">
+        <div class="category-title">Estilo de Vida</div>
+        <div class="question-row" data-cat="estilo" data-idx="0"><span class="question-text">Voce pratica atividade fisica pelo menos 3 vezes por semana?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="estilo" data-idx="1"><span class="question-text">Voce dorme de 7 a 8 horas por noite?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="estilo" data-idx="2"><span class="question-text">Voce gerencia bem o estresse do dia a dia?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="estilo" data-idx="3"><span class="question-text">Voce evita o consumo de bebidas alcoholicas em excesso?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="estilo" data-idx="4"><span class="question-text">Voce nao e fumante?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="estilo" data-idx="5"><span class="question-text">Voce realiza exames preventivos anualmente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="estilo" data-idx="6"><span class="question-text">Voce reserva tempo para lazer e hobbies regularmente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+      </div>
+
+      <!-- CONTROLE DE PESO -->
+      <div class="category-section" id="cat-peso">
+        <div class="category-title">Controle de Peso</div>
+        <div class="question-row" data-cat="peso" data-idx="0"><span class="question-text">Voce esta satisfeito(a) com seu peso atual?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="peso" data-idx="1"><span class="question-text">Seu peso tem se mantido estavel nos ultimos 6 meses?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="peso" data-idx="2"><span class="question-text">Voce evita dietas restritivas ou da moda?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="peso" data-idx="3"><span class="question-text">Voce se pesa regularmente para acompanhar sua evolucao?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+        <div class="question-row" data-cat="peso" data-idx="4"><span class="question-text">Voce possui historico familiar de peso saudavel?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="nao">Nao</button><button type="button" class="toggle-btn" data-val="sim">Sim</button></div></div>
+      </div>
+
+      <div class="btn-group" style="justify-content: center;">
+        <button type="button" class="btn btn-primary" id="btnCalcular">Ver Resultado</button>
+        <button type="button" class="btn btn-outline" id="btnLimpar">Limpar Respostas</button>
+      </div>
+    </form>
+
+    <div id="resultado-box" role="region" aria-live="polite">
+      <h3>Seu Relatorio de Autoavaliacao</h3>
+      <div id="pontos-detalhe"></div>
+      <span class="score-badge" id="score-geral"></span>
+      <div class="classif-label" id="classificacao"></div>
+      <div class="sugestoes-box" id="sugestoes"></div>
+      <a href="#" id="wa-link" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">Conversar com Eduardo no WhatsApp</a>
+    </div>
+
+    <p class="disclaimer-medico">Esta ficha de autoavaliacao tem finalidade exclusivamente informativa e educacional. Ela nao substitui consulta com profissional de saude, nutricionista ou medico. Os resultados aqui apresentados sao baseados nas suas respostas e nao constituem diagnostico. Consulte sempre um profissional qualificado.</p>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="../assets/js/bloco-incluir.js" defer></script>
+  <script src="../assets/js/bloco-protecao.js" defer></script>
+  <script>
+  (function() {
+    var respostas = { alim: {}, estilo: {}, peso: {} };
+
+    // Toggle buttons
+    document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var row = this.closest('.question-row');
+        var cat = row.dataset.cat;
+        var idx = row.dataset.idx;
+        var val = this.dataset.val;
+
+        // Desmarca se clicou no mesmo
+        if (respostas[cat][idx] === val) {
+          respostas[cat][idx] = null;
+        } else {
+          respostas[cat][idx] = val;
+        }
+
+        // Atualiza UI
+        row.querySelectorAll('.toggle-btn').forEach(function(b) {
+          b.classList.remove('active-sim', 'active-nao');
+          if (b.dataset.val === respostas[cat][idx]) {
+            b.classList.add(respostas[cat][idx] === 'sim' ? 'active-sim' : 'active-nao');
+          }
+        });
+      });
+    });
+
+    // Calcular resultado
+    document.getElementById('btnCalcular').addEventListener('click', function() {
+      var alimCount = Object.values(respostas.alim).filter(function(v) { return v === 'sim'; }).length;
+      var estiloCount = Object.values(respostas.estilo).filter(function(v) { return v === 'sim'; }).length;
+      var pesoCount = Object.values(respostas.peso).filter(function(v) { return v === 'sim'; }).length;
+      var total = alimCount + estiloCount + pesoCount;
+
+      // Classificacao
+      var classe = '';
+      if (total >= 18) classe = 'Excelente';
+      else if (total >= 13) classe = 'Bom';
+      else if (total >= 8) classe = 'Regular';
+      else classe = 'Precisa de Atencao';
+
+      // Sugestoes baseadas na categoria mais fraca
+      var pctAlim = alimCount / 6;
+      var pctEstilo = estiloCount / 7;
+      var pctPeso = pesoCount / 5;
+      var min = Math.min(pctAlim, pctEstilo, pctPeso);
+      var sug = '';
+
+      if (min === pctAlim) {
+        sug = 'Sugestao personalizada: Seus resultados indicam que a Alimentacao Saudavel merece mais atencao. Os Shakes Herbalife (200 Kcal por porcao com 23 vitaminas e minerais), o NutreV (fonte de fibras e proteinas vegetais) e o Fiber Powder podem ajudar a equilibrar sua nutricao diaria. O Multivitaminico completa a suplementacao de micronutrientes essenciais.';
+      } else if (min === pctEstilo) {
+        sug = 'Sugestao personalizada: Seus resultados indicam que o Estilo de Vida merece mais atencao. O Herbal Concentrate (cha de ervas com acao termogenica), o N-R-G (guarana natural para energia) e o Liftoff (bebida energetica com vitaminas B e cafeina) podem ajudar a aumentar sua disposicao. O Shape Control com extrato de laranja Moro e cromo auxilia no metabolismo.';
+      } else {
+        sug = 'Sugestao personalizada: Seus resultados indicam que o Controle de Peso merece mais atencao. Os Shakes Herbalife como substitutos parciais de refeicao (reducao de ate 800 Kcal/dia substituindo 2 refeicoes), o Shape Control e o Protein Powder podem auxiliar no gerenciamento de peso. Consulte Eduardo para montar o protocolo ideal para voce.';
+      }
+
+      // Exibe resultado
+      document.getElementById('pontos-detalhe').innerHTML =
+        '<p class="score-category">Alimentacao Saudavel: <strong>' + alimCount + '/6</strong></p>' +
+        '<p class="score-category">Estilo de Vida: <strong>' + estiloCount + '/7</strong></p>' +
+        '<p class="score-category">Controle de Peso: <strong>' + pesoCount + '/5</strong></p>';
+      document.getElementById('score-geral').textContent = 'Pontuacao Geral: ' + total + '/22';
+      document.getElementById('classificacao').textContent = 'Classificacao: ' + classe;
+      document.getElementById('sugestoes').textContent = sug;
+
+      var msg = encodeURIComponent('Ola Eduardo, finalizei minha autoavaliacao HLF. Minha pontuacao foi ' + total + '/22 (' + classe + '). Gostaria de conversar sobre as sugestoes de produtos.');
+      document.getElementById('wa-link').href = 'https://wa.me/5551999663200?text=' + msg;
+
+      var box = document.getElementById('resultado-box');
+      box.style.display = 'block';
+      box.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Limpar
+    document.getElementById('btnLimpar').addEventListener('click', function() {
+      respostas = { alim: {}, estilo: {}, peso: {} };
+      document.querySelectorAll('.toggle-btn').forEach(function(b) {
+        b.classList.remove('active-sim', 'active-nao');
+      });
+      document.getElementById('resultado-box').style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>

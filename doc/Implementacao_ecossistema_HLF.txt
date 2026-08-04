@@ -1,0 +1,303 @@
+Eduardo Sidegum — Ecossistema HLF
+
+ARQUIVOS DE IMPLEMENTAÇÃO — FASE 3
+
+Perfil de Autoavaliação e Página de Cadastro (Funil Saída A)
+
+31 de julho de 2026
+
+---
+
+### 1. Arquivo: `perfil/perfil.html`
+
+```html
+
+
+
+    
+    
+    Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum
+    
+    
+    
+        :root { --switch-bg: #1A3A24; --switch-active: #2E8B57; }
+        .perfil-container { max-width: 800px; margin: 2rem auto; padding: 0 5%; }<br/>
+        .form-group { margin-bottom: 1.5rem; }<br/>
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--garden-soft); font-weight: 600; }<br/>
+        .form-control { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: #fff; }<br/>
+        .category-section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }<br/>
+        .category-title { color: var(--garden-light); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.05em; }<br/>
+        .question-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }<br/>
+        .question-text { flex: 1; padding-right: 20px; font-size: 0.95rem; }<br/>
+        .toggle-group { display: flex; background: var(--switch-bg); border-radius: 20px; padding: 2px; }<br/>
+        .toggle-btn { border: none; background: none; color: var(--muted); padding: 6px 16px; border-radius: 18px; cursor: pointer; font-size: 0.8rem; font-weight: 700; transition: var(--transition); }<br/>
+        .toggle-btn.active { background: var(--switch-active); color: #fff; }<br/>
+        #resultado-box { display: none; margin-top: 2rem; padding: 2rem; border: 2px solid var(--garden); border-radius: 12px; background: var(--garden-bg); }<br/>
+        .score-badge { font-size: 2rem; font-weight: 800; color: var(--garden-light); display: block; margin: 10px 0; }<br/>
+        .disclaimer-medico { font-size: 0.8rem; color: var(--muted); margin-top: 2rem; padding: 1rem; border-left: 3px solid var(--amber); background: rgba(212, 160, 23, 0.05); }
+    
+    
+    {
+      "@context": "https://schema.org",<br/>
+      "@type": "WebApplication",<br/>
+      "name": "Ficha de Autoavaliação do Bem-Estar HLF",<br/>
+      "url": "https://edusidegum.github.io/HLF/perfil/perfil.html",<br/>
+      "applicationCategory": "HealthApplication",<br/>
+      "operatingSystem": "All",<br/>
+      "author": { "@type": "Person", "name": "Eduardo Sidegum" }
+    }
+    
+
+
+    
+        
+            
+                
+                Eduardo SidegumDistribuidor Independente
+            
+            
+                Home
+                Hype Drink
+                Cliente Premium
+                Catálogo
+            
+        
+    
+
+    
+        Ficha de Autoavaliação do Bem-Estar
+        Responda com sinceridade para receber uma análise preliminar do seu estilo de vida.
+
+        
+            
+                Dados Pessoais
+                Nome Completo
+                
+                    Peso (kg)
+                    Altura (cm)
+                
+                
+                    Objetivo Principal
+                    
+                        Reduzir peso
+                        Ganhar músculos
+                        Manter peso
+                        Vida mais saudável
+                        Rendimento no esporte
+                    
+                
+            
+
+            
+                Alimentação Saudável
+                Faz pelo menos 3 refeições equilibradas ao dia?NãoSim
+                Consome grãos integrais diariamente?NãoSim
+                Evita excesso de açúcar e doces?NãoSim
+                Inclui gorduras saudáveis (azeite, castanhas) na dieta?NãoSim
+                Consome 5 porções de frutas/vegetais ao dia?NãoSim
+                Bebe pelo menos 2 litros de água por dia?NãoSim
+            
+
+            
+                Estilo de Vida
+                Pratica atividade física 3x por semana?NãoSim
+                Dorme entre 7 e 8 horas por noite?NãoSim
+                Consegue gerenciar bem o estresse diário?NãoSim
+                Evita o consumo frequente de álcool?NãoSim
+                Não é fumante?NãoSim
+                Realiza exames preventivos anualmente?NãoSim
+                Reserva tempo para lazer e hobbies?NãoSim
+            
+
+            
+                Controle de Peso
+                Está satisfeito com seu peso atual?NãoSim
+                Seu peso tem se mantido estável no último ano?NãoSim
+                Evita fazer dietas restritivas sem orientação?NãoSim
+                Monitora seu peso regularmente?NãoSim
+                Possui histórico familiar de peso saudável?NãoSim
+            
+
+            
+                Ver Resultado
+                Limpar Respostas
+            
+        
+
+        
+            Seu Relatório de Autoavaliação
+            
+            
+            
+            
+            Conversar com Eduardo no WhatsApp
+        
+
+        Esta ficha de autoavaliação tem finalidade exclusivamente informativa e educacional. Não substitui consulta com profissional de saúde, nutricionista ou médico.
+    
+
+    
+
+    
+    
+    
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.getElementById('btnCalcular').addEventListener('click', function() {
+            const resAlim = document.querySelectorAll('#cat-alimentacao .toggle-btn.active[data-val="1"]').length;
+            const resEst = document.querySelectorAll('#cat-estilo .toggle-btn.active[data-val="1"]').length;
+            const resPeso = document.querySelectorAll('#cat-peso .toggle-btn.active[data-val="1"]').length;
+            const total = resAlim + resEst + resPeso;
+
+            let classe = "";
+            if(total >= 18) classe = "Excelente";
+            else if(total >= 13) classe = "Bom";
+            else if(total >= 8) classe = "Regular";
+            else classe = "Precisa de Atenção";
+
+            let sug = "";
+            const min = Math.min(resAlim/6, resEst/7, resPeso/5);
+            if(min === resAlim/6) sug = "Sugestão: Shakes, NutreV, Fiber Powder e Multivitamínicos para reforçar sua base nutricional.";<br/>
+            else if(min === resEst/7) sug = "Sugestão: Herbal Concentrate, N-R-G e Liftoff para melhorar sua disposição e foco diário.";<br/>
+            else sug = "Sugestão: Shakes, Shape Control e Protein Powder para auxiliar no gerenciamento de peso.";
+
+            document.getElementById('pontos-detalhe').innerHTML = `<p>Alimentação: ${resAlim}/6 | Estilo de Vida: ${resEst}/7 | Controle de Peso: ${resPeso}/5</p>`;<br/>
+            document.getElementById('score-geral').innerText = `Pontuação Geral: ${total}/22`;<br/>
+            document.getElementById('classificacao').innerText = `Classificação: ${classe}`;
+            document.getElementById('sugestoes').innerText = sug;
+            
+            const msg = encodeURIComponent(`Olá Eduardo, finalizei minha autoavaliação HLF. Minha pontuação foi ${total}/22 (${classe}). Gostaria de conversar sobre as sugestões.`);
+            document.getElementById('wa-link').href = `https://wa.me/5551999663200?text=${msg}`;
+            document.getElementById('resultado-box').style.display = 'block';
+            document.getElementById('resultado-box').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('btnLimpar').addEventListener('click', () => {
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('resultado-box').style.display = 'none';
+        });
+    
+
+
+```
+
+---
+
+### 2. Arquivo: `cadastro.html`
+
+```html
+
+
+
+    
+    
+    Seja Cliente Premium ou Consultor | Eduardo Sidegum
+    
+    
+    
+    
+        .video-container { position: relative; width: 100%; max-width: 800px; margin: 2rem auto; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid var(--border); }<br/>
+        .video-placeholder { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: opacity 0.3s; }<br/>
+        .video-container:hover .video-placeholder { opacity: 0.8; }<br/>
+        .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 48px; background: rgba(255,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; }<br/>
+        .play-button::after { content: ''; border-style: solid; border-width: 10px 0 10px 15px; border-color: transparent transparent transparent white; }<br/>
+        .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0; }<br/>
+        .step-card { text-align: center; padding: 1.5rem; background: var(--card); border-radius: 12px; border: 1px solid var(--border); }<br/>
+        .step-num { width: 40px; height: 40px; background: var(--garden); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 800; }
+    
+
+
+    
+        
+            
+                
+                Eduardo SidegumDistribuidor Independente
+            
+            
+                Home
+                Hype Drink
+                Cliente Premium
+                Catálogo
+            
+        
+    
+
+    
+        
+            
+                Sua Jornada Começa Aqui
+                Cadastre-se para comprar com descontos exclusivos de 14% a 32% e receba suporte profissional no seu protocolo de transformação.
+                
+                    Quero me cadastrar
+                    Saiba como funciona
+                
+            
+        
+
+        
+            Como funciona o cadastro?
+            Assista ao vídeo abaixo para entender as vantagens de ser um Cliente Premium ou Consultor.
+            
+                
+                
+            
+        
+
+        
+            Vantagens Exclusivas
+            
+                Suporte CompletoAcompanhamento direto no seu protocolo de transformação corporal.
+                Descontos ProgressivosEconomia real de 14% a 32% em toda a linha de produtos.
+                Margens ProfissionaisOportunidade de ganhos com a repetição de vendas para consultores.
+                Frete GrátisIsenção de frete em pedidos a partir de 30 pontos de volume (PV).
+                Garantia TotalSatisfação garantida ou seu dinheiro de volta em até 30 dias.
+            
+        
+
+        
+            Tabela de Descontos
+            
+                
+                    NívelDescontoBenefício Adicional
+                    
+                        Bronze14%Acesso a promoções exclusivas
+                        Prata23%Acúmulo de pontos para brindes
+                        Ouro32%Frete grátis (acima de 30 PV)
+                    
+                
+            
+        
+
+        
+            Passo a Passo
+            
+                1AssistaVeja o vídeo explicativo acima.
+                2EscolhaDefina entre Cliente Premium ou Consultor.
+                3PeçaFaça seu primeiro pedido com desconto.
+                4RecebaEntrega rápida em sua residência.
+            
+            
+                Iniciar meu cadastro agora
+            
+        
+    
+
+    
+        
+    
+
+    
+    
+    
+
+
+```
+
+---
+
+*Documento elaborado em 31 de julho de 2026. As informações contidas são de responsabilidade do solicitante.*

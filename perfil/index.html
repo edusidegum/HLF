@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Autoavaliação do Bem-Estar | Eduardo Sidegum</title>
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root { --switch-bg: #1A3A24; --switch-active: #2E8B57; }
+        .perfil-container { max-width: 800px; margin: 2rem auto; padding: 0 5%; }<br/>
+        .form-group { margin-bottom: 1.5rem; }<br/>
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--garden-soft); font-weight: 600; }<br/>
+        .form-control { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: #fff; }<br/>
+        .category-section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }<br/>
+        .category-title { color: var(--garden-light); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.05em; }<br/>
+        .question-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }<br/>
+        .question-text { flex: 1; padding-right: 20px; font-size: 0.95rem; }<br/>
+        .toggle-group { display: flex; background: var(--switch-bg); border-radius: 20px; padding: 2px; }<br/>
+        .toggle-btn { border: none; background: none; color: var(--muted); padding: 6px 16px; border-radius: 18px; cursor: pointer; font-size: 0.8rem; font-weight: 700; transition: var(--transition); }<br/>
+        .toggle-btn.active { background: var(--switch-active); color: #fff; }<br/>
+        #resultado-box { display: none; margin-top: 2rem; padding: 2rem; border: 2px solid var(--garden); border-radius: 12px; background: var(--garden-bg); }<br/>
+        .score-badge { font-size: 2rem; font-weight: 800; color: var(--garden-light); display: block; margin: 10px 0; }<br/>
+        .disclaimer-medico { font-size: 0.8rem; color: var(--muted); margin-top: 2rem; padding: 1rem; border-left: 3px solid var(--amber); background: rgba(212, 160, 23, 0.05); }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",<br/>
+      "@type": "WebApplication",<br/>
+      "name": "Ficha de Autoavaliação do Bem-Estar HLF",<br/>
+      "url": "https://edusidegum.github.io/HLF/perfil/perfil.html",<br/>
+      "applicationCategory": "HealthApplication",<br/>
+      "operatingSystem": "All",<br/>
+      "author": { "@type": "Person", "name": "Eduardo Sidegum" }
+    }
+    </script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-wrap">
+            <a href="../index.html" class="logo-row">
+                <img src="../assets/img/Herbalife-Logo.webp" alt="Logo Herbalife">
+                <span><span class="brand-name">Eduardo Sidegum</span><span class="brand-sub">Distribuidor Independente</span></span>
+            </a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../hypedrink/">Hype Drink</a>
+                <a href="../cadastro.html">Cliente Premium</a>
+                <a href="https://catalogoherbalife.com.br/edusidegum" target="_blank">Catálogo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="perfil-container">
+        <h1>Ficha de Autoavaliação do Bem-Estar</h1>
+        <p class="section-subtitle">Responda com sinceridade para receber uma análise preliminar do seu estilo de vida.</p>
+
+        <form id="perfilForm">
+            <div class="category-section">
+                <div class="category-title">Dados Pessoais</div>
+                <div class="form-group"><label>Nome Completo</label><input type="text" class="form-control" required></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group"><label>Peso (kg)</label><input type="number" class="form-control" step="0.1" required></div>
+                    <div class="form-group"><label>Altura (cm)</label><input type="number" class="form-control" required></div>
+                </div>
+                <div class="form-group">
+                    <label>Objetivo Principal</label>
+                    <select class="form-control" id="objetivo">
+                        <option value="Reduzir peso">Reduzir peso</option>
+                        <option value="Ganhar músculos">Ganhar músculos</option>
+                        <option value="Manter peso">Manter peso</option>
+                        <option value="Vida mais saudável">Vida mais saudável</option>
+                        <option value="Rendimento no esporte">Rendimento no esporte</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="category-section" id="cat-alimentacao">
+                <div class="category-title">Alimentação Saudável</div>
+                <div class="question-row"><span class="question-text">Faz pelo menos 3 refeições equilibradas ao dia?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Consome grãos integrais diariamente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Evita excesso de açúcar e doces?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Inclui gorduras saudáveis (azeite, castanhas) na dieta?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Consome 5 porções de frutas/vegetais ao dia?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Bebe pelo menos 2 litros de água por dia?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+            </div>
+
+            <div class="category-section" id="cat-estilo">
+                <div class="category-title">Estilo de Vida</div>
+                <div class="question-row"><span class="question-text">Pratica atividade física 3x por semana?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Dorme entre 7 e 8 horas por noite?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Consegue gerenciar bem o estresse diário?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Evita o consumo frequente de álcool?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Não é fumante?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Realiza exames preventivos anualmente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Reserva tempo para lazer e hobbies?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+            </div>
+
+            <div class="category-section" id="cat-peso">
+                <div class="category-title">Controle de Peso</div>
+                <div class="question-row"><span class="question-text">Está satisfeito com seu peso atual?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Seu peso tem se mantido estável no último ano?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Evita fazer dietas restritivas sem orientação?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Monitora seu peso regularmente?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+                <div class="question-row"><span class="question-text">Possui histórico familiar de peso saudável?</span><div class="toggle-group"><button type="button" class="toggle-btn" data-val="0">Não</button><button type="button" class="toggle-btn" data-val="1">Sim</button></div></div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" id="btnCalcular">Ver Resultado</button>
+                <button type="reset" class="btn btn-outline" id="btnLimpar">Limpar Respostas</button>
+            </div>
+        </form>
+
+        <div id="resultado-box">
+            <h3>Seu Relatório de Autoavaliação</h3>
+            <div id="pontos-detalhe"></div>
+            <span class="score-badge" id="score-geral"></span>
+            <h4 id="classificacao"></h4>
+            <div id="sugestoes" style="margin: 1.5rem 0; color: var(--muted);"></div>
+            <a href="#" id="wa-link" class="btn btn-whatsapp" target="_blank">Conversar com Eduardo no WhatsApp</a>
+        </div>
+
+        <p class="disclaimer-medico">Esta ficha de autoavaliação tem finalidade exclusivamente informativa e educacional. Não substitui consulta com profissional de saúde, nutricionista ou médico.</p>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script src="../assets/js/bloco-incluir.js" defer></script>
+    <script src="../assets/js/bloco-protecao.js" defer></script>
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.getElementById('btnCalcular').addEventListener('click', function() {
+            const resAlim = document.querySelectorAll('#cat-alimentacao .toggle-btn.active[data-val="1"]').length;
+            const resEst = document.querySelectorAll('#cat-estilo .toggle-btn.active[data-val="1"]').length;
+            const resPeso = document.querySelectorAll('#cat-peso .toggle-btn.active[data-val="1"]').length;
+            const total = resAlim + resEst + resPeso;
+
+            let classe = "";
+            if(total >= 18) classe = "Excelente";
+            else if(total >= 13) classe = "Bom";
+            else if(total >= 8) classe = "Regular";
+            else classe = "Precisa de Atenção";
+
+            let sug = "";
+            const min = Math.min(resAlim/6, resEst/7, resPeso/5);
+            if(min === resAlim/6) sug = "Sugestão: Shakes, NutreV, Fiber Powder e Multivitamínicos para reforçar sua base nutricional.";<br/>
+            else if(min === resEst/7) sug = "Sugestão: Herbal Concentrate, N-R-G e Liftoff para melhorar sua disposição e foco diário.";<br/>
+            else sug = "Sugestão: Shakes, Shape Control e Protein Powder para auxiliar no gerenciamento de peso.";
+
+            document.getElementById('pontos-detalhe').innerHTML = `<p>Alimentação: ${resAlim}/6 | Estilo de Vida: ${resEst}/7 | Controle de Peso: ${resPeso}/5</p>`;<br/>
+            document.getElementById('score-geral').innerText = `Pontuação Geral: ${total}/22`;<br/>
+            document.getElementById('classificacao').innerText = `Classificação: ${classe}`;
+            document.getElementById('sugestoes').innerText = sug;
+            
+            const msg = encodeURIComponent(`Olá Eduardo, finalizei minha autoavaliação HLF. Minha pontuação foi ${total}/22 (${classe}). Gostaria de conversar sobre as sugestões.`);
+            document.getElementById('wa-link').href = `https://wa.me/5551999663200?text=${msg}`;
+            document.getElementById('resultado-box').style.display = 'block';
+            document.getElementById('resultado-box').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('btnLimpar').addEventListener('click', () => {
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('resultado-box').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

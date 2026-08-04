@@ -1,0 +1,643 @@
+Eduardo Sidegum — Distribuidor Independente Herbalife
+
+ECOSSISTEMA HLF NÍVEL 5
+
+Implementação de Alta Performance e Conformidade Técnica
+
+30 de julho de 2026
+
+---
+
+### 1. ARQUIVO: assets/css/style.css
+
+```css
+/* 
+   HLF Ecosystem Level 5 - Green Theme
+   Author: Eduardo Sidegum
+   Date: 30/07/2026
+*/
+
+:root {
+    --garden: #2E8B57;
+    --garden-light: #3CB371;
+    --garden-soft: #66CDAA;
+    --garden-dark: #1B5E34;
+    --garden-deep: #0D3B1C;
+    --garden-bg: #071A0E;
+    --bg: #071209;
+    --card: #0C1F12;
+    --text: #E8F0EC;
+    --muted: #8CA89A;
+    --border: #1A3A24;
+    --accent-cta: #2E8B57;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-to-content:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    background: var(--garden);
+    color: white;
+    padding: 10px 20px;
+    z-index: 10000;
+}
+
+/* Navigation */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(7, 26, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(7, 18, 9, 0.7), rgba(7, 18, 9, 0.7)), url('../img/composicaocorporal.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 5%;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: var(--transition);
+    will-change: transform;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--garden-light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--garden), var(--garden-dark));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.4);
+}
+
+/* Tables */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th { background: var(--garden-deep); color: var(--garden-soft); }
+
+/* Footer */
+footer {
+    background: linear-gradient(to bottom, var(--garden-bg), #000);
+    padding: 4rem 5% 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 768px) {
+    .hero { min-height: 60vh; }
+    .topbar { padding: 1rem 20px; }
+}
+```
+
+---
+
+### 2. ARQUIVO: assets/js/bloco-incluir.js
+
+```javascript
+/**
+ * HLF Inclusion Engine v5.0
+ * Handles dynamic components, LGPD, and Tracking
+ */
+
+const HLF_INCLUIR = {
+    init() {
+        this.injectFooter();
+        this.injectLGPD();
+        this.initTracking();
+    },
+
+    injectFooter() {
+        const footer = document.querySelector('footer');
+        if (!footer) return;
+
+        const content = `
+            
+                Desenvolvido em 31/07/2026 | Eduardo Sidegum
+                Política de Privacidade
+                Distribuidor Independente Herbalife
+            
+        `;
+        footer.innerHTML += content;
+    },
+
+    injectLGPD() {
+        if (localStorage.getItem('hlf_lgpd_consent')) return;
+
+        const banner = document.createElement('div');
+        banner.id = 'hlf-lgpd';
+        banner.style = "position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: #0C1F12; border: 1px solid #2E8B57; padding: 20px; border-radius: 12px; z-index: 9999; box-shadow: 0 10px 40px rgba(0,0,0,0.8);";
+        banner.innerHTML = `
+            Utilizamos cookies para melhorar sua experiência e analisar o tráfego conforme nossa Política de Privacidade.
+            Aceitar
+        `;
+        document.body.appendChild(banner);
+    },
+
+    acceptLGPD() {
+        localStorage.setItem('hlf_lgpd_consent', 'true');
+        document.getElementById('hlf-lgpd').remove();
+    },
+
+    initTracking() {
+        const ga4Id = '[GA4_MEASUREMENT_ID]';
+        const gtmId = '[GTM_CONTAINER_ID]';
+        
+        console.log('Tracking initialized with placeholders.');
+        // Logic for dynamic script injection would go here
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => HLF_INCLUIR.init());
+```
+
+---
+
+### 3. ARQUIVO: assets/js/bloco-protecao.js
+
+```javascript
+/**
+ * HLF Protection Module v1.1
+ * Selective protection respecting accessibility
+ */
+
+const HLF_PROTECTION = {
+    init() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        this.protectImages();
+        this.injectCSS();
+    },
+
+    protectImages() {
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'FIGURE') {
+                e.preventDefault();
+            }
+        }, false);
+    },
+
+    injectCSS() {
+        const style = document.createElement('style');
+        style.innerHTML = `
+            [data-protect] {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            img { pointer-events: none; }
+        `;
+        document.head.appendChild(style);
+    }
+};
+
+HLF_PROTECTION.init();
+```
+
+---
+
+### 4. ARQUIVO: assets/js/contato.js
+
+```javascript
+const CONTATO_HLF = {
+    proprietario: "Eduardo Sidegum",
+    cargo: "Distribuidor Independente Herbalife",
+    whatsapp: "+5551999663200",
+    wa_link: "https://wa.me/5551999663200",
+    email: "edusidegum@gmail.com",
+    localizacao: {
+        cidade: "Novo Hamburgo",
+        estado: "RS",
+        pais: "Brasil"
+    },
+    links: {
+        portfolio: "https://edusidegum.github.io/edusidegum/sobre.html",
+        catalogo: "https://catalogoherbalife.com.br/edusidegum",
+        instagram: "https://instagram.com/edusidegum",
+        facebook: "https://facebook.com/edusidegum",
+        twitter: "https://twitter.com/edusidegum"
+    }
+};
+```
+
+---
+
+### 5. ARQUIVO: assets/js/dados-kits.js
+
+```javascript
+const PRODUTOS_HLF = [
+    {
+        id: 1,
+        nome: "Shake Doce de Leite",
+        categoria: "Nutrição Base",
+        pontosVolume: 23.95,
+        precoSugerido: 235.00,
+        descricao: "Substituto parcial de refeição equilibrado.",
+        beneficios: ["23 vitaminas e minerais", "Proteína de alta qualidade"],
+        sabores: ["Doce de Leite"],
+        sku: "HLF-SK-DL",
+        destaque: true
+    },
+    {
+        id: 2,
+        nome: "Herbal Concentrate (Chá)",
+        categoria: "Energia",
+        pontosVolume: 19.95,
+        precoSugerido: 185.00,
+        descricao: "Mistura instantânea de ervas.",
+        beneficios: ["Ação termogênica", "Hidratação com sabor"],
+        sabores: ["Original", "Limão", "Pêssego"],
+        sku: "HLF-HC-OR",
+        destaque: true
+    },
+    {
+        id: 3,
+        nome: "Creatina Premium",
+        categoria: "Esporte",
+        pontosVolume: 15.50,
+        precoSugerido: 150.00,
+        descricao: "Creatina monohidratada pura.",
+        beneficios: ["Aumento de força", "Explosão muscular"],
+        sku: "HLF-CR-PM",
+        destaque: false
+    }
+    /* ... totalizando 33 itens conforme especificação ... */
+];
+```
+
+---
+
+### 6. ARQUIVO: assets/js/calculadora-kit.js
+
+```javascript
+const CALC_KIT = {
+    custoRefeicao(produtosIds) {
+        let totalPreco = 0;
+        let totalPV = 0;
+        
+        produtosIds.forEach(id => {
+            const p = PRODUTOS_HLF.find(item => item.id === id);
+            if (p) {
+                totalPreco += p.precoSugerido;
+                totalPV += p.pontosVolume;
+            }
+        });
+
+        const custoPorDose = totalPreco / 21; // Média de doses por kit
+        return {
+            custo: custoPorDose,
+            pv: totalPV,
+            comparativo: "R$ 30,00 fast food"
+        };
+    },
+
+    getDescontos(preco) {
+        return {
+            bronze: preco * 0.86,
+            prata: preco * 0.77,
+            ouro: preco * 0.68
+        };
+    }
+};
+```
+
+---
+
+### 7. ARQUIVO: index.html
+
+```html
+
+
+
+    
+    
+    Eduardo Sidegum | Nutrição de Alta Performance Herbalife
+    
+    
+    
+    
+    
+    
+    
+    {
+      "@context": "https://schema.org",<br/>
+      "@graph": [
+        {
+          "@type": "LocalBusiness",<br/>
+          "name": "Eduardo Sidegum - Herbalife",<br/>
+          "address": {<br/>
+            "@type": "PostalAddress",<br/>
+            "addressLocality": "Novo Hamburgo",<br/>
+            "addressRegion": "RS",<br/>
+            "addressCountry": "BR"
+          },
+          "url": "https://edusidegum.github.io/HLF/",<br/>
+          "telephone": "+5551999663200"
+        }
+      ]
+    }
+    
+
+
+    Pular para o conteúdo
+
+    
+        HLF Eduardo
+        
+            Home
+            Hype Drink
+            Perfil
+            Cadastro
+        
+    
+
+    
+        
+            
+                Nutrição de Alta Performance
+                Soluções factuais para controle de peso e bem-estar.
+                Falar com Eduardo
+            
+        
+
+        
+            
+                Shakes Nutricionais
+                Mais de 5.3 milhões de shakes consumidos diariamente no mundo.
+            
+            
+                Ciência Aplicada
+                Corpo científico com mais de 300 especialistas e PhDs.
+            
+        
+    
+
+    
+
+    
+    
+    
+
+
+```
+
+---
+
+### 8. ARQUIVO: hypedrink/index.html
+
+```html
+
+
+
+    
+    Hype Drink | Energia e Hidratação
+    
+
+
+    
+        HLF Hype Drink
+    
+    
+        
+            Hype Drink
+            A combinação perfeita de energia e refrescância.
+        
+        
+            Benefícios
+            Foco, energia e hidratação imediata para seu dia a dia.
+        
+    
+    
+    
+
+
+```
+
+---
+
+### 9. ARQUIVO: perfil/perfil.html
+
+```html
+
+
+
+    
+    Autoavaliação de Perfil | HLF
+    
+    
+
+
+    
+        Ficha de Autoavaliação
+        
+            
+                Objetivo Principal
+                
+                    Reduzir peso
+                    Ganhar músculos
+                    Vida saudável
+                
+            
+            
+            Ver Resultado
+        
+        Nota: Esta avaliação não substitui consulta profissional médica ou nutricional.
+    
+    
+    
+
+
+```
+
+---
+
+### 10. ARQUIVO: cadastro.html
+
+```html
+
+
+
+    
+    Seja um Cliente Premium | HLF
+    
+    
+
+
+    
+        Vantagens Cliente Premium
+        
+            
+                
+                    NívelDesconto
+                
+                
+                    Bronze14%
+                    Prata23%
+                    Ouro32%
+                
+            
+        
+        Quero me cadastrar
+    
+    
+    
+
+
+```
+
+---
+
+### 11. ARQUIVO: tabelas/index.html
+
+```html
+
+
+
+    
+    Tabela de Preços Imutável | HLF
+    
+    
+
+
+    
+        Tabela de Referência 2026
+        
+            
+        
+        Dados imutáveis para conferência de auditoria.
+    
+    
+    
+
+
+```
+
+---
+
+### 12. ARQUIVO: 404.html
+
+```html
+
+
+
+    
+    Página não encontrada | HLF
+    
+    
+
+
+    
+        404
+        O conteúdo que você procura não está disponível.
+        Voltar para Home
+    
+
+
+```
+
+*Documento elaborado em 30 de julho de 2026. As informações contidas são de responsabilidade do solicitante.*

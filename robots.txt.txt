@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+Disallow: /perfil/
+Disallow: /tabelas/
+Disallow: /cadastro.html
+Disallow: /assets/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /perfil/
+Disallow: /tabelas/
+Disallow: /cadastro.html
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /perfil/
+Disallow: /tabelas/
+Disallow: /cadastro.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /perfil/
+Disallow: /tabelas/
+Disallow: /cadastro.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /perfil/
+Disallow: /tabelas/
+Disallow: /cadastro.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /perfil/
+Disallow: /tabelas/
+Disallow: /cadastro.html
+
+Sitemap: https://edusidegum.github.io/HLF/sitemap.xml
